@@ -27,16 +27,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def load_env():
-    env = {}
+    # .env locally; in a cloud session the keys come from the environment's variables instead
+    env = {k: os.environ[k] for k in ("AI33_API_KEY", "AI33_BASE_URL") if os.environ.get(k)}
     path = os.path.join(ROOT, ".env")
-    with open(path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                env[k.strip()] = v.strip()
+    if os.path.exists(path):
+        with open(path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    env.setdefault(k.strip(), v.strip())
     if not env.get("AI33_API_KEY"):
-        sys.exit("AI33_API_KEY missing in .env")
+        sys.exit("AI33_API_KEY missing (set it in .env or as an environment variable)")
     return env
 
 

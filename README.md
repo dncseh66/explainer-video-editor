@@ -30,4 +30,4 @@ Changing a single word creates a new paid generation, so lock the script before 
 scripts/bin/mux exports/the-saw.mp4 output/voiceover/the-saw/audio_url.mp3 output/final/the-saw.mp4 0 0.35
 ```
 Arguments: video, voice, output, voice start (s), music volume (0–1; 0 drops the animation's own sound).
-`scripts/bin/mux` is compiled from `scripts/mux.swift` (built-in macOS AVFoundation, nothing to install).
+`scripts/bin/mux` is compiled from `scripts/mux.swift` (built-in macOS AVFoundation, nothing to install) on a Mac; on Linux / cloud sessions the same command runs the ffmpeg version in `scripts/av.py`.

@@ -20,7 +20,12 @@ Scenes, props, infographics and colour moods: `presets/style/SCENES.md` + `prese
 2. Voice: `python3 -I scripts/tts.py scripts_text/<name>.txt --voice narrator` (cached by text+voice+speed; reruns are free). Key lives only in `.env`. Dialogue lines (`SPEAKER: line` + `# cast: SPEAKER=preset`) get their own character voices and are joined into `audio_url.m4a` — see DIRECTING.md §14.
 3. Time scenes to `output/voiceover/<name>/json_url.json` word starts; save the map in `presets/timing/<name>.json`.
 4. Build the Motion film; keep a copy of its modules in `presets/film-snapshot/` after every change.
-5. Final: export MP4 to `exports/`, then `scripts/bin/mux exports/<name>.mp4 output/voiceover/<name>/audio_url.mp3 output/final/<name>.mp4 0 0.35`.
+5. Final: render the silent MP4 with `python3 -I scripts/render.py presets/film-snapshot/<film> exports/<name>.mp4` (headless Chrome → frames → encode), then `scripts/bin/mix exports/<name>.mp4 presets/timing/<name>.json output/final/<name>.mp4` (voice + music + SFX) or `scripts/bin/mux exports/<name>.mp4 output/voiceover/<name>/audio_url.mp3 output/final/<name>.mp4 0 0.35` (voice only).
+
+## Cloud sessions (Linux)
+- The repo is github.com/dncseh66/explainer-video-editor (private). `.env`, `cache/`, `exports/`, `output/final/` and all `.mp4` are git-ignored; keys come from the cloud environment's variables (`AI33_API_KEY`, `EPIDEMIC_SOUND_MCP_API_KEY`), which `scripts/tts.py` and `scripts/es_mcp_headers.sh` read before `.env`.
+- `.claude/settings.json` runs `scripts/cloud_setup.sh` at session start in the cloud (installs ffmpeg + headless Chromium). `scripts/bin/{mix,mux,vo_concat,encode}` use the Swift builds in `scripts/bin/mac/` on a Mac and `scripts/av.py` (ffmpeg) elsewhere — same arguments.
+- Finished videos are not in git: when a cloud session finishes a film, commit only the source (snapshot, timing, scripts) and hand the MP4 back as a download, or keep rendering finals locally.
 
 ## Sound (Epidemic Sound)
 - The `epidemic-sound` MCP server (`.mcp.json`) gives music + SFX search and download; its key is `EPIDEMIC_SOUND_MCP_API_KEY` in `.env`, read by `scripts/es_mcp_headers.sh`. Key expires ~2027-11.

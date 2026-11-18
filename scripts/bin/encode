@@ -1,0 +1,5 @@
+#!/bin/sh
+# encode: uses the compiled Swift tool on a Mac (scripts/bin/mac/), the ffmpeg version (scripts/av.py) everywhere else.
+D="$(cd "$(dirname "$0")" && pwd)"
+if [ "$(uname)" = Darwin ] && [ -x "$D/mac/encode" ]; then exec "$D/mac/encode" "$@"; fi
+exec python3 -I "$D/../av.py" encode "$@"
