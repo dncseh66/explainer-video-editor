@@ -1,0 +1,37 @@
+{
+  "id": "fed82786-05da-46f7-936c-48ead91a24c4",
+  "created_at": "2026-11-17T16:17:23.179Z",
+  "status": "done",
+  "credit_cost": 212,
+  "metadata": {
+    "v3": {
+      "provider": "elevenlabs",
+      "raw_voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY"
+    },
+    "data": {
+      "model_id": "eleven_multilingual_v2",
+      "file_name": "jbl-charge4-10s",
+      "multi_turn": false,
+      "with_loudnorm": false,
+      "with_transcript": true
+    },
+    "query": {},
+    "srt_url": "https://cdn.ai33.pro/v3/tts/fed82786-05da-46f7-936c-48ead91a24c4_1794932243298.srt?name=jbl-charge4-10s.srt&dl=1",
+    "json_url": "https://cdn.ai33.pro/v3/tts/fed82786-05da-46f7-936c-48ead91a24c4_1794932243298.json?name=jbl-charge4-10s.json&dl=1",
+    "voice_id": "E95b3lkMWHDsKeHJaIcY",
+    "transcript_status": "completed",
+    "transcript_credit_cost": 27,
+    "audio_url": "https://cdn.ai33.pro/v3/tts/fed82786-05da-46f7-936c-48ead91a24c4_1794932243298.mp3?name=jbl-charge4-10s.mp3&dl=1"
+  },
+  "progress": 100,
+  "type": "tts",
+  "updated_at": "2026-11-17T16:17:35.000Z",
+  "text": "This is the JBL Charge 4. Inside, one driver makes the sound, two passive radiators pump out the bass, and a seventy-five hundred milliamp-hour battery powers it all.",
+  "text_length": 166,
+  "text_truncated": false,
+  "_request": {
+    "speed": 1.0,
+    "text": "This is the JBL Charge 4. Inside, one driver makes the sound, two passive radiators pump out the bass, and a seventy-five hundred milliamp-hour battery powers it all.",
+    "voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "voiceover": "output/voiceover/the-saw/audio_url.mp3",
+  "voiceover_seconds": 27.14,
+  "film_seconds": 28.5,
+  "shots": [
+    { "id": "ledger", "start": 0.0,  "end": 5.3,  "vo": "The question that no executioner in the Holy Roman Empire ever recorded an answer to is this:", "mode": "host", "device": "gag", "mood": "hallSage", "bg": "stoneRoom", "cast": ["narrator"],
+      "events": [ { "word": "Holy", "t": 1.96, "do": "HOLY ROMAN EMPIRE tag pops", "sfx": "pop" }, { "word": "recorded", "t": 3.24, "do": "points, page flips blank", "sfx": "whoosh" }, { "word": "answer", "t": 3.84, "do": "? pops, surprised take", "sfx": "pop" } ] },
+    { "id": "bisect", "start": 5.3, "end": 9.0, "vo": "At what point during the vertical bisection of a living human body", "mode": "diagram", "device": "literal", "mood": "infoPaper", "bg": "paper", "cast": ["plain stick figure"],
+      "events": [ { "word": "vertical", "t": 6.4, "do": "coral dashed line draws down the middle", "sfx": "reverse whoosh" }, { "word": "bisection", "t": 6.8, "do": "VERTICAL BISECTION label + leader", "sfx": "pop" }, { "word": "body", "t": 8.24, "do": "figure turns worried", "sfx": "" } ] },
+    { "id": "react", "start": 9.0, "end": 10.7, "vo": "does consciousness end?", "mode": "host", "device": "reaction", "mood": "hallSage", "cast": ["narrator"],
+      "events": [ { "word": "consciousness", "t": 9.24, "do": "worried take + CONSCIOUSNESS? pops", "sfx": "pop + pluck" } ] },
+    { "id": "crimes", "start": 10.7, "end": 14.3, "vo": "The method was reserved for crimes beyond ordinary treason.", "mode": "data", "device": "symbol", "mood": "infoPaper", "bg": "paper",
+      "events": [ { "word": "reserved/crimes", "t": 11.2, "do": "theft, murder, treason icons pop along a ruler", "sfx": "pop x3" }, { "word": "beyond", "t": 12.4, "do": "coral arrow shoots past treason, shake", "sfx": "whoosh + thud" } ] },
+    { "id": "bound", "start": 14.3, "end": 19.9, "vo": "The condemned was stripped, bound at the ankles, and suspended upside down from a wooden frame.", "mode": "scene", "device": "literal", "mood": "stoneBlue", "bg": "stoneRoom flagstones", "cast": ["condemned", "executioner"],
+      "events": [ { "word": "stripped", "t": 15.14, "do": "tunic flies off", "sfx": "whoosh" }, { "word": "bound", "t": 15.94, "do": "ankle tie pops", "sfx": "click" }, { "word": "suspended", "t": 17.32, "do": "hoisted and turned upside down; UPSIDE DOWN tag", "sfx": "whoosh + thud" }, { "word": "frame", "t": 19.0, "do": "beam takes the weight (bump)", "sfx": "thud" } ] },
+    { "id": "saw", "start": 19.9, "end": 23.1, "vo": "A large two-handled saw was positioned at the groin.", "mode": "insert", "device": "literal", "mood": "stoneBlue",
+      "events": [ { "word": "two-handled", "t": 20.44, "do": "TWO-HANDLED SAW tag", "sfx": "pop" }, { "word": "saw", "t": 21.08, "do": "saw drops in, lands", "sfx": "metal ding" }, { "word": "positioned", "t": 21.54, "do": "two white fists grip the handles", "sfx": "thud x2" } ] },
+    { "id": "crowd", "start": 23.1, "end": 27.1, "vo": "Two executioners began pulling the blade downward through the center of the body.", "mode": "scene", "device": "reaction (cut-away)", "mood": "stoneBlue", "cast": ["crowd of 8"],
+      "events": [ { "word": "began", "t": 24.08, "do": "worried takes ripple", "sfx": "saw rasps (sound only)" }, { "word": "downward", "t": 25.16, "do": "flinch + tremble", "sfx": "" }, { "word": "body", "t": 26.4, "do": "eyes shut / sad", "sfx": "" } ] },
+    { "id": "close", "start": 27.1, "end": 28.5, "vo": "(silence)", "mode": "host", "device": "reaction", "mood": "hallSage", "cast": ["narrator"],
+      "events": [ { "word": "-", "t": 27.3, "do": "narrator closes eyes, bows", "sfx": "low pluck" } ] }
+  ]
+}

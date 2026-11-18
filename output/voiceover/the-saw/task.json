@@ -1,0 +1,37 @@
+{
+  "id": "1e95a69e-d559-425f-874f-4d019a8fb606",
+  "created_at": "2026-11-12T11:31:19.057Z",
+  "status": "done",
+  "credit_cost": 611,
+  "metadata": {
+    "v3": {
+      "provider": "elevenlabs",
+      "raw_voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY"
+    },
+    "data": {
+      "model_id": "eleven_multilingual_v2",
+      "file_name": "the-saw",
+      "multi_turn": false,
+      "with_loudnorm": false,
+      "with_transcript": true
+    },
+    "query": {},
+    "srt_url": "https://cdn.ai33.pro/v3/tts/1e95a69e-d559-425f-874f-4d019a8fb606_1794483078991.srt?name=the-saw.srt&dl=1",
+    "json_url": "https://cdn.ai33.pro/v3/tts/1e95a69e-d559-425f-874f-4d019a8fb606_1794483078991.json?name=the-saw.json&dl=1",
+    "voice_id": "E95b3lkMWHDsKeHJaIcY",
+    "transcript_status": "completed",
+    "transcript_credit_cost": 79,
+    "audio_url": "https://cdn.ai33.pro/v3/tts/1e95a69e-d559-425f-874f-4d019a8fb606_1794483078991.mp3?name=the-saw.mp3&dl=1"
+  },
+  "progress": 100,
+  "type": "tts",
+  "updated_at": "2026-11-12T11:31:34.000Z",
+  "text": "The question that no executioner in the Holy Roman Empire ever recorded an answer to is this. At what point during the vertical bisection of a living human body does consciousness end? The method was reserved for crimes beyond ordinary treason. The condemned was stripped, bound at the ankles, and suspended upside down from a wooden frame. A large two handled saw was positioned at the groin. Two executioners began pulling the blade downward through the center of the body.",
+  "text_length": 475,
+  "text_truncated": false,
+  "_request": {
+    "speed": 1.0,
+    "text": "The question that no executioner in the Holy Roman Empire ever recorded an answer to is this. At what point during the vertical bisection of a living human body does consciousness end? The method was reserved for crimes beyond ordinary treason. The condemned was stripped, bound at the ankles, and suspended upside down from a wooden frame. A large two handled saw was positioned at the groin. Two executioners began pulling the blade downward through the center of the body.",
+    "voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY"
+  }
+}

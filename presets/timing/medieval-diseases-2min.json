@@ -1,0 +1,781 @@
+{
+ "voiceover": "output/voiceover/medieval-diseases-2min/audio_url.mp3",
+ "voiceover_seconds": 124.79,
+ "film_seconds": 126.3,
+ "fps": 30,
+ "sound": {
+  "music": {
+   "id": "91bcfdbc-3ded-3e5a-9609-2b7f8dfe726e",
+   "title": "Through Dark Gardens",
+   "artist": "Arthur Benson",
+   "why": "mysterious + quirky contemporary classical, 131 s, fits the dark/curious bathos",
+   "file": "assets/sound/music/through-dark-gardens.mp3",
+   "volume_under_voice": 0.16,
+   "cuts": [
+    {
+     "at": 81.0,
+     "do": "drop to silence 0.6 s on 'stopped'"
+    }
+   ]
+  },
+  "sfx": {
+   "pop": {
+    "id": "5c5c3085-0e0b-4c29-bba3-c8779dc6daa9",
+    "title": "Cartoon, Pop, Small Lid",
+    "file": "assets/sound/sfx/pop.mp3",
+    "dropped": "2026-11-13: cut, adds nothing (user: SFX only where they add value)"
+   },
+   "whoosh": {
+    "id": "61fa6548-f0c4-468b-8256-daaf853800b9",
+    "title": "Swooshes, Swish, Short, Classic, Noise, Filter, Dry",
+    "file": "assets/sound/sfx/whoosh.mp3",
+    "dropped": "2026-11-13: cut, adds nothing (user: SFX only where they add value)"
+   },
+   "thud": {
+    "id": "aaa36e82-f3f3-44b9-b27a-5895326bb47b",
+    "title": "Cartoon, Impact, Wood Knocks, Fast",
+    "file": "assets/sound/sfx/thud.mp3"
+   },
+   "tick": {
+    "id": "d637e4e8-6846-496b-84f9-19f3f7b59539",
+    "title": "User Interface, Click, UI Buttons, Simple, Select",
+    "file": "assets/sound/sfx/tick.mp3",
+    "dropped": "2026-11-13: cut, adds nothing (user: SFX only where they add value)"
+   },
+   "ding": {
+    "id": "750b3bb7-497d-4e08-a828-198e0121bba2",
+    "title": "User Interface, Alert, Alert Chime, Bell, Bright, Positive",
+    "file": "assets/sound/sfx/ding.mp3"
+   },
+   "scratch": {
+    "id": "a50668f5-5070-4423-ba3d-5507da34de8c",
+    "title": "Human, Skin, Itch, Scratch Body, Skin",
+    "file": "assets/sound/sfx/scratch.mp3"
+   },
+   "scratch4": {
+    "id": "571883a7-8895-452a-9420-8e95a29e8fd3",
+    "title": "Human, Skin, Itch, Scratch Body, Skin, Quick x4",
+    "file": "assets/sound/sfx/scratch4.mp3"
+   },
+   "night": {
+    "id": "527ee829-657a-42de-9a7c-ae338cf2ae1f",
+    "title": "Ambience, Insect, Forest, Crickets, Wind, Night 01",
+    "file": "assets/sound/sfx/night.mp3"
+   },
+   "shake": {
+    "id": "1d1b8fd1-26ad-47ee-98af-5d92da894bc5",
+    "title": "Cloth, Flap, Trousers, Shake",
+    "file": "assets/sound/sfx/shake.mp3"
+   },
+   "splat": {
+    "id": "1fbd4f9f-56da-4612-a5c8-6e8690490250",
+    "title": "Cartoon, Splat, Squelch, Wet",
+    "file": "assets/sound/sfx/splat.mp3"
+   },
+   "splash": {
+    "id": "7c9ac26f-3c04-4fbd-8a70-049cd775c094",
+    "title": "Water, Splash, Bath, Hands Splash",
+    "file": "assets/sound/sfx/splash.mp3"
+   },
+   "blanket": {
+    "id": "abbebdeb-4c88-494f-93cc-f8af838a84b6",
+    "title": "Cloth, Flap, Flap, Blanket, Whoosh",
+    "file": "assets/sound/sfx/blanket.mp3"
+   }
+  },
+  "rules": "SFX only where the sound carries story (impacts, diegetic actions, the silence beat). Text only for names, places, dates, key numbers.",
+  "music_cues": [
+   {
+    "section": "Tunis hospital mystery",
+    "file": "assets/sound/music/through-dark-gardens.mp3",
+    "id": "91bcfdbc-3ded-3e5a-9609-2b7f8dfe726e",
+    "title": "Through Dark Gardens",
+    "artist": "Arthur Benson",
+    "from": 0.0,
+    "to": 44.3,
+    "vol": 0.16,
+    "fade_in": 1.2,
+    "fade_out": 1.4
+   },
+   {
+    "section": "Granada war camps",
+    "file": "assets/sound/music/return-of-the-longship.mp3",
+    "id": "ba8d09ae-d815-4a0b-87dc-86af21053dce",
+    "title": "Return of the Longship",
+    "artist": "Dian Shuai",
+    "from": 43.2,
+    "to": 81.05,
+    "vol": 0.18,
+    "fade_in": 1.2,
+    "fade_out": 0.08
+   },
+   {
+    "section": "silence 81-88: 'the scratching stopped' / dying man",
+    "file": "",
+    "from": 81.05,
+    "to": 88.0
+   },
+   {
+    "section": "louse explainer",
+    "file": "assets/sound/music/pitfall.mp3",
+    "id": "6a4eba53-d701-4a6f-b94e-b0bf31ecb096",
+    "title": "Pitfall",
+    "artist": "Arthur Benson",
+    "from": 88.0,
+    "to": 126.3,
+    "vol": 0.16,
+    "fade_in": 0.5,
+    "fade_out": 2.5
+   }
+  ]
+ },
+ "shots": [
+  {
+   "id": "title",
+   "start": 0.0,
+   "end": 4.2,
+   "vo": "All right, let's go. Number 10, epidemic typhus.",
+   "mode": "host",
+   "device": "data",
+   "mood": "hallSage",
+   "events": [
+    {
+     "word": "go",
+     "t": 1.0,
+     "do": "monk points forward",
+     "sfx": ""
+    },
+    {
+     "word": "10",
+     "t": 1.94,
+     "do": "big #10 drops in",
+     "sfx": "thud"
+    },
+    {
+     "word": "epidemic",
+     "t": 2.7,
+     "do": "EPIDEMIC TYPHUS tag pops",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "hall",
+   "start": 4.2,
+   "end": 9.4,
+   "vo": "The admissions hall of the Sadiki Hospital in Tunis was an ordinary place in 1909.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "hospitalMint",
+   "events": [
+    {
+     "word": "Tunis",
+     "t": 6.42,
+     "do": "TUNIS tag",
+     "sfx": ""
+    },
+    {
+     "word": "1909",
+     "t": 8.04,
+     "do": "1909 tag",
+     "sfx": ""
+    }
+   ],
+   "camera": "slow push 1.0→1.05"
+  },
+  {
+   "id": "bath",
+   "start": 9.4,
+   "end": 16.1,
+   "vo": "Patients arrived in their own clothes, were stripped, bathed with soap and hot water, and given clean hospital linen.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "hospitalMint",
+   "events": [
+    {
+     "word": "arrived",
+     "t": 9.86,
+     "do": "patient slides in",
+     "sfx": ""
+    },
+    {
+     "word": "stripped",
+     "t": 11.66,
+     "do": "rags fly off",
+     "sfx": ""
+    },
+    {
+     "word": "bathed",
+     "t": 12.42,
+     "do": "tub pops up, bubbles",
+     "sfx": "splash"
+    },
+    {
+     "word": "linen",
+     "t": 15.36,
+     "do": "clean white gown, happy",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "laundry",
+   "start": 16.1,
+   "end": 23.7,
+   "vo": "Their old clothing was bundled and carried to the laundry. It was routine hygiene, repeated hundreds of times without a second thought.",
+   "mode": "scene",
+   "device": "literal + data",
+   "mood": "stonePale",
+   "events": [
+    {
+     "word": "bundled",
+     "t": 17.16,
+     "do": "rags tie into a bundle",
+     "sfx": ""
+    },
+    {
+     "word": "laundry",
+     "t": 18.18,
+     "do": "orderly walks bundle to LAUNDRY door",
+     "sfx": ""
+    },
+    {
+     "word": "hundreds",
+     "t": 21.26,
+     "do": "bundles stack up x many",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "nicolle",
+   "start": 23.7,
+   "end": 30.9,
+   "vo": "But Charles Nicolle, director of the Pasteur Institute in Tunis, noticed something strange about that routine.",
+   "mode": "scene",
+   "device": "reaction",
+   "mood": "stonePale",
+   "events": [
+    {
+     "word": "Nicolle",
+     "t": 24.3,
+     "do": "name tag",
+     "sfx": ""
+    },
+    {
+     "word": "Pasteur",
+     "t": 25.94,
+     "do": "PASTEUR INSTITUTE sub",
+     "sfx": ""
+    },
+    {
+     "word": "strange",
+     "t": 28.78,
+     "do": "squints, ? pops",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "infect",
+   "start": 30.9,
+   "end": 38.9,
+   "vo": "Typhus patients infected the staff who received them, the orderlies who undressed them, and the workers who washed their clothes.",
+   "mode": "diagram",
+   "device": "data",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "received",
+     "t": 33.1,
+     "do": "staff gets fever mark",
+     "sfx": ""
+    },
+    {
+     "word": "undressed",
+     "t": 35.08,
+     "do": "orderly gets fever mark",
+     "sfx": ""
+    },
+    {
+     "word": "washed",
+     "t": 37.06,
+     "do": "washer gets fever mark",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "ward",
+   "start": 38.9,
+   "end": 43.5,
+   "vo": "Once they were bathed and on the ward, they infected no one at all.",
+   "mode": "scene",
+   "device": "data",
+   "mood": "hospitalMint",
+   "events": [
+    {
+     "word": "ward",
+     "t": 40.72,
+     "do": "beds, clean patient",
+     "sfx": ""
+    },
+    {
+     "word": "no one",
+     "t": 42.26,
+     "do": "INFECTED: 0 pops",
+     "sfx": "ding"
+    }
+   ]
+  },
+  {
+   "id": "map",
+   "start": 43.5,
+   "end": 47.5,
+   "vo": "The war for Granada was fought by an army that lived in its clothes.",
+   "mode": "map",
+   "device": "symbol",
+   "mood": "mapSea",
+   "events": [
+    {
+     "word": "Granada",
+     "t": 44.16,
+     "do": "pin + GRANADA",
+     "sfx": ""
+    },
+    {
+     "word": "army",
+     "t": 45.38,
+     "do": "soldier heads pop",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "years",
+   "start": 47.5,
+   "end": 50.9,
+   "vo": "In the campaigns of 1489 and 1490,",
+   "mode": "timeline",
+   "device": "data",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "1489",
+     "t": 48.54,
+     "do": "1489 pops",
+     "sfx": ""
+    },
+    {
+     "word": "1490",
+     "t": 49.58,
+     "do": "flips to 1490",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "tents",
+   "start": 50.9,
+   "end": 56.0,
+   "vo": "Spanish soldiers slept in tents and earthworks, packed shoulder to shoulder for warmth.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "snowCold (dusk)",
+   "events": [
+    {
+     "word": "tents",
+     "t": 52.2,
+     "do": "tents pop",
+     "sfx": ""
+    },
+    {
+     "word": "packed",
+     "t": 53.7,
+     "do": "soldiers slide together, squish",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "blanket",
+   "start": 56.0,
+   "end": 59.6,
+   "vo": "Blankets passed from the sick to the well without a second look.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "dungeonWarm (tent)",
+   "events": [
+    {
+     "word": "passed",
+     "t": 56.62,
+     "do": "blanket slides across",
+     "sfx": "blanket"
+    },
+    {
+     "word": "sick",
+     "t": 57.28,
+     "do": "SICK tag",
+     "sfx": ""
+    },
+    {
+     "word": "well",
+     "t": 57.8,
+     "do": "WELL tag",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "tunic",
+   "start": 59.6,
+   "end": 65.8,
+   "vo": "Wool tunics were worn for weeks without being removed. Linen shirts stiffened with sweat and wood smoke.",
+   "mode": "scene",
+   "device": "gag",
+   "mood": "fieldSpring (dull)",
+   "events": [
+    {
+     "word": "weeks",
+     "t": 61.0,
+     "do": "WEEK 1→4 counter",
+     "sfx": ""
+    },
+    {
+     "word": "stiffened",
+     "t": 63.66,
+     "do": "stains + flies",
+     "sfx": ""
+    },
+    {
+     "word": "smoke",
+     "t": 64.76,
+     "do": "smoke wisps",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "night",
+   "start": 65.8,
+   "end": 70.4,
+   "vo": "At night, the camps were never fully silent because thousands of men were scratching.",
+   "mode": "scene",
+   "device": "symbol",
+   "mood": "night",
+   "events": [
+    {
+     "word": "night",
+     "t": 66.04,
+     "do": "night camp, crickets",
+     "sfx": "night amb"
+    },
+    {
+     "word": "scratching",
+     "t": 69.4,
+     "do": "scratch marks over every tent",
+     "sfx": "scratch4"
+    }
+   ]
+  },
+  {
+   "id": "scratch",
+   "start": 70.4,
+   "end": 77.5,
+   "vo": "They scratched at the waistband, the armpits, and the collar until the skin broke and their fingernails came away dark.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "dungeonWarm (tent)",
+   "events": [
+    {
+     "word": "waistband",
+     "t": 71.36,
+     "do": "scratch + target",
+     "sfx": "scratch"
+    },
+    {
+     "word": "armpits",
+     "t": 72.52,
+     "do": "scratch + target",
+     "sfx": "scratch"
+    },
+    {
+     "word": "collar",
+     "t": 73.24,
+     "do": "scratch + target",
+     "sfx": "scratch"
+    },
+    {
+     "word": "broke",
+     "t": 74.9,
+     "do": "small coral marks",
+     "sfx": ""
+    },
+    {
+     "word": "dark",
+     "t": 76.6,
+     "do": "worried look at hand",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "stopped",
+   "start": 77.5,
+   "end": 81.9,
+   "vo": "Then, in one tent and then another, the scratching stopped.",
+   "mode": "scene",
+   "device": "symbol",
+   "mood": "night",
+   "events": [
+    {
+     "word": "tent",
+     "t": 78.86,
+     "do": "one tent's marks vanish",
+     "sfx": ""
+    },
+    {
+     "word": "another",
+     "t": 79.46,
+     "do": "another vanishes",
+     "sfx": ""
+    },
+    {
+     "word": "stopped",
+     "t": 81.02,
+     "do": "all vanish, music cuts",
+     "sfx": "silence"
+    }
+   ]
+  },
+  {
+   "id": "still",
+   "start": 81.9,
+   "end": 88.1,
+   "vo": "A man would lie still, staring at nothing, too far gone and fevered to feel the itch at all.",
+   "mode": "scene",
+   "device": "literal (quiet)",
+   "mood": "dungeonWarm (tent, dim)",
+   "events": [
+    {
+     "word": "still",
+     "t": 82.78,
+     "do": "hold, no blink",
+     "sfx": ""
+    },
+    {
+     "word": "fevered",
+     "t": 85.9,
+     "do": "heat lines + thermometer",
+     "sfx": ""
+    }
+   ],
+   "camera": "slow push"
+  },
+  {
+   "id": "host",
+   "start": 88.1,
+   "end": 92.2,
+   "vo": "The cause of that itch was something every soldier knew and no one feared.",
+   "mode": "host",
+   "device": "reaction",
+   "mood": "hallSage",
+   "events": [
+    {
+     "word": "cause",
+     "t": 88.3,
+     "do": "monk lifts magnifier",
+     "sfx": ""
+    },
+    {
+     "word": "knew",
+     "t": 90.44,
+     "do": "tiny bug pops in lens",
+     "sfx": ""
+    },
+    {
+     "word": "feared",
+     "t": 91.32,
+     "do": "smug shrug",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "louse",
+   "start": 92.2,
+   "end": 95.4,
+   "vo": "The body louse is roughly the size of a sesame seed.",
+   "mode": "diagram",
+   "device": "data",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "louse",
+     "t": 92.74,
+     "do": "big louse diagram + BODY LOUSE",
+     "sfx": ""
+    },
+    {
+     "word": "sesame",
+     "t": 94.28,
+     "do": "shrinks next to a sesame seed",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "seam",
+   "start": 95.4,
+   "end": 108.8,
+   "vo": "It does not live on the skin. It lives in the clothing … climbs down to feed … climbs back into the fabric to digest.",
+   "mode": "diagram",
+   "device": "cutaway",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "skin",
+     "t": 96.56,
+     "do": "louse on skin, coral X",
+     "sfx": ""
+    },
+    {
+     "word": "clothing",
+     "t": 97.98,
+     "do": "slides into the seam",
+     "sfx": ""
+    },
+    {
+     "word": "warmth",
+     "t": 102.08,
+     "do": "warm glow",
+     "sfx": ""
+    },
+    {
+     "word": "down",
+     "t": 103.64,
+     "do": "climbs down",
+     "sfx": ""
+    },
+    {
+     "word": "several",
+     "t": 104.34,
+     "do": "x SEVERAL A DAY",
+     "sfx": ""
+    },
+    {
+     "word": "back",
+     "t": 106.48,
+     "do": "climbs back up",
+     "sfx": ""
+    },
+    {
+     "word": "digest",
+     "t": 107.6,
+     "do": "belly fills",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "eggs",
+   "start": 108.8,
+   "end": 115.9,
+   "vo": "The female lays her eggs along the threads and glues them … shaking a garment does nothing.",
+   "mode": "diagram",
+   "device": "gag",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "eggs",
+     "t": 109.84,
+     "do": "eggs pop along the thread",
+     "sfx": ""
+    },
+    {
+     "word": "glues",
+     "t": 111.58,
+     "do": "GLUED tag",
+     "sfx": ""
+    },
+    {
+     "word": "shaking",
+     "t": 113.94,
+     "do": "cloth shakes hard, eggs stay",
+     "sfx": "shake"
+    },
+    {
+     "word": "nothing",
+     "t": 115.0,
+     "do": "NOTHING tag",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "shirt",
+   "start": 115.9,
+   "end": 118.9,
+   "vo": "A single unwashed shirt can shelter hundreds of them.",
+   "mode": "data",
+   "device": "data",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "shirt",
+     "t": 116.88,
+     "do": "shirt pops",
+     "sfx": ""
+    },
+    {
+     "word": "hundreds",
+     "t": 117.76,
+     "do": "dots swarm, x100s",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "mud",
+   "start": 118.9,
+   "end": 126.3,
+   "vo": "To a medieval soldier, lice were as ordinary as mud, an unpleasant fact of sleeping in the field.",
+   "mode": "scene",
+   "device": "gag",
+   "mood": "fieldSpring",
+   "events": [
+    {
+     "word": "lice",
+     "t": 120.5,
+     "do": "soldier flicks a louse away",
+     "sfx": ""
+    },
+    {
+     "word": "mud",
+     "t": 121.74,
+     "do": "mud splats on his boot; = MUD",
+     "sfx": "splat"
+    },
+    {
+     "word": "field",
+     "t": 124.1,
+     "do": "shrugs, lies down; fade",
+     "sfx": ""
+    }
+   ]
+  }
+ ],
+ "edit": {
+  "date": "2026-11-13",
+  "rule": "Paper Billions pacing: a new framing per clause (DIRECTING.md §13)",
+  "camera_cuts": "F.CUTS in presets/film-snapshot/medieval-diseases-2min/src/film-kit.js",
+  "shots_total": 74,
+  "avg_shot_s": 1.71,
+  "added": [
+   "hospital sign board with TUNIS 1909",
+   "Granada · 1489 chapter card 43.5-44.6",
+   "laundry wall clock spins on 'repeated hundreds of times'",
+   "lamps, shelves, pictures, plants, lanterns, sacks, helmets as set dressing"
+  ]
+ }
+}

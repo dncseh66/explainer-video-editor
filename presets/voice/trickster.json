@@ -1,0 +1,10 @@
+{
+  "name": "trickster",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_N2lVS1w4EtoT3dr4eOWO",
+  "source_voice": "Callum - Husky Trickster",
+  "speed": 1.0,
+  "with_transcript": true,
+  "role": "Husky trickster: merchants, quacks, schemers, the funny side character",
+  "notes": "Character voice for dialogue lines only. Same character = same preset for the whole video."
+}

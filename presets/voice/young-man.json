@@ -1,0 +1,10 @@
+{
+  "name": "young-man",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_yl2ZDV1MzN4HbQJbMihG",
+  "source_voice": "Alex - Young American Male",
+  "speed": 1.0,
+  "with_transcript": true,
+  "role": "Young confident man: orderlies, apprentices, eager soldiers, the naive one",
+  "notes": "Character voice for dialogue lines only. Same character = same preset for the whole video."
+}

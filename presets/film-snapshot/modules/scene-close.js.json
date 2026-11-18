@@ -1,0 +1,4 @@
+{
+  "kind": "js",
+  "text": "const { seg, lerp, eio } = kit;\nkit.scene('close', {\n  init(kit) {\n    const M = W.MOODS.hallSage;\n    kit.stage.append(kit.h('<div class=\"ground\"><div class=\"layer close-cam\"><svg class=\"art\" viewBox=\"0 0 1920 1080\">' + W.bg.stoneRoom(M, { seed: 9, floorY: 1200 }) + W.glow(960, 420, 700, '#FFF6D8', 0.5) +\n      W.person('close-n', Object.assign({}, W.NARRATOR, { item: null })) + '</svg></div><div class=\"vignette\"></div></div>'));\n    this.m = W.bindPerson(kit.stage, 'close-n'); this.cam = kit.stage.querySelector('.close-cam');\n  },\n  render(t) {\n    this.cam.style.transformOrigin = '960px 500px';\n    this.cam.style.transform = 'scale(' + lerp(1.0, 1.04, eio(seg(t, 0, 1.4))).toFixed(4) + ')';\n    const bow = eio(seg(t, 0.15, 0.7));\n    W.posePerson(this.m, { x: 960, y: 1290, s: 3.4, expr: t < 0.2 ? 'sad' : 'sleep', head: 8 * bow, lean: 2 * bow, a1: -8, b1: 8 });\n  },\n});"
+}

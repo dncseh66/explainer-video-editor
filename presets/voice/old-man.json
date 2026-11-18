@@ -1,0 +1,10 @@
+{
+  "name": "old-man",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_S9V0fuqWOqX0i8Kb8ctu",
+  "source_voice": "Alden - Tired Old Man",
+  "speed": 1.0,
+  "with_transcript": true,
+  "role": "Tired, dry old man: doctors, elders, monks, deadpan wise lines",
+  "notes": "Character voice for dialogue lines only. Same character = same preset for the whole video."
+}

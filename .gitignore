@@ -1,0 +1,16 @@
+# secrets (keys go in the cloud environment's variables instead)
+.env
+*.env
+
+# caches / local-only
+cache/
+.DS_Store
+__pycache__/
+.claude/settings.local.json
+
+# rendered videos and frames (rebuilt by the pipeline)
+exports/
+output/final/
+**/frames/
+*.mp4
+*.mov

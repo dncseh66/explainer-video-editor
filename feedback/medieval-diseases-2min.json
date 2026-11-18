@@ -1,0 +1,805 @@
+{
+ "video": "medieval-diseases-2min",
+ "updated": "2026-11-13T14:37:51",
+ "notes": [
+  {
+   "id": "nmwf055qb8uxi",
+   "t": 2.076,
+   "t_end": null,
+   "text": "no zoom in needed, number 10 should be a whole page. white bg with a big 10 written on it without the hashtag",
+   "cat": "text",
+   "drawing": [
+    {
+     "tool": "box",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       934,
+       233
+      ],
+      [
+       1554,
+       551
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "title",
+   "vo": "All right, let's go. Number 10, epidemic typhus.",
+   "time": "0:02.08",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:18:46.256Z",
+   "image": "feedback/medieval-diseases-2min/nmwf055qb8uxi.png",
+   "_ver": 1794575926316,
+   "reply": "No zoom any more. On \"Number 10\" it cuts to a full white page with a big hand-lettered 10, no hashtag."
+  },
+  {
+   "id": "nmwf06f8q2leq",
+   "t": 3.816,
+   "t_end": null,
+   "text": "the name of the listicle element should be written on the top of the page in the style I will attavh here(cannot attach a photo so sending later)",
+   "cat": "animation",
+   "drawing": [],
+   "status": "open",
+   "shot": "title",
+   "vo": "All right, let's go. Number 10, epidemic typhus.",
+   "time": "0:03.82",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:20:11.130Z",
+   "image": "feedback/medieval-diseases-2min/nmwf06f8q2leq.png",
+   "_ver": 1794576011164,
+   "reply": "For now \"EPIDEMIC TYPHUS\" is written at the top of the white page in the plain hand lettering. Send me the style image and I will match it; leaving this note open until then."
+  },
+  {
+   "id": "nmwf0884ugiak",
+   "t": 6.252,
+   "t_end": null,
+   "text": "door is not placed correctly",
+   "cat": "animation",
+   "drawing": [
+    {
+     "tool": "box",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       63,
+       427
+      ],
+      [
+       452,
+       974
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "hall",
+   "vo": "The admissions hall of the Sadiki Hospital in Tunis was an ordinary place in 1909.",
+   "time": "0:06.25",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:20:42.470Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0884ugiak.png",
+   "_ver": 1794576042495,
+   "reply": "Door moved onto the back wall, standing on the wall/floor line, slightly smaller so it sits under the sign board."
+  },
+  {
+   "id": "nmwf08q8oyvx3",
+   "t": 6.252,
+   "t_end": null,
+   "text": "picture is not placed correctly",
+   "cat": "animation",
+   "drawing": [
+    {
+     "tool": "box",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       1120,
+       135
+      ],
+      [
+       1712,
+       508
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "hall",
+   "vo": "The admissions hall of the Sadiki Hospital in Tunis was an ordinary place in 1909.",
+   "time": "0:06.25",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:20:59.415Z",
+   "image": "feedback/medieval-diseases-2min/nmwf08q8oyvx3.png",
+   "_ver": 1794576059440,
+   "reply": "Picture moved off the window into the free wall space on the right."
+  },
+  {
+   "id": "nmwf0933n2vte",
+   "t": 6.252,
+   "t_end": null,
+   "text": "ppl should be placed more down so it feels natural compared to the bench",
+   "cat": "animation",
+   "drawing": [
+    {
+     "tool": "box",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       487,
+       491
+      ],
+      [
+       1202,
+       1052
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "hall",
+   "vo": "The admissions hall of the Sadiki Hospital in Tunis was an ordinary place in 1909.",
+   "time": "0:06.25",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:21:27.384Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0933n2vte.png",
+   "_ver": 1794576087411,
+   "reply": "The three patients moved down 80 px so they stand in front of the bench; the nurse moved down to match."
+  },
+  {
+   "id": "nmwf0a2h99x3q",
+   "t": 11.703,
+   "t_end": null,
+   "text": "when the clothing is stripped no clothing should remain on the person",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "bath",
+   "vo": "Patients arrived in their own clothes, were stripped, bathed with soap and hot water, and given clean hospital linen.",
+   "time": "0:11.70",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:28:19.179Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0a2h99x3q.png",
+   "_ver": 1794576499232,
+   "reply": "Fixed. A frame-capture bug was un-hiding the clothed version on top of the stripped one. Now no clothing remains, and the rags fly clear to the right."
+  },
+  {
+   "id": "nmwf0j200aepe",
+   "t": 13.188,
+   "t_end": null,
+   "text": "he should be inside the bathing bowl",
+   "cat": "animation",
+   "drawing": [
+    {
+     "tool": "circle",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       638,
+       241
+      ],
+      [
+       1338,
+       1034
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "bath",
+   "vo": "Patients arrived in their own clothes, were stripped, bathed with soap and hot water, and given clean hospital linen.",
+   "time": "0:13.19",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:29:04.070Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0j200aepe.png",
+   "_ver": 1794576544095,
+   "reply": "He now sinks into the tub so only his head and shoulders show above the water."
+  },
+  {
+   "id": "nmwf0jms91yie",
+   "t": 15.446,
+   "t_end": null,
+   "text": "there is a glitch here",
+   "cat": "animation",
+   "drawing": [
+    {
+     "tool": "circle",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       586,
+       301
+      ],
+      [
+       1370,
+       866
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "bath",
+   "vo": "Patients arrived in their own clothes, were stripped, bathed with soap and hot water, and given clean hospital linen.",
+   "time": "0:15.45",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:29:23.548Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0jms91yie.png",
+   "_ver": 1794576563568,
+   "reply": "Glitch fixed: the bubbles shared a name with the stripped patient and dragged a see-through copy of him up the screen. The close-up is removed too."
+  },
+  {
+   "id": "nmwf0kvvbbsd4",
+   "t": 33.34,
+   "t_end": null,
+   "text": "too much zoom in on this scene",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "infect",
+   "vo": "Typhus patients infected the staff who received them, the orderlies who undressed them, and the workers who washed their clothes.",
+   "time": "0:33.34",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:30:18.861Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0kvvbbsd4.png",
+   "_ver": 1794576618878,
+   "reply": "Zoom reduced from 1.5-1.7x to 1.25x."
+  },
+  {
+   "id": "nmwf0l7hdhq8o",
+   "t": 36.619,
+   "t_end": null,
+   "text": "instead of cutting when going to the right you should use keyframes",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "infect",
+   "vo": "Typhus patients infected the staff who received them, the orderlies who undressed them, and the workers who washed their clothes.",
+   "time": "0:36.62",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:30:46.770Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0l7hdhq8o.png",
+   "_ver": 1794576646796,
+   "reply": "Hard cuts replaced by one smooth keyframed pan along the chain (patient > staff > orderlies > laundry), then a glide out to the whole chain."
+  },
+  {
+   "id": "nmwf0mcmuek4f",
+   "t": 40.704,
+   "t_end": null,
+   "text": "unneccessary zoom in",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "ward",
+   "vo": "Once they were bathed and on the ward, they infected no one at all.",
+   "time": "0:40.70",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:31:26.840Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0mcmuek4f.png",
+   "_ver": 1794576686867,
+   "reply": "Zoom removed; the ward stays wide."
+  },
+  {
+   "id": "nmwf0mnlc3qcq",
+   "t": 42.938,
+   "t_end": null,
+   "text": "the text should be in a box",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "ward",
+   "vo": "Once they were bathed and on the ward, they infected no one at all.",
+   "time": "0:42.94",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:31:44.289Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0mnlc3qcq.png",
+   "_ver": 1794576704312,
+   "reply": "INFECTED: 0 is now in a box."
+  },
+  {
+   "id": "nmwf0nbhjz3wu",
+   "t": 52.911,
+   "t_end": null,
+   "text": "bg here doesnt make sense, these animations/elements are not precise",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "tents",
+   "vo": "Spanish soldiers slept in tents and earthworks, packed shoulder to shoulder for warmth.",
+   "time": "0:52.91",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:32:29.239Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0nbhjz3wu.png",
+   "_ver": 1794576749279,
+   "reply": "Camp rebuilt: removed the stray sacks, barrel and helmet; the odd mound is now a proper earthwork rampart with wooden stakes running across behind the soldiers, tents on the plain behind it."
+  },
+  {
+   "id": "nmwf0prh5yr61",
+   "t": 79.503,
+   "t_end": null,
+   "text": "unneccessary cut",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "stopped",
+   "vo": "Then, in one tent and then another, the scratching stopped.",
+   "time": "1:19.50",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:34:06.098Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0prh5yr61.png",
+   "_ver": 1794576846116,
+   "reply": "Cuts removed; this shot stays wide with only a slow push."
+  },
+  {
+   "id": "nmwf0q225p7uk",
+   "t": 82.933,
+   "t_end": null,
+   "text": "blanket is not placed correctly",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "still",
+   "vo": "A man would lie still, staring at nothing, too far gone and fevered to feel the itch at all.",
+   "time": "1:22.93",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:34:22.397Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0q225p7uk.png",
+   "_ver": 1794576862415,
+   "reply": "Blanket now lies over him from chest to feet instead of beside him."
+  },
+  {
+   "id": "nmwf0qxm9woye",
+   "t": 91.157,
+   "t_end": null,
+   "text": "the zoom in cut is not precize, the bug should be centered, but the zoom in not even needed",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "host",
+   "vo": "The cause of that itch was something every soldier knew and no one feared.",
+   "time": "1:31.16",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:35:19.666Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0qxm9woye.png",
+   "_ver": 1794576919690,
+   "reply": "Magnifier zoom removed; the shot stays on the monk with the lens visible."
+  },
+  {
+   "id": "nmwf0sey6qvef",
+   "t": 105.43,
+   "t_end": null,
+   "text": "text should be moved left",
+   "cat": "animation",
+   "drawing": [
+    {
+     "tool": "pen",
+     "col": "#ff3b30",
+     "pts": [
+      [
+       150,
+       597
+      ],
+      [
+       150,
+       597
+      ],
+      [
+       154,
+       597
+      ],
+      [
+       163,
+       597
+      ],
+      [
+       178,
+       597
+      ],
+      [
+       201,
+       596
+      ],
+      [
+       234,
+       594
+      ],
+      [
+       281,
+       592
+      ],
+      [
+       339,
+       590
+      ],
+      [
+       398,
+       590
+      ],
+      [
+       452,
+       590
+      ],
+      [
+       503,
+       590
+      ],
+      [
+       557,
+       590
+      ],
+      [
+       614,
+       590
+      ],
+      [
+       788,
+       604
+      ],
+      [
+       814,
+       609
+      ],
+      [
+       834,
+       613
+      ],
+      [
+       853,
+       617
+      ],
+      [
+       869,
+       620
+      ],
+      [
+       882,
+       622
+      ],
+      [
+       893,
+       624
+      ],
+      [
+       903,
+       625
+      ],
+      [
+       911,
+       626
+      ],
+      [
+       919,
+       626
+      ],
+      [
+       928,
+       627
+      ],
+      [
+       937,
+       628
+      ],
+      [
+       944,
+       628
+      ],
+      [
+       950,
+       629
+      ],
+      [
+       955,
+       629
+      ],
+      [
+       959,
+       629
+      ],
+      [
+       964,
+       629
+      ],
+      [
+       969,
+       629
+      ],
+      [
+       973,
+       629
+      ],
+      [
+       979,
+       630
+      ],
+      [
+       984,
+       630
+      ],
+      [
+       989,
+       631
+      ],
+      [
+       994,
+       631
+      ],
+      [
+       998,
+       632
+      ],
+      [
+       1001,
+       633
+      ],
+      [
+       1005,
+       634
+      ],
+      [
+       1008,
+       635
+      ],
+      [
+       1012,
+       637
+      ],
+      [
+       1016,
+       639
+      ],
+      [
+       1020,
+       642
+      ],
+      [
+       1023,
+       646
+      ],
+      [
+       1026,
+       649
+      ],
+      [
+       1029,
+       652
+      ],
+      [
+       1030,
+       658
+      ],
+      [
+       1031,
+       667
+      ],
+      [
+       1029,
+       680
+      ],
+      [
+       1018,
+       697
+      ],
+      [
+       988,
+       720
+      ],
+      [
+       941,
+       745
+      ],
+      [
+       887,
+       765
+      ],
+      [
+       833,
+       778
+      ],
+      [
+       781,
+       789
+      ],
+      [
+       736,
+       798
+      ],
+      [
+       699,
+       804
+      ],
+      [
+       665,
+       806
+      ],
+      [
+       633,
+       806
+      ],
+      [
+       601,
+       802
+      ],
+      [
+       569,
+       795
+      ],
+      [
+       541,
+       789
+      ],
+      [
+       515,
+       784
+      ],
+      [
+       490,
+       780
+      ],
+      [
+       467,
+       777
+      ],
+      [
+       449,
+       775
+      ],
+      [
+       432,
+       772
+      ],
+      [
+       417,
+       769
+      ],
+      [
+       403,
+       766
+      ],
+      [
+       390,
+       763
+      ],
+      [
+       378,
+       759
+      ],
+      [
+       366,
+       753
+      ],
+      [
+       352,
+       745
+      ],
+      [
+       335,
+       735
+      ],
+      [
+       318,
+       724
+      ],
+      [
+       261,
+       690
+      ],
+      [
+       245,
+       683
+      ],
+      [
+       230,
+       678
+      ],
+      [
+       217,
+       674
+      ],
+      [
+       206,
+       671
+      ],
+      [
+       196,
+       669
+      ],
+      [
+       186,
+       667
+      ],
+      [
+       177,
+       664
+      ],
+      [
+       169,
+       662
+      ],
+      [
+       162,
+       659
+      ],
+      [
+       155,
+       656
+      ],
+      [
+       150,
+       653
+      ],
+      [
+       145,
+       648
+      ],
+      [
+       141,
+       640
+      ],
+      [
+       138,
+       630
+      ],
+      [
+       137,
+       620
+      ],
+      [
+       136,
+       611
+      ],
+      [
+       135,
+       606
+      ],
+      [
+       134,
+       605
+      ]
+     ]
+    }
+   ],
+   "status": "done",
+   "shot": "seam",
+   "vo": "It does not live on the skin. It lives in the clothing … climbs down to feed … climbs back into the fabric to digest.",
+   "time": "1:45.43",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:36:15.453Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0sey6qvef.png",
+   "_ver": 1794576975486,
+   "reply": "\"Feeds several times a day\" moved left, clear of the louse."
+  },
+  {
+   "id": "nmwf0soxfsorc",
+   "t": 105.43,
+   "t_end": null,
+   "text": "unneccessary cut, there are too much unneccessary cuts that doesnt add to the value of the video. Only add a cut or zoom in, keyframe when it makes the video better",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "seam",
+   "vo": "It does not live on the skin. It lives in the clothing … climbs down to feed … climbs back into the fabric to digest.",
+   "time": "1:45.43",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:37:01.167Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0soxfsorc.png",
+   "_ver": 1794577021196,
+   "reply": "Cut count cut hard across the whole film: hall, bath, ward, tents, blanket, stopped, host and louse have no cuts now. The rest keep only cuts that show a detail (clock gag, Nicolle reaction, stained shirt, scratch spots, dying stare, mud splat), and moves along a row are smooth glides. Seam: one glide in, one out."
+  },
+  {
+   "id": "nmwf0u3yx5wdy",
+   "t": 111.22,
+   "t_end": null,
+   "text": "here the zoom ins are really good, this 5 -10 second part is well edited",
+   "cat": "animation",
+   "drawing": [],
+   "status": "done",
+   "shot": "eggs",
+   "vo": "The female lays her eggs along the threads and glues them … shaking a garment does nothing.",
+   "time": "1:51.22",
+   "updated": "2026-11-13T14:50:50",
+   "created": "2026-11-13T13:37:51.918Z",
+   "image": "feedback/medieval-diseases-2min/nmwf0u3yx5wdy.png",
+   "reply": "Kept exactly as it was; I am using it as the model for when to zoom."
+  }
+ ]
+}

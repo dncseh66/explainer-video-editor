@@ -1,0 +1,10 @@
+{
+  "name": "soldier",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_SOYHLrjzK2X1ezoPC6cr",
+  "source_voice": "Harry - Fierce Warrior",
+  "speed": 1.0,
+  "with_transcript": true,
+  "role": "Rough fierce fighter: soldiers, guards, sergeants",
+  "notes": "Character voice for dialogue lines only. Same character = same preset for the whole video."
+}

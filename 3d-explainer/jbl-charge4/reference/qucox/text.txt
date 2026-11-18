@@ -1,0 +1,135 @@
+
+Share
+Facebook
+Twitter
+LinkedIn
+Pinterest
+Reddit
+VKontakte
+Telegram
+WhatsApp
+Tumblr
+JBL
+ is an audio brand under Harman Kardon. As an old-brand audio manufacturer in the United States, JBL has a series of processes from the development of raw materials to the design and production of speaker units, to the design and production of speakers. Its audio product service range is very wide, covering professional and civilian levels, and it can be seen in various audio fields.
+This time 52audio brought you the 
+JBL CHARGE 4
+ 4th generation wireless bluetooth speaker. This product continues the design of the previous generation in appearance, with a cylindrical shape and the whole is wrapped by woven mesh. The configuration uses 50*90mm track speakers, the maximum output power is increased to 30W; the charging interface is upgraded to Type-C, the battery life reaches 20h, and it can be used as a power bank; it also supports IPX7 waterproofing and multiple series functions.
+52audio has teardown the JBL Flip 5, JBL TUNE 225, JBL T280, JBL TUNE120, JBL Free and other TWS true wireless earbuds. Let’s take a look at the internal structure of this speaker product today!
+| JBL CHARGE4 speaker teardown
+Coming to the disassembly part, first pry open the cover of the sound hole wrapped in the woven mesh cloth in the picture.
+Disassemble the outer shell.
+Internal structure of function keys.
+The inside of the JBL logo is special.
+There is an oval full-range speaker unit on the front of the internal cavity of the speaker.
+Buffer sponge pads are arranged on the back of the internal cavity of the sound box and the junction between the cavity and the shell.
+Buffer sponge pad.
+The top diaphragm cover is fixed by screws and buckles.
+The wire interface cover is fixed with the main body by means of snaps.
+Remove the screws to unlock the buckle, and remove the diaphragm cover units at both ends.
+The outside of the diaphragm cover.
+The two inner end faces are low-frequency radiation units.
+In the internal structure of the cavity, first see the two larger sockets on the motherboard. There are screws on the right side of the motherboard. The socket on the right is connected to the battery, and the socket on the left is connected to the charge/discharge sub-board.
+The internal structure of the cavity at the other end, you can see the wiring terminals of the full-range speaker unit.
+Remove the bottom foot pad cover structure, the inside is a transparent plastic waterproof shell.
+Recyclable logo on the inside of the cover, produced in September 2020, made of PC+TPU.
+Light guide structure of power indicator indicator.
+The edge of the cover is provided with a sponge wrap to improve the waterproof performance.
+The cavity is also protected by a transparent cover.
+The indicator light plate is fixed on the transparent cover plate by glue.
+There is a cable socket connected to the main board on the back of the small board, and the cable is wrapped with foam to prevent noise from resonance.
+Remove the cable, transparent cover structure.
+On the back of the small board are the cable interface and the indicator current limiting resistor.
+There are 6 LED indicators on the front, 5 of the same color are used to display power, and there is a bluetooth connection indicator of a different color.
+A sealing rubber gasket is arranged at the junction of the transparent cover plate and the shell.
+Remove the battery from the cavity.
+Both ends of the battery pack are protected by sponge wrap.
+The wires are also covered with sponge.
+Rechargeable lithium-ion battery pack model: IAA011NA, charging limit voltage: 4.2V, implementation standard: GB 31241-1014, nominal voltage: 3.6V, rated capacity: 7500mAh/27.0Wh, manufacturer: Brocade Energy Systems (Shenzhen) Limited company.
+The bottom of the battery pack is covered with a sponge pad.
+Open the foam pad, and there is a plastic gasket inside to protect it.
+Tear off the outer blue protective film, the information on the 18650 cylindrical lithium-ion battery, the supplier is from Samsung.
+Tear off the top sponge sticker, the battery pack is composed of three 18650 batteries in parallel, with regular nickel sheets and firm spot welding.
+The other end.
+There is a circuit protection board on the battery pack, and the protection board is covered by an insulating plastic sheet.
+Tear off the insulation sticker, and fix the battery protection board inside the plastic insulation bracket. The details are well received.
+The components on the front of the circuit protection board are reinforced with glue on the output wires.
+1.5mΩ chip resistor, used for battery output current detection.
+The circuit protection IC of silk screen AJ014.
+Six NMOS tubes with 4422E silk screen are used for battery protection.
+The front of the speaker unit.
+There is also a rubber gasket at the junction of the speaker unit and the cavity.
+The appearance of the speaker.
+The loudspeaker T iron is attached with a QR code label.
+Take out the wire interface unit, and connect the small board to the main board through a flat cable.
+Remove the cable and take out the small board. There is a sealed protective cover on the inside of the cover for double protection.
+The input small board and the cover are fixed by multiple screws.
+The junction on the cavity is also made of gaskets.
+Separate the cover plate and the input small plate.
+On the front of the input small board, there are Type-C charging interface, 3.5mm audio cable interface and USB power supply port welded through the holes.
+There are only through-hole solder joints on the back of the input board.
+There is dustproof and waterproof double-sided foam glue between the cover and the PCB for sealing, and the interface is protected by TVS and ESD.
+The Type-C charging interface is soldered on a separate PCB board.
+The function key cushion is fixed by double-sided tape.
+Remove the function key cushion fixed by the glue and disassemble.
+The inner structure of the silicone protective pad covering the function keys.
+The front of the small board with function keys.
+Jog buttons on the small board.
+There are also multiple LED indicators on the small board to provide light sources for the power button and the bluetooth connection button.
+Silk-screened 2TY transistor.
+Buffer pad at the junction of component structure.
+The front of the motherboard is protected by a sponge pad on the edge.
+On the back of the motherboard, a large area of ​​copper and tin is exposed for heat dissipation.
+The bluetooth antenna is connected to the main board through a coaxial cable, and the connector is reinforced with glue.
+The thin-film bluetooth antenna comes from Southstar, model: CHARGE4-BT.
+Two 4R7 filter inductors are used for digital power amplifier output filter, and the filter capacitor is fixed by white glue.
+Two 1R5 alloy boost inductors.
+Two RUNIC RS622 low noise operational amplifiers. The parameter definition is moderate, and the ultra-low input bias current is provided to minimize the impact on the signal source. It is suitable for processing audio signal prevention, audio signal detection, envelope detection, motor drive current detection and other application scenarios.
+Main parameter characteristics: unity gain bandwidth 7MHz; input offset voltage typical value of 0.7mV, adjustable to the maximum value of 0.5mV (RS62xP series); input bias current as low as 1pA (typical value); low input noise: 7.5nV√ Hz@10KHz, 11nV√Hz@1KHz; phase margin 62°; power consumption per channel as low as 600µA; rail-to-rail input/output; power supply ripple rejection ratio PSRR 93dB; common mode rejection ratio CMRR 92dB; slew rate 3.7 V/us; working voltage range 2.5V~5.5V; working temperature range -40°C~125°C.
+According to 52audio, JBL FLIP5 bluetooth speaker also uses this operational amplifier chip.
+The triode of LG and KL3 silk screen.
+Silk screen UBB IC.
+Microne D3TG voltage regulator IC.
+TI PCM5121 audio stereo DAC has PCM interface and fixed audio processing function. The PCM512x device belongs to a monolithic CMOS integrated circuit series, composed of a stereo digital-to-analog converter (DAC) and additional support circuits, providing 2.1 VRMS central grounding output and an external mute circuit.
+A small stamp board is welded on the main board for bluetooth connection. There are many ICs on the stamp board, and a silk-printed QR code label is affixed to the main control chip.
+The IC of silk screen SP2.
+IC with silk screen Fb.
+The IC of silk screen MF.
+The IC of silkscreen 661E01.
+Macronix MX25U6435F memory, with a capacity of 8MB, used to store firmware and connection information.
+Silk screen 9MB IC.
+Qualcomm QCC5125 Low-power bluetooth audio SoC, supports bluetooth 5.0, and supports aptX audio decoding. It has the characteristics of low power consumption and high-quality wireless audio. Designed for mainstream bluetooth speakers, stereo headphones and true wireless earbuds.
+Qualcomm QCC5125 adopts quad-core processor architecture, dual-core 32-bit processor application subsystem; dual-core Qualcomm®Kalimba™ DSP audio, embedded ROM + RAM and external Q-SPI flash memory; supports aptX, aptX HD, aptX adaptive technology; The integrated battery charger supports internal mode (maximum 200 mA) and external mode (maximum 1.8 A).
+The triode of silk screen HY4C.
+AWINIC AW9523B LED driver chip, I2C interface, supports 16 breathing lights. The 16 LEDs are driven by a common anode constant current, each with 256-step linear dimming function.
+AO3401 PMOS tube.
+TI TPA3128D2 is a dual-channel 30W differential analog input class D amplifier with low idle power loss. It has the characteristics of extending the battery life of bluetooth/wireless speakers and other battery-powered audio systems. It supports 4.5-26V operating voltage and supports programmable power limits.
+Microne S2TG voltage regulator IC.
+MATSUKI ME4435 P-channel logic enhanced power field effect transistor, manufactured with high cell density and DMOS channel technology. Specially designed to reduce on-resistance, suitable for low-voltage applications.
+MPS MP3431 High-efficiency fully integrated synchronous boost chip, powering the digital power amplifier, the highest output voltage can reach 16V, support 30W output, the highest peak output of 40W.
+SILERGY SY7065A of silk screen VLBUF, a synchronous rectifier boost IC with built-in switch tube, used for USB-A port 5V output.
+The IC of the silk screen CA4KH.
+TI TPS2546 USB charging port controller with CDP/SDP automatic switching function and 2.5A power switch with load detection function for USB-A port output protection.
+MPS MP2624 power management IC, used for built-in battery charging management, and supports path management.
+All components of JBL CHARGE4 wireless bluetooth speaker.
+| Summary
+The appearance design of JBL CHARGE 4 wireless bluetooth speaker continues the design of the previous generation and inherits the family-style design language. Cylindrical appearance, large-area woven mesh wrapping, horizontal vertical mode, radiation diaphragms on the left and right sides, and JBL iconic LOGO on the diaphragm, the overall look is relatively simple and highly recognizable. There are many color matching, which enrich the personalized choice of this product.
+The internal structure is well-made and detailed. The components are connected by sockets, and the joints of the cavities are cushioned and protected by sealing rubber pads. The configuration uses a speaker unit with a maximum output power of 30W, with two low-frequency radiation diaphragm units on the left and right to enhance the low-frequency sense; and is equipped with TI TPA3128D2 Class D amplifier and PCM5121 audio digital processor, as well as two to minimize the signal source The affected RUNIC RS622 low-noise operational amplifier effectively guarantees the sound quality.
+The charging interface is replaced from the previous generation of Micro-USB to Type-C, and the battery capacity has been increased to 7500mAh, providing a long-lasting battery life of up to 20h for the speaker; the battery is equipped with a circuit protection board, which is fixed inside the plastic insulation bracket, and the protection board has Circuit protection IC and NMOS tube; and equipped with a USB-A interface, supporting the power bank function, which can be used for emergency charging of mobile devices such as mobile phones and tablets.
+The main control chip adopts Qualcomm QCC5125 low-power bluetooth audio SOC, supports bluetooth 5.0, has low power consumption, high-quality wireless audio and other features; MPS MP3431 high-efficiency fully integrated synchronous boost chip, powers the digital amplifier; SILERGY SY7065A synchronization Rectifier boost IC for USB-A port 5V output; TI TPS2546 USB charging port controller for USB-A port output protection; MPS MP2624 power management IC for built-in battery charging management; and Macronix MX25U6435F memory, AWINIC AW9523B LED Driver, MATSUKI ME4435 P-channel logic enhanced power field effect transistor, etc.
+Source: 52audio
+Check JBL CHARGE 4 Price:
+Check price on 
+Amazon US
+Check price on 
+Amazon Germany
+Check latest price on other 
+Amazon countries
+JBL
+JBL CHARGE 4
+JBL CHARGE 4 teardown
+JBL CHARGE4
+JBL CHARGE4 speaker
+JBL CHARGE4 teardown
+Outdoor Bluetooth Speaker
+wireless speaker
+			

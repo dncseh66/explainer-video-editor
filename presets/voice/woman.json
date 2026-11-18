@@ -1,0 +1,10 @@
+{
+  "name": "woman",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_EXAVITQu4vr4xnSDxMaL",
+  "source_voice": "Sarah - Mature, Reassuring, Confident",
+  "speed": 1.0,
+  "with_transcript": true,
+  "role": "Mature confident woman: nurses, queens, wives, washerwomen",
+  "notes": "Character voice for dialogue lines only. Same character = same preset for the whole video."
+}

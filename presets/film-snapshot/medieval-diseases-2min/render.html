@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Typhus film render</title>
+<style>
+  body { margin:0; background:#222; color:#eee; font:13px system-ui, sans-serif }
+  #bar { position:sticky; top:0; z-index:9; background:#111; padding:8px 12px; display:flex; gap:10px; align-items:center }
+  #t { flex:1 } #frame { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#000 }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; transform-origin:0 0; overflow:hidden; --display:"Patrick Hand SC"; --sans:Inter, system-ui }
+  #err { color:#ff8a80; padding:8px 12px; white-space:pre-wrap } canvas { width:480px; display:none }
+</style></head>
+<body>
+<div id="bar"><button id="play">Play</button><input id="t" type="range" min="0" max="126.3" step="0.01" value="0"><span id="lab">0.00</span><span id="st"></span></div>
+<div id="frame"><div id="stage"></div></div><div id="err"></div><canvas id="cv" width="1920" height="1080"></canvas>
+<script>
+// Stand-in for the Motion player's kit (same API as presets/film-snapshot/preview.html) + an offline frame renderer.
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const K = { clamp01, seg: (t, a, b) => clamp01((t - a) / (b - a)), lerp: (a, b, p) => a + (b - a) * p,
+  eo: (x) => 1 - Math.pow(1 - clamp01(x), 3), ei: (x) => Math.pow(clamp01(x), 3), eio: (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; },
+  eob: (x, k) => { k = k || 1.4; x = clamp01(x); const y = x - 1; return 1 + (k + 1) * y * y * y + k * y * y; },
+  h: (html) => { const d = document.createElement('div'); d.innerHTML = html; return d.children.length === 1 ? d.firstElementChild : d; } };
+const scenes = {}; let list = []; let CSS = '';
+const err = (m) => (document.getElementById('err').textContent += m + '\n');
+async function load(n) { const r = await fetch('modules/' + n + '.json?' + Date.now()); return (await r.json()).text; }
+async function fontCSS() {
+  const b = await (await fetch('fonts/PatrickHandSC.woff2')).arrayBuffer(); let s = ''; const u = new Uint8Array(b);
+  for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000));
+  return '@font-face{font-family:"Patrick Hand SC";src:url(data:font/woff2;base64,' + btoa(s) + ') format("woff2")}';
+}
+(async () => {
+  const font = await fontCSS();
+  CSS = font + '\n' + (await load('base.css')) + '\n' + '#stage{position:relative;width:1920px;height:1080px;overflow:hidden;--display:"Patrick Hand SC";--sans:Inter,system-ui}';
+  const css = document.createElement('style'); css.textContent = CSS; document.head.appendChild(css);
+  try { (0, eval)(await load('shared.js')); } catch (e) { err('shared.js: ' + e); }
+  const css2 = document.createElement('style'); css2.textContent = W.info.CSS; document.head.appendChild(css2); CSS += '\n' + W.info.CSS;
+  const sj = JSON.parse(await load('scenes.json')); let t0 = 0;
+  for (const s of sj.scenes) {
+    const kit = Object.assign({}, K, { scene: (id, def) => (scenes[id] = def) });
+    try { new Function('kit', await load('scene-' + s.id + '.js'))(kit); } catch (e) { err(s.id + ' load: ' + e); }
+    list.push({ id: s.id, start: t0, dur: s.dur }); t0 = Math.round((t0 + s.dur) * 1000) / 1000;
+  }
+  window.TOTAL = t0; document.getElementById('t').max = t0;
+  const stage = document.getElementById('stage');
+  for (const L of list) {
+    const box = document.createElement('div'); box.className = 'scenebox'; box.style.cssText = 'position:absolute;inset:0;display:none'; stage.appendChild(box); L.box = box;
+    const kit = Object.assign({}, K, { stage: box, dur: L.dur, start: L.start, W: 1920, H: 1080 });
+    L.def = scenes[L.id];
+    try { if (L.def && L.def.init) await L.def.init.call(L.def, kit); } catch (e) { err(L.id + ' init: ' + e.stack); }
+  }
+  await document.fonts.ready;
+  const fit = () => (stage.style.transform = 'scale(' + document.getElementById('frame').clientWidth / 1920 + ')'); addEventListener('resize', fit); fit();
+  window.show = (t) => {
+    document.getElementById('lab').textContent = t.toFixed(2); let act = null;
+    for (const L of list) { const on = (t >= L.start && t < L.start + L.dur) || (L === list[list.length - 1] && t >= L.start); L.box.style.display = on ? '' : 'none';
+      if (on) { act = L; if (L.def) try { L.def.render.call(L.def, t - L.start, K); } catch (e) { err(L.id + ' render @' + t.toFixed(2) + ': ' + e.stack); } } }
+    return act;
+  };
+  const sl = document.getElementById('t'); sl.oninput = () => show(+sl.value); show(+(new URLSearchParams(location.search).get('t') || 0));
+  let playing = false, base = 0, from = 0;
+  document.getElementById('play').onclick = () => { playing = !playing; base = performance.now(); from = +sl.value; };
+  (function loop(now) { if (playing) { let t = from + (now - base) / 1000; if (t > +sl.max) t = 0, from = 0, base = now; sl.value = t; show(t); } requestAnimationFrame(loop); })(0);
+
+  // ---- offline render: rasterise the active scene through an SVG foreignObject, post JPEG frames to the local server
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+  window.snap = async (t) => {
+    const L = show(t);
+    const xml = new XMLSerializer().serializeToString(L.box); // the active box is already visible; never strip display:none (it hid characters)
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080"><foreignObject x="0" y="0" width="1920" height="1080">' +
+      '<div xmlns="http://www.w3.org/1999/xhtml" id="stage" style="position:relative;width:1920px;height:1080px;overflow:hidden"><style>' + CSS.replace(/</g, '\\3c ') + '</style>' + xml + '</div></foreignObject></svg>';
+    const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    const img = new Image(); img.src = url; await img.decode();
+    ctx.fillStyle = '#000'; ctx.fillRect(0, 0, 1920, 1080); ctx.drawImage(img, 0, 0);
+    return await new Promise((r) => cv.toBlob(r, 'image/jpeg', 0.9));
+  };
+  window.renderAll = async (fps, from, to, step) => {
+    fps = fps || 30; const n0 = Math.round((from || 0) * fps), n1 = Math.round((to || TOTAL) * fps); step = step || 1;
+    const st = document.getElementById('st'); const T = performance.now(); let inflight = [];
+    for (let i = n0; i < n1; i += step) {
+      const blob = await snap(i / fps);
+      inflight.push(fetch('/frame/' + i, { method: 'POST', body: blob }));
+      if (inflight.length > 6) await inflight.shift();
+      if (i % 30 === 0) { st.textContent = ' frame ' + i + '/' + n1 + ' ' + ((performance.now() - T) / 1000).toFixed(0) + 's'; await fetch('/log', { method: 'POST', body: st.textContent }); }
+    }
+    await Promise.all(inflight); await fetch('/done', { method: 'POST', body: 'ok' }); st.textContent += ' DONE'; return 'done';
+  };
+  window.ready = true;
+  const P = new URLSearchParams(location.search);
+  if (P.get('auto')) renderAll(30, +(P.get('from') || 0), P.get('to') ? +P.get('to') : undefined).catch((e) => fetch('/log', { method: 'POST', body: 'ERR ' + e.stack }));
+})();
+</script>
+</body></html>

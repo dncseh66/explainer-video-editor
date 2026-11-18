@@ -1,0 +1,451 @@
+[
+  {
+    "language_code": "eng",
+    "language_probability": 0.9349794983863831,
+    "text": "This is the JBL Charge 4. Inside, one driver makes the sound. Two passive radiators pump out the bass, and a 7,500 milliamp hour battery powers it all",
+    "words": [
+      {
+        "text": "This",
+        "start": 0.32,
+        "end": 0.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00007497983460780233
+      },
+      {
+        "text": " ",
+        "start": 0.48,
+        "end": 0.54,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "is",
+        "start": 0.54,
+        "end": 0.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": " ",
+        "start": 0.66,
+        "end": 0.7,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "the",
+        "start": 0.7,
+        "end": 0.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": " ",
+        "start": 0.8,
+        "end": 0.86,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000010847986231965479
+      },
+      {
+        "text": "JBL",
+        "start": 0.86,
+        "end": 1.3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000010847986231965479
+      },
+      {
+        "text": " ",
+        "start": 1.3,
+        "end": 1.42,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000007986990567587782
+      },
+      {
+        "text": "Charge",
+        "start": 1.42,
+        "end": 1.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000007986990567587782
+      },
+      {
+        "text": " ",
+        "start": 1.72,
+        "end": 1.82,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.11593543738126755
+      },
+      {
+        "text": "4.",
+        "start": 1.82,
+        "end": 2.12,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000004112704559133817
+      },
+      {
+        "text": " ",
+        "start": 2.12,
+        "end": 2.12,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000016689286894688848
+      },
+      {
+        "text": "Inside,",
+        "start": 2.84,
+        "end": 3.3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002435270809136065
+      },
+      {
+        "text": " ",
+        "start": 3.3,
+        "end": 3.42,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000834461570775602
+      },
+      {
+        "text": "one",
+        "start": 3.42,
+        "end": 3.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000834461570775602
+      },
+      {
+        "text": " ",
+        "start": 3.54,
+        "end": 3.6,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000014305104514278355
+      },
+      {
+        "text": "driver",
+        "start": 3.6,
+        "end": 3.88,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000014305104514278355
+      },
+      {
+        "text": " ",
+        "start": 3.88,
+        "end": 3.96,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006318072337307967
+      },
+      {
+        "text": "makes",
+        "start": 3.96,
+        "end": 4.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006318072337307967
+      },
+      {
+        "text": " ",
+        "start": 4.16,
+        "end": 4.2,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "the",
+        "start": 4.2,
+        "end": 4.3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": " ",
+        "start": 4.3,
+        "end": 4.34,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -2.3841855067985307e-7
+      },
+      {
+        "text": "sound.",
+        "start": 4.34,
+        "end": 4.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.09599714477854586
+      },
+      {
+        "text": " ",
+        "start": 4.72,
+        "end": 4.72,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006437280717364047
+      },
+      {
+        "text": "Two",
+        "start": 5.2,
+        "end": 5.32,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006437280717364047
+      },
+      {
+        "text": " ",
+        "start": 5.32,
+        "end": 5.44,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000015020257706055418
+      },
+      {
+        "text": "passive",
+        "start": 5.44,
+        "end": 5.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000015020257706055418
+      },
+      {
+        "text": " ",
+        "start": 5.76,
+        "end": 5.84,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000015735502529423684
+      },
+      {
+        "text": "radiators",
+        "start": 5.84,
+        "end": 6.32,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000015735502529423684
+      },
+      {
+        "text": " ",
+        "start": 6.32,
+        "end": 6.42,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "pump",
+        "start": 6.42,
+        "end": 6.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": " ",
+        "start": 6.6,
+        "end": 6.66,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "out",
+        "start": 6.66,
+        "end": 6.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": " ",
+        "start": 6.78,
+        "end": 6.8,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "the",
+        "start": 6.8,
+        "end": 6.9,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": " ",
+        "start": 6.9,
+        "end": 6.94,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.011050100438296795
+      },
+      {
+        "text": "bass,",
+        "start": 6.94,
+        "end": 7.28,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0088439426941477
+      },
+      {
+        "text": " ",
+        "start": 7.28,
+        "end": 7.28,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000005483612312673358
+      },
+      {
+        "text": "and",
+        "start": 7.76,
+        "end": 7.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000005483612312673358
+      },
+      {
+        "text": " ",
+        "start": 7.84,
+        "end": 7.88,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "a",
+        "start": 7.88,
+        "end": 7.96,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": " ",
+        "start": 7.96,
+        "end": 8.2,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.016019096598029137
+      },
+      {
+        "text": "7,500",
+        "start": 8.2,
+        "end": 8.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.03204951882324849
+      },
+      {
+        "text": " ",
+        "start": 8.94,
+        "end": 8.98,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.01051280740648508
+      },
+      {
+        "text": "milliamp",
+        "start": 8.98,
+        "end": 9.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.006706646719976561
+      },
+      {
+        "text": " ",
+        "start": 9.4,
+        "end": 9.44,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.02083662338554859
+      },
+      {
+        "text": "hour",
+        "start": 9.44,
+        "end": 9.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.02083662338554859
+      },
+      {
+        "text": " ",
+        "start": 9.62,
+        "end": 9.72,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "battery",
+        "start": 9.72,
+        "end": 10.04,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": " ",
+        "start": 10.04,
+        "end": 10.16,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000011086402082582936
+      },
+      {
+        "text": "powers",
+        "start": 10.16,
+        "end": 10.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000011086402082582936
+      },
+      {
+        "text": " ",
+        "start": 10.48,
+        "end": 10.52,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "it",
+        "start": 10.52,
+        "end": 10.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": " ",
+        "start": 10.6,
+        "end": 10.7,
+        "type": "spacing",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "all",
+        "start": 10.7,
+        "end": 10.88,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      }
+    ],
+    "transcription_id": "DtyoiSimJrDjYImnhUL1",
+    "audio_duration_secs": 11.232653
+  }
+]

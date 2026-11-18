@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Character sheet</title>
+<style>
+  body { margin:0; background:#F6EDC8; font:14px/1.3 system-ui, sans-serif; color:#2A2522 }
+  h1 { font-size:20px; margin:18px 20px 4px } h2 { font-size:15px; margin:18px 20px 6px; text-transform:uppercase; letter-spacing:.08em }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:10px; padding:0 20px 10px }
+  .card { background:#FFFDF4; border:2px solid #2A2522; border-radius:10px; padding:4px 6px 8px; text-align:center }
+  .card svg { width:100%; height:auto; display:block }
+  .card b { display:block; font-size:13px } .card small { color:#6b6157; font-size:11px }
+</style></head>
+<body>
+<h1>Character kit — every person shares the white head</h1>
+<div id="root"></div>
+<script src="person.js"></script>
+<script>
+const groups = {
+  'Monks & clergy': [
+    ['Narrator monk', {outfit:'robe', glasses:true, item:'pointer', itemL:'book'}],
+    ['Old abbot', {age:'old', outfit:'robe', hair:'tonsure', hairColor:'grey', facial:'longbeard', item:'staff'}],
+    ['Hooded monk', {outfit:'robe', hat:'hood', item:'bowl'}],
+    ['Monk + mustache', {outfit:'robe', hair:'tonsure', facial:'mustache', item:'bread'}],
+  ],
+  'Townsfolk': [
+    ['Peasant man', {outfit:'peasant', hair:'short', facial:'stubble'}],
+    ['Peasant woman', {outfit:'dress', hair:'long', hairColor:'brown', hat:'coif', color:'#8FA86E', shade:'#748A57'}],
+    ['Farmer', {outfit:'tunic', hair:'short', hat:'straw', facial:'beard', hairColor:'red'}],
+    ['Girl, ponytail', {age:'child', outfit:'dress', hair:'ponytail', hairColor:'blond', color:'#D98C7A', shade:'#B9705F'}],
+    ['Boy, curly', {age:'child', outfit:'tunic', hair:'curly', hairColor:'black'}],
+    ['Baby', {age:'baby', hair:'tuft'}],
+    ['Old woman', {age:'old', outfit:'dress', hair:'bun', hairColor:'grey', color:'#7E6B8F', shade:'#66567A', item:'staff'}],
+    ['Prisoner', {outfit:'rags', limbs:'stick', expr:'sad'}],
+  ],
+  'Power & law': [
+    ['King', {outfit:'king', facial:'beard', hairColor:'brown'}],
+    ['Queen', {outfit:'dress', hair:'long', hairColor:'blond', hat:'crown', color:'#3F4F7A', shade:'#323F62'}],
+    ['Noble', {outfit:'noble', hair:'short', hairColor:'black', facial:'mustache'}],
+    ['Guard', {outfit:'guard', item:'spear'}],
+    ['Soldier', {outfit:'soldier', facial:'beard', hairColor:'black'}],
+    ['Executioner', {outfit:'exec'}],
+  ],
+  'Science & medicine': [
+    ['Scientist', {outfit:'labcoat', facial:'mustache', glasses:true, item:'vial', hair:'balding', hairColor:'grey'}],
+    ['Nurse', {outfit:'scrubs', hair:'bun', hairColor:'black', expr:'joy'}],
+    ['Doctor', {outfit:'labcoat', hair:'short', hairColor:'brown', glasses:true, facial:'beard'}],
+    ['Patient (skin limbs)', {outfit:'rags', limbs:'skin', color:'#C9CCD1', shade:'#ADB2B9', expr:'sleep'}],
+  ],
+};
+const exprs = ['neutral','happy','joy','talk','surprised','worried','sad','smug','angry','sleep'];
+const root = document.getElementById('root');
+const live = [];
+let id = 0;
+function card(label, opts, sub) {
+  const cls = 'c' + (id++);
+  const el = document.createElement('div'); el.className = 'card';
+  el.innerHTML = '<svg viewBox="-110 -330 220 350">' + W.person(cls, opts) + '</svg><b>' + label + '</b><small>' + (sub || Object.entries(opts).filter(([k]) => k !== 'expr').map(([k, v]) => v === true ? k : v).join(' · ')) + '</small>';
+  const m = W.bindPerson(el, cls);
+  live.push({ m, opts, ph: id * 0.7 });
+  return el;
+}
+for (const [name, list] of Object.entries(groups)) {
+  const h = document.createElement('h2'); h.textContent = name; root.appendChild(h);
+  const g = document.createElement('div'); g.className = 'grid'; root.appendChild(g);
+  list.forEach(([l, o]) => g.appendChild(card(l, o)));
+}
+let h = document.createElement('h2'); h.textContent = 'Expressions'; root.appendChild(h);
+let g = document.createElement('div'); g.className = 'grid'; root.appendChild(g);
+exprs.forEach((e) => g.appendChild(card(e, { outfit:'robe', hair:'tonsure', expr:e }, 'expr: ' + e)));
+h = document.createElement('h2'); h.textContent = 'Stepped walk (8 fps)'; root.appendChild(h);
+g = document.createElement('div'); g.className = 'grid'; root.appendChild(g);
+[['Walking monk', {outfit:'robe', hair:'tonsure', walk:true}], ['Walking guard', {outfit:'guard', item:'spear', walk:true}], ['Walking prisoner', {outfit:'rags', walk:true}]].forEach(([l, o]) => g.appendChild(card(l, o, 'W.walk(t)')));
+function frame(ms) {
+  const t = ms / 1000;
+  for (const L of live) {
+    const w = L.opts.walk ? W.walk(t + L.ph) : {};
+    const br = Math.sin(t * 2 + L.ph) * 1.5;
+    const long = ['staff', 'spear', 'torch', 'pointer'].includes(L.opts.item);
+    W.posePerson(L.m, Object.assign({ expr: L.opts.expr || 'neutral', head: br, blink: W.blinkAt((t + L.ph) % 3.2, [3.0]), a1: (long ? -34 : -8) + br, a2: long ? 22 : -6, b1: 8 - br }, w));
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body></html>

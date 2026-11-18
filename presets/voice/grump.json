@@ -1,0 +1,10 @@
+{
+  "name": "grump",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_mSOmKHC6GZcZbSTGlqHO",
+  "source_voice": "Mister Gruff - Miserable old neighbor",
+  "speed": 1.0,
+  "with_transcript": true,
+  "role": "Miserable gruff old man: officials, bosses, landlords, complainers",
+  "notes": "Character voice for dialogue lines only. Same character = same preset for the whole video."
+}

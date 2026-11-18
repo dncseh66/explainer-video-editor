@@ -1,0 +1,17 @@
+1
+00:00:00,320 --> 00:00:02,620
+This is the JBL Charge 4.
+
+2
+00:00:02,840 --> 00:00:05,116
+Inside, one driver makes the sound.
+
+3
+00:00:05,200 --> 00:00:07,676
+Two passive radiators pump out the bass,
+
+4
+00:00:07,760 --> 00:00:11,232
+and a 7,500 milliamp
+hour battery powers it all
+

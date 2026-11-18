@@ -1,0 +1,8 @@
+{
+  "name": "narrator",
+  "provider": "ai33 v3 text-to-speech",
+  "voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY",
+  "speed": 1.0,
+  "with_transcript": true,
+  "notes": "Main channel narrator (ElevenLabs voice E95b3lkMWHDsKeHJaIcY via ai33). Change speed here, not in scripts; any change creates a new cache entry."
+}

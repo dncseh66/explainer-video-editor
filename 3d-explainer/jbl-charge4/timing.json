@@ -1,0 +1,108 @@
+{
+  "name": "jbl-charge4-10s",
+  "voiceover": "3d-explainer/jbl-charge4/voiceover/audio_url.mp3",
+  "voiceover_seconds": 11.23,
+  "film_seconds": 12.0,
+  "fps": 30,
+  "script": "This is the JBL Charge 4. Inside, one driver makes the sound, two passive radiators pump out the bass, and a seventy-five hundred milliamp-hour battery powers it all.",
+  "facts": {
+    "battery": "7,500 mAh / 27 Wh, 3.6 V Li-ion, pack IAA011NA = 3 x Samsung 18650 in parallel (52audio teardown); 20 h (JBL)",
+    "driver": "one 50 x 90 mm racetrack driver, 4-lobe star phase plug, front-left of chassis, 4 screws (spec page, 52audio, iFixit photos)",
+    "radiators": "two passive radiators, one per end; grey hatched plate ('!JBL' / '!'), clip on and seal out water (JBL renders, iFixit)",
+    "released": "2018",
+    "reference": "3d-explainer/jbl-charge4/reference/REFERENCE.md"
+  },
+  "shots": [
+    {
+      "id": "hero",
+      "start": 0.0,
+      "end": 2.84,
+      "vo": "This is the JBL Charge 4.",
+      "visual": "Closed speaker on black star field, slow eased orbit from 3/4 left. Caption label 'JBL Charge 4' + '2018' fades in under it on 'JBL' (0.86).",
+      "events": [
+        {
+          "at": 0.86,
+          "what": "caption label in"
+        }
+      ]
+    },
+    {
+      "id": "driver",
+      "start": 2.84,
+      "end": 5.2,
+      "vo": "Inside, one driver makes the sound.",
+      "visual": "On 'Inside' the fabric cover (badge, top controls, back CHARGE4 panel) lifts off and fades, showing the black chassis with the driver mounted front-left behind an orange gasket. On 'driver' (3.6) cyan outline + 'Driver / 50 x 90 mm'; cone moves.",
+      "events": [
+        {
+          "at": 2.84,
+          "what": "shell lifts"
+        },
+        {
+          "at": 3.6,
+          "what": "driver outline + label"
+        }
+      ]
+    },
+    {
+      "id": "radiators",
+      "start": 5.2,
+      "end": 7.76,
+      "vo": "Two passive radiators pump out the bass,",
+      "visual": "Camera pulls back; both radiators slide out of their bumpers on 'Two' (5.2), outlined on 'passive', label with two leader lines on 'radiators' (5.84), pump hard on 'pump' (6.42), slide home on 'and'.",
+      "events": [
+        {
+          "at": 5.44,
+          "what": "radiator outlines"
+        },
+        {
+          "at": 5.84,
+          "what": "label"
+        },
+        {
+          "at": 6.42,
+          "what": "big pump"
+        }
+      ]
+    },
+    {
+      "id": "battery",
+      "start": 7.76,
+      "end": 12.0,
+      "vo": "and a 7,500 milliamp-hour battery powers it all.",
+      "visual": "Bottom foot/cover drops and fades on 'and' (7.76); the blue 3-cell pack drops out and floats in front, outlined; label 'Battery / 7,500 mAh / 3 x 18650 cells' on '7,500' (8.2). On 'powers' (10.16) everything goes back, fabric returns, the 5 battery LEDs fill up one by one.",
+      "events": [
+        {
+          "at": 7.76,
+          "what": "battery rises"
+        },
+        {
+          "at": 8.2,
+          "what": "label"
+        },
+        {
+          "at": 10.16,
+          "what": "reassemble"
+        }
+      ]
+    }
+  ],
+  "sound": {
+    "music_cues": [
+      {
+        "file": "3d-explainer/jbl-charge4/sound/hidden-fields.mp3",
+        "from": 0.0,
+        "to": 12.0,
+        "src": 0.0,
+        "vol": 0.2,
+        "fade_in": 0.4,
+        "fade_out": 1.0,
+        "id": "2e53e258-f42a-3040-af1a-062fe2af2ccb",
+        "title": "Hidden Fields",
+        "artist": "Clarence Reed",
+        "why": "hopeful light indie-pop, 120 bpm, matches the upbeat 'discovery' bed of the Jared Owen reference"
+      }
+    ],
+    "sfx": {},
+    "sfx_note": "none: no event here carries story beyond the narration (user rule: SFX only where valuable)"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "epidemic-sound": {
+      "type": "http",
+      "url": "https://www.epidemicsound.com/a/mcp-service/mcp",
+      "headersHelper": "sh ./scripts/es_mcp_headers.sh"
+    }
+  }
+}

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Review</title>
+<style>
+  :root { --bg:#16181c; --panel:#1f2228; --panel2:#272b33; --line:#353a44; --ink:#e8e6e1; --dim:#9aa0aa; --accent:#f2b544; --red:#ff5a4f; --ok:#5fc27e; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, -apple-system, sans-serif; height:100vh; display:flex; flex-direction:column }
+  header { display:flex; gap:12px; align-items:center; padding:8px 14px; border-bottom:1px solid var(--line); background:var(--panel) }
+  header h1 { font-size:15px; margin:0; font-weight:600 }
+  select, button, input, textarea { font:inherit; color:var(--ink); background:var(--panel2); border:1px solid var(--line); border-radius:6px }
+  button { padding:5px 10px; cursor:pointer } button:hover { border-color:var(--dim) }
+  button.on { background:var(--accent); color:#1b1b1b; border-color:var(--accent) }
+  button.primary { background:var(--accent); color:#1b1b1b; border-color:var(--accent); font-weight:600 }
+  button.danger { color:var(--red) }
+  .grow { flex:1 }
+  #saved { color:var(--dim); font-size:12px }
+  main { flex:1; display:flex; min-height:0 }
+  #left { flex:1; display:flex; flex-direction:column; padding:12px; gap:8px; min-width:0 }
+  #stage { position:relative; width:100%; max-height:calc(100vh - 270px); aspect-ratio:16/9; background:#000; align-self:center }
+  #stage video, #stage canvas { position:absolute; inset:0; width:100%; height:100% }
+  #stage canvas.drawing { cursor:crosshair }
+  #stage canvas:not(.drawing) { pointer-events:none }
+  #bar { display:flex; gap:6px; align-items:center; flex-wrap:wrap }
+  #tc { font-variant-numeric:tabular-nums; min-width:150px }
+  #shotinfo { color:var(--dim); font-size:13px; min-height:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+  #shotinfo b { color:var(--accent); font-weight:600 }
+  #timeline { position:relative; height:46px; background:var(--panel); border:1px solid var(--line); border-radius:6px; cursor:pointer; user-select:none }
+  #timeline .shot { position:absolute; top:0; bottom:0; border-left:1px solid #3b414c }
+  #timeline .shot span { position:absolute; top:2px; left:3px; font-size:10px; color:#6f7682; white-space:nowrap }
+  #timeline .range { position:absolute; top:22px; height:8px; background:rgba(242,181,68,.35); border-radius:3px }
+  #timeline .mark { position:absolute; top:18px; width:12px; height:16px; margin-left:-6px; background:var(--accent); border-radius:3px 3px 6px 6px; border:2px solid #1b1b1b }
+  #timeline .mark.done { background:var(--ok) }
+  #timeline .head { position:absolute; top:0; bottom:0; width:2px; background:#fff; margin-left:-1px; pointer-events:none }
+  #draw { display:none; gap:6px; align-items:center; flex-wrap:wrap; background:var(--panel); border:1px solid var(--accent); border-radius:8px; padding:8px }
+  #draw.show { display:flex }
+  .sw { width:22px; height:22px; border-radius:50%; border:2px solid var(--line); cursor:pointer; padding:0 }
+  .sw.on { border-color:#fff; box-shadow:0 0 0 2px var(--accent) }
+  #draw textarea { width:100%; min-height:54px; padding:6px 8px; resize:vertical }
+  aside { width:380px; border-left:1px solid var(--line); background:var(--panel); display:flex; flex-direction:column; min-height:0 }
+  aside .top { padding:10px 12px; border-bottom:1px solid var(--line); display:flex; gap:8px; align-items:center }
+  #notes { overflow:auto; padding:8px; display:flex; flex-direction:column; gap:8px }
+  .note { background:var(--panel2); border:1px solid var(--line); border-radius:8px; padding:8px; cursor:pointer }
+  .note.cur { border-color:var(--accent) }
+  .note.done { opacity:.6 }
+  .note .h { display:flex; gap:6px; align-items:center; font-size:12px; color:var(--dim) }
+  .note .t { color:var(--accent); font-weight:600; font-variant-numeric:tabular-nums }
+  .note .cat { border:1px solid var(--line); border-radius:10px; padding:0 6px }
+  .note .txt { margin:4px 0; white-space:pre-wrap }
+  .note img { width:100%; border-radius:4px; display:block; margin-top:4px }
+  .note .reply { margin-top:6px; padding:6px; border-left:3px solid var(--ok); background:#20291f; font-size:13px; white-space:pre-wrap }
+  .note .acts { display:flex; gap:6px; margin-top:6px } .note .acts button { padding:2px 8px; font-size:12px }
+  .help { color:var(--dim); font-size:12px; padding:8px 12px; border-top:1px solid var(--line) }
+  kbd { background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:0 4px; font-size:11px }
+  .empty { color:var(--dim); padding:20px; text-align:center }
+</style>
+</head>
+<body>
+<header>
+  <h1>Video review</h1>
+  <select id="vid"></select>
+  <span class="grow"></span>
+  <span id="saved"></span>
+</header>
+<main>
+  <section id="left">
+    <div id="stage"><video id="v" preload="auto" playsinline></video><canvas id="cv" width="1920" height="1080"></canvas></div>
+    <div id="bar">
+      <button id="play" title="Space">▶</button>
+      <button data-step="-1" title="Shift+←">−1s</button><button data-step="-0.0333" title="←">◀ frame</button>
+      <button data-step="0.0333" title="→">frame ▶</button><button data-step="1" title="Shift+→">+1s</button>
+      <select id="rate"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select>
+      <span id="tc">0:00.00</span>
+      <span class="grow"></span>
+      <button class="primary" id="add" title="N">+ Note here</button>
+    </div>
+    <div id="shotinfo"></div>
+    <div id="timeline"><div class="head" id="head"></div></div>
+    <div id="draw">
+      <b id="dtitle">New note</b>
+      <span style="color:var(--dim)">Draw on the frame:</span>
+      <button data-tool="pen" class="on">✎ Pen</button><button data-tool="arrow">➜ Arrow</button><button data-tool="box">▢ Box</button><button data-tool="circle">◯ Circle</button>
+      <button class="sw on" data-col="#ff3b30" style="background:#ff3b30"></button><button class="sw" data-col="#ffd60a" style="background:#ffd60a"></button>
+      <button class="sw" data-col="#32d7ff" style="background:#32d7ff"></button><button class="sw" data-col="#ffffff" style="background:#ffffff"></button>
+      <button id="undo" title="Cmd+Z">Undo</button><button id="clr">Clear</button>
+      <span class="grow"></span>
+      <select id="cat"><option>animation</option><option>timing</option><option>text</option><option>sound</option><option>music</option><option>layout</option><option>story</option><option>other</option></select>
+      <button id="setend" title="Pause later and click to make the note cover a range">Set end here</button><span id="endlab" style="color:var(--dim)"></span>
+      <textarea id="txt" placeholder="What should change? e.g. &quot;make him look scared here&quot;, &quot;cut this shot shorter&quot;, &quot;label missing&quot;…"></textarea>
+      <button class="primary" id="save">Save note</button><button id="cancel">Cancel</button>
+    </div>
+  </section>
+  <aside>
+    <div class="top"><b>Notes</b><span id="count" style="color:var(--dim)"></span><span class="grow"></span>
+      <label style="font-size:12px;color:var(--dim)"><input type="checkbox" id="hideDone"> hide done</label></div>
+    <div id="notes"></div>
+    <div class="help"><kbd>Space</kbd> play · <kbd>←</kbd><kbd>→</kbd> frame · <kbd>Shift</kbd>+arrows 1 s · <kbd>N</kbd> new note · <kbd>Esc</kbd> cancel. Notes save automatically to <code>feedback/</code>; tell Claude “apply the feedback”.</div>
+  </aside>
+</main>
+<script>
+const $ = (s) => document.querySelector(s), $$ = (s) => [...document.querySelectorAll(s)];
+const v = $('#v'), cv = $('#cv'), cx = cv.getContext('2d');
+let video = null, data = { notes: [], timing: null }, draft = null, tool = 'pen', col = '#ff3b30', viewing = null;
+const fmt = (t) => { t = Math.max(0, t || 0); const m = Math.floor(t / 60), s = t - m * 60; return m + ':' + (s < 10 ? '0' : '') + s.toFixed(2); };
+const uid = () => 'n' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const shotAt = (t) => (data.timing && data.timing.shots.find((s) => t >= s.start && t < s.end)) || null;
+
+// ---------- load ----------
+async function init() {
+  const vids = await (await fetch('/api/videos')).json();
+  vids.sort((a, b) => (a.dir === b.dir ? b.mtime - a.mtime : a.dir === 'final' ? -1 : 1));
+  $('#vid').innerHTML = vids.map((x, i) => '<option value="' + i + '">' + x.name + (x.dir === 'exports' ? ' (no audio)' : '') + '</option>').join('');
+  $('#vid').onchange = () => load(vids[+$('#vid').value]);
+  const want = new URLSearchParams(location.search).get('v');
+  const i = Math.max(0, vids.findIndex((x) => x.name === want && x.dir === 'final'));
+  $('#vid').value = i; if (vids.length) load(vids[i]); else $('#notes').innerHTML = '<div class="empty">No videos in output/final/</div>';
+}
+async function load(x) {
+  video = x; cancelDraft();
+  v.src = '/video/' + x.dir + '/' + encodeURIComponent(x.name) + '.mp4';
+  data = await (await fetch('/api/feedback/' + encodeURIComponent(x.name))).json();
+  data.notes = data.notes || [];
+  v.addEventListener('loadedmetadata', () => { drawTimeline(); renderNotes(); }, { once: true });
+  renderNotes();
+}
+async function persist() {
+  $('#saved').textContent = 'saving…';
+  const notes = data.notes.map((n) => { const o = Object.assign({}, n); if (!o._img) delete o.image_data; else o.image_data = o._img; delete o._img; return o; });
+  const r = await fetch('/api/feedback/' + encodeURIComponent(video.name), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ notes }) });
+  if (r.ok) { data.notes.forEach((n) => { if (n._img) { n.image = 'feedback/' + video.name + '/' + n.id + '.png'; n._ver = Date.now(); } delete n._img; }); $('#saved').textContent = 'saved ' + new Date().toLocaleTimeString(); renderNotes(); }
+  else $('#saved').textContent = 'SAVE FAILED (' + r.status + ')';
+}
+
+// ---------- player ----------
+$('#play').onclick = () => (v.paused ? v.play() : v.pause());
+v.onplay = () => ($('#play').textContent = '❚❚'); v.onpause = () => ($('#play').textContent = '▶');
+$$('[data-step]').forEach((b) => (b.onclick = () => step(+b.dataset.step)));
+$('#rate').onchange = () => (v.playbackRate = +$('#rate').value);
+function step(d) { v.pause(); v.currentTime = Math.min(v.duration || 0, Math.max(0, v.currentTime + d)); }
+function tick() {
+  const t = v.currentTime, D = v.duration || 1;
+  $('#tc').textContent = fmt(t) + ' / ' + fmt(D);
+  $('#head').style.left = (100 * t / D) + '%';
+  const s = shotAt(t);
+  $('#shotinfo').innerHTML = s ? '<b>' + s.id + '</b> ' + fmt(s.start) + '–' + fmt(s.end) + ' · “' + (s.vo || '').replace(/</g, '&lt;') + '”' : '';
+  if (!draft) {
+    const near = data.notes.find((n) => (n.t_end != null ? t >= n.t - 0.02 && t <= n.t_end : Math.abs(t - n.t) < 0.06) && n.drawing && n.drawing.length);
+    if (near !== viewing) { viewing = near || null; paint(viewing ? viewing.drawing : []); }
+    $$('.note').forEach((el) => el.classList.toggle('cur', !!viewing && el.dataset.id === viewing.id));
+  }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+// ---------- timeline ----------
+function drawTimeline() {
+  const tl = $('#timeline'), D = v.duration || 1;
+  tl.querySelectorAll('.shot,.mark,.range').forEach((e) => e.remove());
+  (data.timing ? data.timing.shots : []).forEach((s) => { const e = document.createElement('div'); e.className = 'shot'; e.style.left = (100 * s.start / D) + '%'; e.innerHTML = '<span>' + s.id + '</span>'; tl.appendChild(e); });
+  data.notes.forEach((n) => {
+    if (n.t_end != null) { const r = document.createElement('div'); r.className = 'range'; r.style.left = (100 * n.t / D) + '%'; r.style.width = (100 * (n.t_end - n.t) / D) + '%'; tl.appendChild(r); }
+    const m = document.createElement('div'); m.className = 'mark' + (n.status === 'done' ? ' done' : ''); m.style.left = (100 * n.t / D) + '%'; m.title = fmt(n.t) + ' ' + n.text;
+    m.onclick = (e) => { e.stopPropagation(); jump(n); }; tl.appendChild(m);
+  });
+}
+let scrub = false;
+const seekTo = (e) => { const r = $('#timeline').getBoundingClientRect(); v.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (v.duration || 0); };
+$('#timeline').onpointerdown = (e) => { if (draft) return; scrub = true; v.pause(); seekTo(e); };
+addEventListener('pointermove', (e) => scrub && seekTo(e)); addEventListener('pointerup', () => (scrub = false));
+function jump(n) { if (draft) return; v.pause(); v.currentTime = n.t; }
+
+// ---------- drawing ----------
+function paint(strokes, live) {
+  cx.clearRect(0, 0, 1920, 1080);
+  for (const s of strokes.concat(live ? [live] : [])) shape(cx, s);
+}
+function shape(c, s) {
+  c.save(); c.strokeStyle = s.col; c.fillStyle = s.col; c.lineWidth = 9; c.lineCap = 'round'; c.lineJoin = 'round';
+  c.shadowColor = 'rgba(0,0,0,.55)'; c.shadowBlur = 6;
+  const p = s.pts, a = p[0], b = p[p.length - 1];
+  c.beginPath();
+  if (s.tool === 'pen') { p.forEach((q, i) => (i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1]))); c.stroke(); }
+  else if (s.tool === 'box') { c.strokeRect(a[0], a[1], b[0] - a[0], b[1] - a[1]); }
+  else if (s.tool === 'circle') { c.ellipse((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, Math.abs(b[0] - a[0]) / 2 || 1, Math.abs(b[1] - a[1]) / 2 || 1, 0, 0, 7); c.stroke(); }
+  else if (s.tool === 'arrow') {
+    c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke();
+    const ang = Math.atan2(b[1] - a[1], b[0] - a[0]), L = 34;
+    c.beginPath(); c.moveTo(b[0], b[1]); c.lineTo(b[0] - L * Math.cos(ang - 0.45), b[1] - L * Math.sin(ang - 0.45)); c.lineTo(b[0] - L * Math.cos(ang + 0.45), b[1] - L * Math.sin(ang + 0.45)); c.closePath(); c.fill();
+  }
+  c.restore();
+}
+const pos = (e) => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) / r.width * 1920), Math.round((e.clientY - r.top) / r.height * 1080)]; };
+let live = null;
+cv.onpointerdown = (e) => { if (!draft) return; cv.setPointerCapture(e.pointerId); live = { tool, col, pts: [pos(e)] }; };
+cv.onpointermove = (e) => { if (!live) return; const p = pos(e); if (live.tool === 'pen') live.pts.push(p); else live.pts[1] = p; paint(draft.drawing, live); };
+cv.onpointerup = () => { if (!live) return; if (live.pts.length > 1) draft.drawing.push(live); live = null; paint(draft.drawing); };
+$$('[data-tool]').forEach((b) => (b.onclick = () => { tool = b.dataset.tool; $$('[data-tool]').forEach((x) => x.classList.toggle('on', x === b)); }));
+$$('[data-col]').forEach((b) => (b.onclick = () => { col = b.dataset.col; $$('[data-col]').forEach((x) => x.classList.toggle('on', x === b)); }));
+$('#undo').onclick = () => { if (draft) { draft.drawing.pop(); paint(draft.drawing); } };
+$('#clr').onclick = () => { if (draft) { draft.drawing = []; paint([]); } };
+
+// ---------- notes ----------
+function startDraft(n) {
+  v.pause();
+  draft = n ? JSON.parse(JSON.stringify(n)) : { id: uid(), t: +v.currentTime.toFixed(3), t_end: null, text: '', cat: 'animation', drawing: [], status: 'open' };
+  draft._new = !n;
+  if (n) v.currentTime = n.t;
+  $('#draw').classList.add('show'); cv.classList.add('drawing');
+  $('#dtitle').textContent = (n ? 'Edit note' : 'New note') + ' @ ' + fmt(draft.t) + (shotAt(draft.t) ? ' (' + shotAt(draft.t).id + ')' : '');
+  $('#txt').value = draft.text; $('#cat').value = draft.cat || 'other';
+  $('#endlab').textContent = draft.t_end != null ? '→ ' + fmt(draft.t_end) : '';
+  paint(draft.drawing); $('#txt').focus();
+}
+function cancelDraft() { draft = null; viewing = undefined; $('#draw').classList.remove('show'); cv.classList.remove('drawing'); paint([]); }
+$('#add').onclick = () => startDraft();
+$('#cancel').onclick = cancelDraft;
+$('#setend').onclick = () => { if (!draft) return; const t = +v.currentTime.toFixed(3); draft.t_end = t > draft.t ? t : null; $('#endlab').textContent = draft.t_end ? '→ ' + fmt(draft.t_end) : '(end must be after start)'; };
+$('#save').onclick = async () => {
+  if (!draft) return;
+  draft.text = $('#txt').value.trim(); draft.cat = $('#cat').value;
+  if (!draft.text && !draft.drawing.length) { $('#txt').focus(); return; }
+  const s = shotAt(draft.t); draft.shot = s ? s.id : null; draft.vo = s ? s.vo : null;
+  draft.time = fmt(draft.t) + (draft.t_end != null ? '–' + fmt(draft.t_end) : '');
+  // snapshot: the exact frame + the drawing, so Claude sees what you saw
+  await new Promise((res) => { if (Math.abs(v.currentTime - draft.t) < 0.02 && v.readyState >= 2) res(); else { v.currentTime = draft.t; v.addEventListener('seeked', res, { once: true }); } });
+  const off = document.createElement('canvas'); off.width = 1920; off.height = 1080; const oc = off.getContext('2d');
+  oc.drawImage(v, 0, 0, 1920, 1080); draft.drawing.forEach((st) => shape(oc, st));
+  draft._img = off.toDataURL('image/png');
+  const isNew = draft._new; delete draft._new;
+  draft.updated = new Date().toISOString(); if (isNew) draft.created = draft.updated;
+  const i = data.notes.findIndex((x) => x.id === draft.id);
+  if (i >= 0) data.notes[i] = draft; else data.notes.push(draft);
+  data.notes.sort((a, b) => a.t - b.t);
+  cancelDraft(); drawTimeline(); renderNotes(); await persist();
+};
+function renderNotes() {
+  const hide = $('#hideDone').checked, list = data.notes.filter((n) => !(hide && n.status === 'done'));
+  $('#count').textContent = data.notes.filter((n) => n.status !== 'done').length + ' open / ' + data.notes.length;
+  $('#notes').innerHTML = list.length ? '' : '<div class="empty">No notes yet. Pause where something should change, press <b>+ Note here</b>, draw on the frame and describe it.</div>';
+  for (const n of list) {
+    const el = document.createElement('div'); el.className = 'note' + (n.status === 'done' ? ' done' : ''); el.dataset.id = n.id;
+    el.innerHTML = '<div class="h"><span class="t">' + fmt(n.t) + (n.t_end != null ? '–' + fmt(n.t_end) : '') + '</span>' + (n.shot ? '<span>' + n.shot + '</span>' : '') +
+      '<span class="cat">' + (n.cat || '') + '</span><span class="grow"></span><span>' + (n.status === 'done' ? '✓ done' : n.status === 'wontfix' ? 'skipped' : 'open') + '</span></div>' +
+      '<div class="txt"></div>' + (n.image ? '<img loading="lazy" src="/' + n.image + '?v=' + (n._ver || n.updated || '') + '">' : '') +
+      (n.reply ? '<div class="reply"></div>' : '') +
+      '<div class="acts"><button data-a="edit">Edit</button><button data-a="toggle">' + (n.status === 'done' ? 'Reopen' : 'Mark done') + '</button><span class="grow"></span><button class="danger" data-a="del">Delete</button></div>';
+    el.querySelector('.txt').textContent = n.text || '(drawing only)';
+    if (n.reply) el.querySelector('.reply').textContent = 'Claude: ' + n.reply;
+    el.onclick = (e) => {
+      const a = e.target.dataset && e.target.dataset.a;
+      if (a === 'edit') return startDraft(n);
+      if (a === 'toggle') { n.status = n.status === 'done' ? 'open' : 'done'; drawTimeline(); renderNotes(); return persist(); }
+      if (a === 'del') { if (confirm('Delete this note?')) { data.notes = data.notes.filter((x) => x !== n); drawTimeline(); renderNotes(); persist(); } return; }
+      jump(n);
+    };
+    $('#notes').appendChild(el);
+  }
+}
+$('#hideDone').onchange = renderNotes;
+
+// ---------- keys ----------
+addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') { if (e.key === 'Escape') cancelDraft(); return; }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'z') { e.preventDefault(); $('#undo').click(); return; }
+  if (e.key === ' ') { e.preventDefault(); $('#play').click(); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); step(e.shiftKey ? -1 : -1 / 30); }
+  else if (e.key === 'ArrowRight') { e.preventDefault(); step(e.shiftKey ? 1 : 1 / 30); }
+  else if (e.key === 'n' || e.key === 'N') { e.preventDefault(); if (!draft) startDraft(); }
+  else if (e.key === 'Escape') cancelDraft();
+});
+// pick up replies Claude writes into the file
+setInterval(async () => {
+  if (!video || draft) return;
+  const d = await (await fetch('/api/feedback/' + encodeURIComponent(video.name))).json();
+  const sig = (x) => JSON.stringify((x.notes || []).map((n) => [n.id, n.status, n.reply, n.updated]));
+  if (sig(d) !== sig(data)) { const keep = data.timing; data = d; data.timing = d.timing || keep; drawTimeline(); renderNotes(); }
+}, 4000);
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Film preview (local)</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#222; color:#eee; font:13px system-ui, sans-serif }
+  #bar { position:sticky; top:0; z-index:9; background:#111; padding:8px 12px; display:flex; gap:10px; align-items:center }
+  #t { flex:1 } #frame { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#000 }
+  #stage { position:absolute; left:0; top:0; width:1920px; height:1080px; transform-origin:0 0; overflow:hidden; --display:"Patrick Hand SC"; --sans:Inter, system-ui }
+  #err { color:#ff8a80; padding:8px 12px; white-space:pre-wrap }
+</style></head>
+<body>
+<div id="bar"><button id="play">Play</button><input id="t" type="range" min="0" max="28.5" step="0.01" value="0"><span id="lab">0.00</span></div>
+<div id="frame"><div id="stage"></div></div><div id="err"></div>
+<script>
+// Minimal stand-in for the Motion player's kit, to check scenes locally (not the real player).
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const K = { clamp01, seg: (t, a, b) => clamp01((t - a) / (b - a)), lerp: (a, b, p) => a + (b - a) * p,
+  eo: (x) => 1 - Math.pow(1 - clamp01(x), 3), ei: (x) => Math.pow(clamp01(x), 3), eio: (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; },
+  eob: (x, k) => { k = k || 1.4; x = clamp01(x); const y = x - 1; return 1 + (k + 1) * y * y * y + k * y * y; },
+  rng: (s) => { s = s >>> 0 || 1; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); },
+  vnoise: (seed) => (x) => Math.sin(x * 1.7 + seed) * 0.6 + Math.sin(x * 3.1 + seed * 2) * 0.4,
+  h: (html) => { const d = document.createElement('div'); d.innerHTML = html; return d.children.length === 1 ? d.firstElementChild : d; } };
+const scenes = {}; let list = [];
+const err = (m) => (document.getElementById('err').textContent += m + '\n');
+async function load(n) { const r = await fetch('modules/' + n + '.json?' + Date.now()); return (await r.json()).text; }
+(async () => {
+  const css = document.createElement('style'); css.textContent = (await load('base.css')).replace(/#stage/g, '#stage'); document.head.appendChild(css);
+  try { (0, eval)(await load('shared.js')); } catch (e) { err('shared.js: ' + e); }
+  const sj = JSON.parse(await load('scenes.json')); let t0 = 0;
+  for (const s of sj.scenes) {
+    const kit = Object.assign({}, K, { scene: (id, def) => (scenes[id] = def) });
+    try { new Function('kit', await load('scene-' + s.id + '.js'))(kit); } catch (e) { err(s.id + ' load: ' + e); }
+    list.push({ id: s.id, start: t0, dur: s.dur }); t0 += s.dur;
+  }
+  document.getElementById('t').max = t0;
+  const stage = document.getElementById('stage');
+  for (const L of list) {
+    const box = document.createElement('div'); box.style.cssText = 'position:absolute;inset:0;display:none'; stage.appendChild(box); L.box = box;
+    const kit = Object.assign({}, K, { stage: box, dur: L.dur, start: L.start, W: 1920, H: 1080 });
+    L.def = scenes[L.id];
+    try { if (L.def && L.def.init) await L.def.init.call(L.def, kit); } catch (e) { err(L.id + ' init: ' + e.stack); }
+  }
+  const fit = () => (stage.style.transform = 'scale(' + document.getElementById('frame').clientWidth / 1920 + ')'); addEventListener('resize', fit); fit();
+  window.show = (t) => {
+    document.getElementById('lab').textContent = t.toFixed(2);
+    for (const L of list) { const on = t >= L.start && t < L.start + L.dur || (L === list[list.length - 1] && t >= L.start); L.box.style.display = on ? '' : 'none';
+      if (on && L.def) try { L.def.render.call(L.def, t - L.start, K); } catch (e) { err(L.id + ' render: ' + e.stack); } }
+  };
+  const sl = document.getElementById('t'); sl.oninput = () => show(+sl.value); show(0);
+  let playing = false, base = 0, from = 0;
+  document.getElementById('play').onclick = () => { playing = !playing; base = performance.now(); from = +sl.value; };
+  (function loop(now) { if (playing) { let t = from + (now - base) / 1000; if (t > +sl.max) t = 0, from = 0, base = now; sl.value = t; show(t); } requestAnimationFrame(loop); })(0);
+  window.ready = true;
+})();
+</script>
+</body></html>

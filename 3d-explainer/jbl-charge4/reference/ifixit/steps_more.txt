@@ -1,0 +1,36 @@
+== 119227 JBL Charge 4 Speaker Replacement
+1 Flip your speaker over and insert the plastic opening tool into the slit on the grille. | Pry away from yourself towards the back of the speaker to release the 
+  IMG g119227_s01_0 https://guide-images.cdn.ifixit.com/igi/iy4ZsdmNfCUZWppV.full
+2 Remove the two 8mm Phillips #0 screws from the other edge of the grille.
+  IMG g119227_s02_0 https://guide-images.cdn.ifixit.com/igi/qcdfWg2RwDmqqrS4.full
+  IMG g119227_s02_1 https://guide-images.cdn.ifixit.com/igi/OSiMomuVET6RbRjO.full
+3 Pull apart both sides of the grille. | Lift the cover off of the speaker.
+  IMG g119227_s03_0 https://guide-images.cdn.ifixit.com/igi/AaICjsZMZMcQpxEv.full
+4 Using the plastic opening tool,  lift the tab on top of the speaker to release the radiator from the clips. | Repeat this process on the other clips around the 
+  IMG g119227_s04_0 https://guide-images.cdn.ifixit.com/igi/dnPklEXxejOwZDWQ.full
+  IMG g119227_s04_1 https://guide-images.cdn.ifixit.com/igi/3nIY5ZbkomWaGoYa.full
+5 Push the radiator off of the frame of the device. | Repeat on the other side. | The passive bass radiators seal out water from inside the device. Removing them 
+  IMG g119227_s05_0 https://guide-images.cdn.ifixit.com/igi/ScVYJYlPFPHlNiVg.full
+  IMG g119227_s05_1 https://guide-images.cdn.ifixit.com/igi/krPLel6bEf5bV2i4.full
+6 Flip the device so that the speaker faces you. | Remove the four 8mm Phillips #1 screws.
+  IMG g119227_s06_0 https://guide-images.cdn.ifixit.com/igi/tYkcrqBWxYWjaKKR.full
+  IMG g119227_s06_1 https://guide-images.cdn.ifixit.com/igi/3neOqKCNh4vieR4q.full
+7 Gently pull out the speaker.
+  IMG g119227_s07_0 https://guide-images.cdn.ifixit.com/igi/IECuoS2wTQ3gHpCu.full
+8 Desolder the red and black wires. | A guide for soldering and desoldering can be found [https://www.ifixit.com/Guide/How+To+Solder+and+Desolder+Connections/750|
+  IMG g119227_s08_0 https://guide-images.cdn.ifixit.com/igi/EI5JwxiWvNVlKoID.full
+  IMG g119227_s08_1 https://guide-images.cdn.ifixit.com/igi/wpCewrU6m2OqiykG.full
+== 119202 JBL Charge 4 Passive Bass Radiators Replacement
+1 Flip your speaker over and insert the plastic opening tool into the slit on the grille. | Pry away from yourself towards the back of the speaker to release the 
+  IMG g119202_s01_0 https://guide-images.cdn.ifixit.com/igi/iy4ZsdmNfCUZWppV.full
+2 Remove the two 8mm Phillips #0 screws from the other edge of the grille.
+  IMG g119202_s02_0 https://guide-images.cdn.ifixit.com/igi/qcdfWg2RwDmqqrS4.full
+  IMG g119202_s02_1 https://guide-images.cdn.ifixit.com/igi/OSiMomuVET6RbRjO.full
+3 Pull apart both sides of the grille. | Lift the cover off of the speaker.
+  IMG g119202_s03_0 https://guide-images.cdn.ifixit.com/igi/AaICjsZMZMcQpxEv.full
+4 Using the plastic opening tool,  lift the tab on top of the speaker to release the radiator from the clips. | Repeat this process on the other clips around the 
+  IMG g119202_s04_0 https://guide-images.cdn.ifixit.com/igi/dnPklEXxejOwZDWQ.full
+  IMG g119202_s04_1 https://guide-images.cdn.ifixit.com/igi/3nIY5ZbkomWaGoYa.full
+5 Push the radiator off of the frame of the device. | Repeat on the other side. | The passive bass radiators seal out water from inside the device. Removing them 
+  IMG g119202_s05_0 https://guide-images.cdn.ifixit.com/igi/ScVYJYlPFPHlNiVg.full
+  IMG g119202_s05_1 https://guide-images.cdn.ifixit.com/igi/krPLel6bEf5bV2i4.full

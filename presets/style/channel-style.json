@@ -1,0 +1,22 @@
+{
+  "name": "monk-storybook",
+  "film_url": "https://claude.ai/artifact/FiHdvUr7riaArEZ1ayBQqJ",
+  "palette": { "ground": "#F6EDC8", "main": "#7A5A3F", "second": "#2B2420", "accent": "#8DB37E",
+    "notes": "Butter-yellow light, sage-green walls, warm brown robe/wood, dark ink outlines. Earlier darker palette: #F1EADA #5C5047 #1D1916 #A26A35." },
+  "fonts": { "display": "Cormorant Garamond (fallback fraunces-display)", "sans": "Inter (fallback instrument-sans)" },
+  "character": {
+    "monk": "Vector rig in presets/film-snapshot/modules/shared.js -> W.monk / W.bindMonk / W.poseMonk. Pose keys: x y s lean head sq a1 a2 a3 b legL legR bob mouth blink.",
+    "executioner": "W.exec in scene-frame.js head (hooded, faceless).",
+    "props": "W.saw, W.lectern, W.candle, W.shelves, W.stones"
+  },
+  "motion_rules_from_reference": [
+    "4-pose stepped walk at 8 fps with a bob on the down beat (W.step)",
+    "constant-speed right-to-left pan with 3 parallax layers (~40% / 70% / 100%)",
+    "literal visual gag on the key narration word, timed to the word",
+    "whip-slide transition: ~10 frames, ease-out settle",
+    "pose-to-pose arm hits: small anticipation, overshoot (eob 1.5-1.8)",
+    "captions on a parchment card, words rising 110 ms apart",
+    "sound effect on every action: footsteps, whoosh, pop, thud"
+  ],
+  "content_rules": "Violence shown only through setup and silhouettes; no gore."
+}
