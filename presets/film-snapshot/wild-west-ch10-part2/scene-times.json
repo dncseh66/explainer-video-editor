@@ -1,0 +1,195 @@
+{
+ "timing_source": "ESTIMATE (no voiceover yet)",
+ "end": 300.65,
+ "scenes": [
+  {
+   "id": "wallpaper",
+   "start": 0.0,
+   "end": 7.51,
+   "word": 0,
+   "vo": "The wallpaper was floral. It was peeling at the seams where moisture had crept behind the paste."
+  },
+  {
+   "id": "carpet",
+   "start": 7.51,
+   "end": 15.34,
+   "word": 17,
+   "vo": "The carpet ran from the front door to the staircase in a path worn so thin the floorboards showed through."
+  },
+  {
+   "id": "settee",
+   "start": 15.34,
+   "end": 27.85,
+   "word": 37,
+   "vo": "A settee against the far wall had a stain on the left cushion that someone had tried to cover with a crocheted throw. The throw had shifted. The stain was visible."
+  },
+  {
+   "id": "distance",
+   "start": 27.85,
+   "end": 33.84,
+   "word": 68,
+   "vo": "The furniture looked expensive from across the room and cheap from three feet away."
+  },
+  {
+   "id": "fabric",
+   "start": 33.84,
+   "end": 40.77,
+   "word": 82,
+   "vo": "The wood was pine stained to look like walnut. The upholstery was cotton print, not silk."
+  },
+  {
+   "id": "price",
+   "start": 40.77,
+   "end": 50.23,
+   "word": 98,
+   "vo": "A parlor house that charged two dollars a visit, roughly what a cowhand earned for a full week of fourteen hour days on the trail,"
+  },
+  {
+   "id": "saddle",
+   "start": 50.23,
+   "end": 56.89,
+   "word": 123,
+   "vo": "was decorated with furnishings that cost less than what a rancher spent on a working saddle."
+  },
+  {
+   "id": "gap",
+   "start": 56.89,
+   "end": 62.79,
+   "word": 139,
+   "vo": "The gap between the price and the product was the first thing the room taught."
+  },
+  {
+   "id": "dime",
+   "start": 62.79,
+   "end": 70.89,
+   "word": 154,
+   "vo": "Every dime novel illustration the first timer had ever seen showed gaslit ballrooms, velvet drapes, women in silk."
+  },
+  {
+   "id": "bunkhouse",
+   "start": 70.89,
+   "end": 81.88,
+   "word": 172,
+   "vo": "Every bunkhouse story told between bedrolls on the trail had described something elegant, something worth the ride and the wages and the weeks of anticipation."
+  },
+  {
+   "id": "woodcut",
+   "start": 81.88,
+   "end": 86.06,
+   "word": 197,
+   "vo": "The woodcut prints in the penny papers showed chandeliers."
+  },
+  {
+   "id": "songs",
+   "start": 86.06,
+   "end": 91.47,
+   "word": 206,
+   "vo": "The songs the men sang at night described painted ladies in gilded rooms."
+  },
+  {
+   "id": "none",
+   "start": 91.47,
+   "end": 94.12,
+   "word": 219,
+   "vo": "None of it was in this parlor."
+  },
+  {
+   "id": "myth",
+   "start": 94.12,
+   "end": 104.11,
+   "word": 226,
+   "vo": "The mythology of the frontier brothel had been built by men who had never been inside one and sold to men who were about to find out."
+  },
+  {
+   "id": "hotel",
+   "start": 104.11,
+   "end": 123.59,
+   "word": 253,
+   "vo": "The gap between the advertised version and the real version of a purchased experience is not a frontier problem. It is a universal one. Anyone who has ever stood in a hotel room that looked different in the photographs has felt the same downward lurch in the stomach."
+  },
+  {
+   "id": "gauge",
+   "start": 123.59,
+   "end": 132.2,
+   "word": 301,
+   "vo": "The difference is that in a hotel, the disappointment is aesthetic. In this parlor, the disappointment reached deeper."
+  },
+  {
+   "id": "face",
+   "start": 132.2,
+   "end": 155.6,
+   "word": 319,
+   "vo": "The first timer's face in the first five seconds told the whole story. Confusion first. Then recalibration, the brain working fast to close the distance between what it expected and what it found. Then something harder to name. Something that sat behind the eyes and had nothing to do with the wallpaper or the carpet."
+  },
+  {
+   "id": "lonely",
+   "start": 155.6,
+   "end": 165.19,
+   "word": 374,
+   "vo": "The loneliness that had driven him here had not diminished. It had followed him through the door and found a room to stand in."
+  },
+  {
+   "id": "shield",
+   "start": 165.19,
+   "end": 180.22,
+   "word": 398,
+   "vo": "The fantasy had been a shield, a bright image held between himself and the ache of eleven weeks on the trail. The room removed the shield. The ache was still there. It was just better lit now."
+  },
+  {
+   "id": "butler",
+   "start": 180.22,
+   "end": 208.36,
+   "word": 435,
+   "vo": "Anne Butler at Utah State University published findings in nineteen eighty five establishing that parlor house interiors in Montana cattle towns were furnished at a median cost of between forty and sixty dollars, roughly the price of a mid grade saddle horse, and that the most common wallpaper recovered from excavated sites was a floral print sold by the ream through mail order catalogs for pennies a roll."
+  },
+  {
+   "id": "apart",
+   "start": 208.36,
+   "end": 226.0,
+   "word": 503,
+   "vo": "But here is where the standard explanation falls apart. The standard narrative says the first timer was disappointed. That the room did not match the fantasy and he felt let down. The letters and diaries that survive tell a different story."
+  },
+  {
+   "id": "replace",
+   "start": 226.0,
+   "end": 235.36,
+   "word": 544,
+   "vo": "The room did not simply fail to meet expectations. It replaced them with something the first timer had no framework to process."
+  },
+  {
+   "id": "weight",
+   "start": 235.36,
+   "end": 260.3,
+   "word": 566,
+   "vo": "The fantasy had been doing more than decorating the future. It had been holding the loneliness at a manageable distance. The room killed the fantasy in the first five seconds. The loneliness did not leave with it. The loneliness stayed, and now there was nothing between the man and the full weight of what had brought him to this door."
+  },
+  {
+   "id": "selling",
+   "start": 260.3,
+   "end": 275.43,
+   "word": 626,
+   "vo": "The parlor houses of the frontier were not selling what the dime novels advertised. They were selling a room. And what made that room devastating was not its cheapness, its smell, or its peeling wallpaper."
+  },
+  {
+   "id": "cure",
+   "start": 275.43,
+   "end": 284.02,
+   "word": 661,
+   "vo": "It was the fact that the man standing inside it had come looking for a cure to something the room could not touch."
+  },
+  {
+   "id": "weapon",
+   "start": 284.02,
+   "end": 292.48,
+   "word": 684,
+   "vo": "The fantasy was the weapon. It armed every first timer with expectations that nothing behind any door could survive."
+  },
+  {
+   "id": "fired",
+   "start": 292.48,
+   "end": 300.65,
+   "word": 703,
+   "vo": "The door opened. The weapon fired. And the man holding it was the one who bled."
+  }
+ ]
+}

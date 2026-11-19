@@ -93,6 +93,12 @@ def synth(text, voice, file_name):
         return cdir, h
     env = load_env()
     base, key = env.get("AI33_BASE_URL", "https://api.ai33.pro"), env["AI33_API_KEY"]
+    os.makedirs(cdir, exist_ok=True)
+    pend = os.path.join(cdir, "pending.json")
+    if os.path.exists(pend):  # a paid task already exists for this exact text: resume it, never pay twice
+        tid = json.load(open(pend))["task_id"]
+        print(f"resuming task {tid} (already paid, not creating a new one)")
+        return poll(tid, base, key, cdir, key_src, pend)
     body, ctype = multipart({
         "text": text, "voice_id": voice["voice_id"], "speed": str(voice.get("speed", 1)),
         "with_transcript": "true" if voice.get("with_transcript", True) else "false",
@@ -103,11 +109,17 @@ def synth(text, voice, file_name):
     if not res.get("success"):
         sys.exit(f"create failed: {res}")
     tid = res["task_id"]
+    json.dump({"task_id": tid, "chars": len(text)}, open(pend, "w"))
     print(f"task {tid} created ({len(text)} chars, {voice.get('name')})")
+    return poll(tid, base, key, cdir, key_src, pend)
+
+
+def poll(tid, base, key, cdir, key_src, pend):
     delay, t0 = 2.0, time.time()
+    limit = float(os.environ.get("TTS_WAIT_MIN", "90")) * 60
     while True:
-        if time.time() - t0 > 600:
-            sys.exit(f"task {tid} still not done after 10 min (ai33 slow or down); rerun later, finished clips stay cached")
+        if time.time() - t0 > limit:
+            sys.exit(f"task {tid} still not done after {limit / 60:.0f} min; rerun the same command later: it resumes this task (no new charge)")
         time.sleep(delay)
         _, raw = request("GET", f"{base}/v1/task/{tid}", key)
         task = json.loads(raw)
@@ -116,9 +128,9 @@ def synth(text, voice, file_name):
         if st == "done":
             break
         if st in ("error", "failed"):
+            os.remove(pend)  # failed tasks are not charged; allow a fresh attempt
             sys.exit(f"task failed: {task.get('error_message')}")
-        delay = min(delay * 1.4, 10)
-    os.makedirs(cdir, exist_ok=True)
+        delay = min(delay * 1.4, 15)
     meta = task.get("metadata") or {}
     for k, v in meta.items():
         if isinstance(v, str) and v.startswith("http"):
@@ -127,7 +139,8 @@ def synth(text, voice, file_name):
     task["_request"] = json.loads(key_src)
     json.dump(task, open(os.path.join(cdir, "task.json"), "w"), indent=2)
     print(f"credits used: {task.get('credit_cost')}")
-    return cdir, h
+    if os.path.exists(pend): os.remove(pend)
+    return cdir, os.path.basename(cdir)
 
 
 def parse(raw):

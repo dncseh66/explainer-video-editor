@@ -1,0 +1,4 @@
+{
+ "kind": "js",
+ "text": "(function () {\n  const F = W.F;\n  kit.scene('parlor', {\n    init(kit) {\n      const M = W.MOODS.parlorRose;\n      kit.stage.append(kit.h(F.frame(W.bg.parlor(M) + W.prop.settee(960, 860, 1, '#C9B48A') + W.prop.piano(1350, 820, 0.8) + W.prop.keroLamp(420, 600, 1, 0) +\n        ['madam', 'girl1', 'girl2', 'pianist', 'baron', 'miner'].map((k) => F.who('lk-' + k, k)).join(''), '', '')));\n      this.p = ['madam', 'girl1', 'girl2', 'pianist', 'baron', 'miner'].map((k) => W.bindPerson(kit.stage, 'lk-' + k)); this.cam = kit.stage.querySelector('.cam');\n    },\n    render(t) { F.framing(this.cam, 1, 960, 540);\n      const xs = [480, 820, 1060, 1330, 1600, 1800];\n      this.p.forEach((m, i) => W.posePerson(m, { x: xs[i], y: 990, s: 1.7, expr: ['smug', 'neutral', 'happy', 'neutral', 'smug', 'worried'][i] })); },\n  });\n})();\n"
+}

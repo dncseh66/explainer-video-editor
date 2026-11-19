@@ -1,0 +1,18 @@
+{
+ "voice": "wild-west-first-timer-full",
+ "lead": 0.35,
+ "parts": [
+  {
+   "name": "wild-west-first-timer-2min",
+   "script": "scripts_text/wild-west-first-timer-2min.txt"
+  },
+  {
+   "name": "wild-west-ch10-part2",
+   "script": "scripts_text/wild-west-ch10-part2.txt"
+  },
+  {
+   "name": "wild-west-ch09",
+   "script": "scripts_text/wild-west-ch09.txt"
+  }
+ ]
+}

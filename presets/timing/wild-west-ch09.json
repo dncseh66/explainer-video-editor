@@ -1,0 +1,462 @@
+{
+ "voiceover": "",
+ "timing_source": "ESTIMATE (no voiceover yet)",
+ "film_seconds": 422.38,
+ "fps": 30,
+ "sound": {
+  "sfx": {
+   "thud": {
+    "id": "aaa36e82-f3f3-44b9-b27a-5895326bb47b",
+    "title": "Cartoon, Impact, Wood Knocks, Fast",
+    "file": "assets/sound/sfx/thud.mp3"
+   }
+  },
+  "music_cues": [
+   {
+    "section": "the letter, the war inside",
+    "file": "assets/sound/music/raised-by-wolves.mp3",
+    "id": "da09bb59-e892-4e48-b447-20b933e872d4",
+    "title": "Raised by Wolves",
+    "artist": "Tellsonic",
+    "src": 40.0,
+    "from": 0.0,
+    "to": 334.57,
+    "vol": 0.15,
+    "fade_in": 1.0,
+    "fade_out": 0.8
+   },
+   {
+    "section": "the nightmare begins",
+    "file": "assets/sound/music/desert-wind.mp3",
+    "id": "9b9872c2-f093-407e-8d8e-ee3c8b023e6b",
+    "title": "Desert Wind",
+    "artist": "Tellsonic",
+    "src": 120.0,
+    "from": 334.57,
+    "to": 422.38,
+    "vol": 0.15,
+    "fade_in": 0.8,
+    "fade_out": 2.0
+   },
+   {
+    "section": "amb: saloon murmur",
+    "file": "assets/sound/sfx/walla.mp3",
+    "id": "4bb74dea-8302-4973-9b07-4a98d3374645",
+    "from": 10.57,
+    "to": 47.57,
+    "vol": 0.1,
+    "fade_in": 0.5,
+    "fade_out": 0.5
+   },
+   {
+    "section": "amb: night on the trail",
+    "file": "assets/sound/sfx/campfire.mp3",
+    "id": "fa82d1a8-3fcc-4125-b793-a35ef14dd1eb",
+    "src": 30.0,
+    "from": 88.68,
+    "to": 100.21,
+    "vol": 0.22,
+    "fade_in": 0.3,
+    "fade_out": 0.3
+   },
+   {
+    "section": "amb: saloon murmur (ritual)",
+    "file": "assets/sound/sfx/walla.mp3",
+    "id": "4bb74dea-8302-4973-9b07-4a98d3374645",
+    "src": 5.0,
+    "from": 137.79,
+    "to": 206.26,
+    "vol": 0.1,
+    "fade_in": 0.5,
+    "fade_out": 0.5
+   }
+  ],
+  "rules": "SFX only where the sound carries story. Text only for names, places, dates, key numbers."
+ },
+ "shots": [
+  {
+   "id": "t9",
+   "start": 0.0,
+   "end": 2.56,
+   "vo": "Number nine. The Courage.",
+   "mode": "host",
+   "device": "data",
+   "mood": "prairieDust",
+   "events": [
+    {
+     "word": "nine",
+     "w": 1,
+     "t": 0.75,
+     "do": "big 9 drops",
+     "sfx": "thud"
+    },
+    {
+     "word": "The",
+     "w": 2,
+     "t": 1.47,
+     "do": "THE COURAGE",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "map9",
+   "start": 2.56,
+   "end": 10.57,
+   "vo": "In eighteen seventy nine, a young cattle drover who had just finished a drive up the Western Trail to Dodge City",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "letter",
+   "start": 10.57,
+   "end": 18.91,
+   "vo": "sat at a table in a saloon on Front Street and wrote a letter to his brother back in Platte County, Missouri.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "bible",
+   "start": 18.91,
+   "end": 31.69,
+   "vo": "The letter would not be found for nearly a century. It was folded inside a family Bible that passed through three generations before landing in a church donation bin in Joplin.",
+   "mode": "insert",
+   "device": "literal",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "was",
+     "w": 58,
+     "t": 23.26,
+     "do": "letter into the Bible",
+     "sfx": ""
+    },
+    {
+     "word": "passed",
+     "w": 65,
+     "t": 25.91,
+     "do": "three generations",
+     "sfx": ""
+    },
+    {
+     "word": "a",
+     "w": 72,
+     "t": 29.16,
+     "do": "donation bin",
+     "sfx": "thud"
+    }
+   ]
+  },
+  {
+   "id": "hours",
+   "start": 31.69,
+   "end": 47.57,
+   "vo": "The drover did not describe a visit to a parlor house. He described the hours before one. The internal negotiation. The whiskey. The shame that was already assembling itself before he had done anything at all.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "vocab",
+   "start": 47.57,
+   "end": 63.06,
+   "vo": "His words carried a confusion that the script he was living inside had no room for, because the frontier did not give young men a vocabulary for loneliness, and it certainly did not give them permission to admit it.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "war",
+   "start": 63.06,
+   "end": 66.17,
+   "vo": "The war was quiet and entirely internal.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "church",
+   "start": 66.17,
+   "end": 76.34,
+   "vo": "A childhood spent in a Methodist household in rural Missouri had installed a set of convictions about damnation that did not soften with distance.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "voice",
+   "start": 76.34,
+   "end": 88.68,
+   "vo": "Two thousand miles of open trail did not erase the voice. It just made the voice harder to hear over the other sound, which was the body, which had its own demands,",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "nights",
+   "start": 88.68,
+   "end": 100.21,
+   "vo": "and which had been ignored for eleven weeks of dust, cattle, and nights spent on the ground with nothing but a saddle blanket and the breathing of other men.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "clergy",
+   "start": 100.21,
+   "end": 108.09,
+   "vo": "The frontier had no clergy within two hundred miles for most trail hands. No confessional. No counsel.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "ceasefire",
+   "start": 108.09,
+   "end": 121.32,
+   "vo": "The only ceasefire between the guilt and the need was whiskey, and the whiskey did not resolve the conflict. It just made the resolution feel like someone else's problem for an hour.",
+   "mode": "data",
+   "device": "metaphor",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "whiskey",
+     "w": 272,
+     "t": 111.94,
+     "do": "whiskey = ceasefire",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "human",
+   "start": 121.32,
+   "end": 137.79,
+   "vo": "The collision between upbringing and desire is not a frontier phenomenon. It is a human one. The silence that surrounds it has not changed in a hundred and fifty years. The vocabulary has expanded. The shame has not.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "ritual",
+   "start": 137.79,
+   "end": 152.1,
+   "vo": "The ritual had steps. Finishing the drink. Standing from the table. Putting on the hat. Walking toward the saloon door. Each step was a decision. Each decision could be reversed.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "older",
+   "start": 152.1,
+   "end": 166.32,
+   "vo": "Older hands made it easier by going first. They stood and left without announcement, and the act of watching them go made the act of following feel less like a choice and more like a current.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "seed",
+   "start": 166.32,
+   "end": 184.97,
+   "vo": "The bunkhouse conversations had already laid the groundwork, weeks earlier on the trail. Someone mentioned a name. A house. A street. The information landed in the first timer's mind and sat there, growing roots, until the night it became an address.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "dozen",
+   "start": 184.97,
+   "end": 206.26,
+   "vo": "The first timer did not decide once. He decided a dozen times, each time overriding the voice that told him to sit back down. The final decision was not the loudest one. It was the one where the voice finally went quiet. Not because it was answered. Because it was exhausted.",
+   "mode": "scene",
+   "device": "gag",
+   "mood": "",
+   "events": [
+    {
+     "word": "decided",
+     "w": 447,
+     "t": 188.25,
+     "do": "up/down \u00d712",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "lonely9",
+   "start": 206.26,
+   "end": 223.18,
+   "vo": "The diaries that survived are remarkably consistent on one point. The men who wrote about their first visits did not describe desire. They described desperation. The word lonely appears in these documents more frequently than any other.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "trail",
+   "start": 223.18,
+   "end": 239.33,
+   "vo": "These were men who had not touched another human being in months. Whose days were measured in dust and cattle and fence posts and whose nights were measured in silence and cold ground and the low sound of a herd settling.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "question",
+   "start": 239.33,
+   "end": 267.46,
+   "vo": "The question of how a man articulates desire in a culture that gave him no vocabulary for emotional need has never been adequately answered. The letters do not answer it. They circle the edges of it. They describe the need without naming it. They confess the act without confessing the feeling that preceded it. They are documents of men reaching for a language that did not exist.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "money",
+   "start": 267.46,
+   "end": 272.37,
+   "vo": "Who went openly and who went in shame depended entirely on money.",
+   "mode": "data",
+   "device": "metaphor",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "on",
+     "w": 645,
+     "t": 271.41,
+     "do": "money bag vs coins",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "baron",
+   "start": 272.37,
+   "end": 283.44,
+   "vo": "A cattle baron walked through the front door of a parlor house and tipped his hat to the madam. The act was understood as the privilege of success.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "alley",
+   "start": 283.44,
+   "end": 293.48,
+   "vo": "A twenty dollar a month cowhand walked down an alley to a crib behind the saloon, moving fast, hoping no one from the outfit saw him.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "diner",
+   "start": 293.48,
+   "end": 311.8,
+   "vo": "The difference between a man earning in a year what another earns in a week, choosing between a restaurant and a street cart for the same hunger. Same act. Same town. Same night. Separated by wages into two entirely different moral categories.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "dary",
+   "start": 311.8,
+   "end": 334.5,
+   "vo": "David Dary, at the University of Kansas, documented in nineteen eighty one that trail hands on cattle drives averaging eleven to fourteen weeks experienced levels of social deprivation so severe, that post drive intake records from Fort Worth and Abilene cataloged physical and behavioral symptoms consistent with prolonged human isolation.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "nightmare",
+   "start": 334.5,
+   "end": 346.15,
+   "vo": "But here is where the nightmare begins. The courage was not bravery. It was not a young man boldly stepping into the world. The courage was collapse.",
+   "mode": "host",
+   "device": "reaction",
+   "mood": "",
+   "events": [
+    {
+     "word": "not",
+     "w": 803,
+     "t": 338.76,
+     "do": "heroic pose crossed out",
+     "sfx": ""
+    },
+    {
+     "word": "was",
+     "w": 818,
+     "t": 345.01,
+     "do": "collapse",
+     "sfx": "thud"
+    }
+   ]
+  },
+  {
+   "id": "runsout",
+   "start": 346.15,
+   "end": 361.81,
+   "vo": "It was the moment a man stopped fighting the loneliness and let it take him somewhere he already knew he would regret. The decision was not made in strength. It was made in the place where resistance runs out.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "cover",
+   "start": 361.81,
+   "end": 381.86,
+   "vo": "Every bunkhouse story that framed the visit as a rite of passage, a reward, a celebration of the trail's end, was covering something smaller and more painful. A man sitting at a table, staring at his hands, trying to find one more reason not to stand up. And failing.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  },
+  {
+   "id": "broke",
+   "start": 381.86,
+   "end": 399.15,
+   "vo": "The trail drives of the American frontier produced tens of thousands of men whose emotional lives had been compressed into a space smaller than a saddle blanket. When they reached the end of the trail, they did not celebrate. They broke.",
+   "mode": "data",
+   "device": "metaphor",
+   "mood": "infoPaper",
+   "events": [
+    {
+     "word": "broke",
+     "w": 948,
+     "t": 398.46,
+     "do": "heart cracks",
+     "sfx": ""
+    }
+   ]
+  },
+  {
+   "id": "onedoor",
+   "start": 399.15,
+   "end": 422.38,
+   "vo": "And the place they broke toward was not chosen out of desire. It was chosen because it was the only door that was open. The courage it took to walk through it was not the kind anyone would recognize as courage at all. It was the sound a man makes when something inside him stops holding.",
+   "mode": "scene",
+   "device": "literal",
+   "mood": "",
+   "events": []
+  }
+ ]
+}

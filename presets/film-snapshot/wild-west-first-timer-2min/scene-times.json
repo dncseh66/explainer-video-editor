@@ -1,0 +1,118 @@
+{
+ "timing_source": "voiceover",
+ "end": 106.06,
+ "scenes": [
+  {
+   "id": "title",
+   "start": 0.0,
+   "end": 4.24,
+   "word": 0,
+   "vo": "All right, let's go. Number ten. The Door."
+  },
+  {
+   "id": "doors",
+   "start": 4.24,
+   "end": 9.6,
+   "word": 8,
+   "vo": "The front door of a parlor house on a cattle town's main street looked like every other door on the block."
+  },
+  {
+   "id": "closeup",
+   "start": 9.6,
+   "end": 15.72,
+   "word": 29,
+   "vo": "Same pine frame. Same iron latch. Same coat of paint cracking in the same prairie sun."
+  },
+  {
+   "id": "walk",
+   "start": 15.72,
+   "end": 26.76,
+   "word": 45,
+   "vo": "A man walking toward it in eighteen seventy eight could have been walking toward the dry goods store or the barber or the land office. Nothing on the outside announced what waited on the other side."
+  },
+  {
+   "id": "latch",
+   "start": 26.76,
+   "end": 31.64,
+   "word": 81,
+   "vo": "But the moment the latch lifted and the door swung inward, the world changed."
+  },
+  {
+   "id": "inside",
+   "start": 31.64,
+   "end": 34.42,
+   "word": 95,
+   "vo": "The air was different. The light was different."
+  },
+  {
+   "id": "smell",
+   "start": 34.42,
+   "end": 38.44,
+   "word": 103,
+   "vo": "The smell hit first, before the eyes adjusted, and what it carried was"
+  },
+  {
+   "id": "campfire",
+   "start": 38.44,
+   "end": 43.4,
+   "word": 116,
+   "vo": "not what any trail song or bunkhouse story had prepared a first time visitor to absorb."
+  },
+  {
+   "id": "jar",
+   "start": 43.4,
+   "end": 51.66,
+   "word": 132,
+   "vo": "The smell was kerosene. That was the first layer. Then lye soap, the sharp chemical kind used in the washbasins upstairs."
+  },
+  {
+   "id": "stain",
+   "start": 51.66,
+   "end": 65.64,
+   "word": 153,
+   "vo": "Then tobacco, not fresh smoke but the residue of thousands of cigars and hand rolled cigarettes that had soaked into the wallpaper and the curtains and the carpet until the fabric itself had become a record of every man who had stood in this room before."
+  },
+  {
+   "id": "perfume",
+   "start": 65.64,
+   "end": 77.6,
+   "word": 199,
+   "vo": "Then perfume. Cheap perfume, floral and aggressive, layered over something sweet and sour that had no clean name. It was the smell of bodies and business and time,"
+  },
+  {
+   "id": "squeeze",
+   "start": 77.6,
+   "end": 81.72,
+   "word": 227,
+   "vo": "compressed into a parlor no larger than a ranch house sitting room."
+  },
+  {
+   "id": "piano",
+   "start": 81.72,
+   "end": 85.88,
+   "word": 239,
+   "vo": "The piano in the corner was out of tune. Someone was playing it anyway."
+  },
+  {
+   "id": "chatter",
+   "start": 85.88,
+   "end": 91.22,
+   "word": 253,
+   "vo": "Conversation had been happening before the door opened. It stopped when the first timer stepped inside."
+  },
+  {
+   "id": "quiet",
+   "start": 91.22,
+   "end": 98.56,
+   "word": 269,
+   "vo": "The room went quiet. Not silent. Quiet in the way a room goes quiet when every person in it is now looking at the same thing."
+  },
+  {
+   "id": "looked",
+   "start": 98.56,
+   "end": 106.06,
+   "word": 295,
+   "vo": "The first timer stood in that quiet and understood, for the first time, that he was the thing being looked at."
+  }
+ ]
+}

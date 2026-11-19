@@ -1,0 +1,216 @@
+{
+ "timing_source": "ESTIMATE (no voiceover yet)",
+ "end": 422.38,
+ "scenes": [
+  {
+   "id": "t9",
+   "start": 0.0,
+   "end": 2.56,
+   "word": 0,
+   "vo": "Number nine. The Courage."
+  },
+  {
+   "id": "map9",
+   "start": 2.56,
+   "end": 10.57,
+   "word": 4,
+   "vo": "In eighteen seventy nine, a young cattle drover who had just finished a drive up the Western Trail to Dodge City"
+  },
+  {
+   "id": "letter",
+   "start": 10.57,
+   "end": 18.91,
+   "word": 25,
+   "vo": "sat at a table in a saloon on Front Street and wrote a letter to his brother back in Platte County, Missouri."
+  },
+  {
+   "id": "bible",
+   "start": 18.91,
+   "end": 31.69,
+   "word": 47,
+   "vo": "The letter would not be found for nearly a century. It was folded inside a family Bible that passed through three generations before landing in a church donation bin in Joplin."
+  },
+  {
+   "id": "hours",
+   "start": 31.69,
+   "end": 47.57,
+   "word": 78,
+   "vo": "The drover did not describe a visit to a parlor house. He described the hours before one. The internal negotiation. The whiskey. The shame that was already assembling itself before he had done anything at all."
+  },
+  {
+   "id": "vocab",
+   "start": 47.57,
+   "end": 63.06,
+   "word": 114,
+   "vo": "His words carried a confusion that the script he was living inside had no room for, because the frontier did not give young men a vocabulary for loneliness, and it certainly did not give them permission to admit it."
+  },
+  {
+   "id": "war",
+   "start": 63.06,
+   "end": 66.17,
+   "word": 153,
+   "vo": "The war was quiet and entirely internal."
+  },
+  {
+   "id": "church",
+   "start": 66.17,
+   "end": 76.34,
+   "word": 160,
+   "vo": "A childhood spent in a Methodist household in rural Missouri had installed a set of convictions about damnation that did not soften with distance."
+  },
+  {
+   "id": "voice",
+   "start": 76.34,
+   "end": 88.68,
+   "word": 184,
+   "vo": "Two thousand miles of open trail did not erase the voice. It just made the voice harder to hear over the other sound, which was the body, which had its own demands,"
+  },
+  {
+   "id": "nights",
+   "start": 88.68,
+   "end": 100.21,
+   "word": 216,
+   "vo": "and which had been ignored for eleven weeks of dust, cattle, and nights spent on the ground with nothing but a saddle blanket and the breathing of other men."
+  },
+  {
+   "id": "clergy",
+   "start": 100.21,
+   "end": 108.09,
+   "word": 245,
+   "vo": "The frontier had no clergy within two hundred miles for most trail hands. No confessional. No counsel."
+  },
+  {
+   "id": "ceasefire",
+   "start": 108.09,
+   "end": 121.32,
+   "word": 262,
+   "vo": "The only ceasefire between the guilt and the need was whiskey, and the whiskey did not resolve the conflict. It just made the resolution feel like someone else's problem for an hour."
+  },
+  {
+   "id": "human",
+   "start": 121.32,
+   "end": 137.79,
+   "word": 294,
+   "vo": "The collision between upbringing and desire is not a frontier phenomenon. It is a human one. The silence that surrounds it has not changed in a hundred and fifty years. The vocabulary has expanded. The shame has not."
+  },
+  {
+   "id": "ritual",
+   "start": 137.79,
+   "end": 152.1,
+   "word": 332,
+   "vo": "The ritual had steps. Finishing the drink. Standing from the table. Putting on the hat. Walking toward the saloon door. Each step was a decision. Each decision could be reversed."
+  },
+  {
+   "id": "older",
+   "start": 152.1,
+   "end": 166.32,
+   "word": 362,
+   "vo": "Older hands made it easier by going first. They stood and left without announcement, and the act of watching them go made the act of following feel less like a choice and more like a current."
+  },
+  {
+   "id": "seed",
+   "start": 166.32,
+   "end": 184.97,
+   "word": 398,
+   "vo": "The bunkhouse conversations had already laid the groundwork, weeks earlier on the trail. Someone mentioned a name. A house. A street. The information landed in the first timer's mind and sat there, growing roots, until the night it became an address."
+  },
+  {
+   "id": "dozen",
+   "start": 184.97,
+   "end": 206.26,
+   "word": 439,
+   "vo": "The first timer did not decide once. He decided a dozen times, each time overriding the voice that told him to sit back down. The final decision was not the loudest one. It was the one where the voice finally went quiet. Not because it was answered. Because it was exhausted."
+  },
+  {
+   "id": "lonely9",
+   "start": 206.26,
+   "end": 223.18,
+   "word": 490,
+   "vo": "The diaries that survived are remarkably consistent on one point. The men who wrote about their first visits did not describe desire. They described desperation. The word lonely appears in these documents more frequently than any other."
+  },
+  {
+   "id": "trail",
+   "start": 223.18,
+   "end": 239.33,
+   "word": 527,
+   "vo": "These were men who had not touched another human being in months. Whose days were measured in dust and cattle and fence posts and whose nights were measured in silence and cold ground and the low sound of a herd settling."
+  },
+  {
+   "id": "question",
+   "start": 239.33,
+   "end": 267.46,
+   "word": 568,
+   "vo": "The question of how a man articulates desire in a culture that gave him no vocabulary for emotional need has never been adequately answered. The letters do not answer it. They circle the edges of it. They describe the need without naming it. They confess the act without confessing the feeling that preceded it. They are documents of men reaching for a language that did not exist."
+  },
+  {
+   "id": "money",
+   "start": 267.46,
+   "end": 272.37,
+   "word": 635,
+   "vo": "Who went openly and who went in shame depended entirely on money."
+  },
+  {
+   "id": "baron",
+   "start": 272.37,
+   "end": 283.44,
+   "word": 647,
+   "vo": "A cattle baron walked through the front door of a parlor house and tipped his hat to the madam. The act was understood as the privilege of success."
+  },
+  {
+   "id": "alley",
+   "start": 283.44,
+   "end": 293.48,
+   "word": 675,
+   "vo": "A twenty dollar a month cowhand walked down an alley to a crib behind the saloon, moving fast, hoping no one from the outfit saw him."
+  },
+  {
+   "id": "diner",
+   "start": 293.48,
+   "end": 311.8,
+   "word": 701,
+   "vo": "The difference between a man earning in a year what another earns in a week, choosing between a restaurant and a street cart for the same hunger. Same act. Same town. Same night. Separated by wages into two entirely different moral categories."
+  },
+  {
+   "id": "dary",
+   "start": 311.8,
+   "end": 334.5,
+   "word": 743,
+   "vo": "David Dary, at the University of Kansas, documented in nineteen eighty one that trail hands on cattle drives averaging eleven to fourteen weeks experienced levels of social deprivation so severe, that post drive intake records from Fort Worth and Abilene cataloged physical and behavioral symptoms consistent with prolonged human isolation."
+  },
+  {
+   "id": "nightmare",
+   "start": 334.5,
+   "end": 346.15,
+   "word": 793,
+   "vo": "But here is where the nightmare begins. The courage was not bravery. It was not a young man boldly stepping into the world. The courage was collapse."
+  },
+  {
+   "id": "runsout",
+   "start": 346.15,
+   "end": 361.81,
+   "word": 820,
+   "vo": "It was the moment a man stopped fighting the loneliness and let it take him somewhere he already knew he would regret. The decision was not made in strength. It was made in the place where resistance runs out."
+  },
+  {
+   "id": "cover",
+   "start": 361.81,
+   "end": 381.86,
+   "word": 859,
+   "vo": "Every bunkhouse story that framed the visit as a rite of passage, a reward, a celebration of the trail's end, was covering something smaller and more painful. A man sitting at a table, staring at his hands, trying to find one more reason not to stand up. And failing."
+  },
+  {
+   "id": "broke",
+   "start": 381.86,
+   "end": 399.15,
+   "word": 908,
+   "vo": "The trail drives of the American frontier produced tens of thousands of men whose emotional lives had been compressed into a space smaller than a saddle blanket. When they reached the end of the trail, they did not celebrate. They broke."
+  },
+  {
+   "id": "onedoor",
+   "start": 399.15,
+   "end": 422.38,
+   "word": 949,
+   "vo": "And the place they broke toward was not chosen out of desire. It was chosen because it was the only door that was open. The courage it took to walk through it was not the kind anyone would recognize as courage at all. It was the sound a man makes when something inside him stops holding."
+  }
+ ]
+}
