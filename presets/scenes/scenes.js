@@ -22,6 +22,9 @@
     fieldSpring:  { wall: '#B9DC8F', wall2: '#A5CE7E', stone: '#C9E4A6', hi: '#E4F2C9', floor: '#B4D98A', floor2: '#9FCB75', glow: '#FFFDF0', wood: '#B98A5F', metal: '#8E8A84', sky: '#DCEFF6', dirt: '#A87C5A' },
     hospitalMint: { wall: '#CDE8C4', wall2: '#BBDDB0', stone: '#DCEFD6', hi: '#EEF8EA', floor: '#E8ECEE', floor2: '#D6DCE0', glow: '#FFFFFF', wood: '#C9A57A', metal: '#A9B2BA', sky: '#CFE6F5', sheet: '#A9D39A' },
     infoPaper:    { wall: '#F6F7FB', wall2: '#D9DDEA', stone: '#FFFFFF', hi: '#FFFFFF', floor: '#F6F7FB', floor2: '#E8EBF3', glow: '#FFFFFF', shadow: '#BFE0F2', coral: '#F08A7E', blood: '#E06A5A', skin: '#F2C3A0' },
+    prairieDust:  { wall: '#D9A86C', wall2: '#C08D55', stone: '#E7C08A', hi: '#F3DDB0', floor: '#E2BE8A', floor2: '#CDA170', glow: '#FFF1C8', wood: '#B98353', metal: '#6F6A66', sky: '#F4E2B8', mesa: '#D98C5F' },
+    parlorRose:   { wall: '#C98F86', wall2: '#B57A72', stone: '#D9A59C', hi: '#E8C6B8', floor: '#8A5A40', floor2: '#74492F', glow: '#FFD58A', wood: '#8C5A3A', metal: '#7D7A80', sky: '#3B4A63', carpet: '#8E3B3B', flower: '#EAD7A6', leaf: '#86935E' },
+    trailNight:   { wall: '#2F3A4F', wall2: '#26303F', stone: '#3E4A5E', hi: '#55627A', floor: '#4A5568', floor2: '#3E4A5E', glow: '#FFC86B', wood: '#7A5A3F', metal: '#5A606A', sky: '#2F3A4F' },
     mapSea:       { wall: '#9ED3CC', wall2: '#86C5BD', stone: '#E9C48A', hi: '#F3D9A8', floor: '#9ED3CC', floor2: '#86C5BD', glow: '#FFFFFF', coral: '#F08A7E' },
   };
 
@@ -73,11 +76,40 @@
     flower(x, y, s, col) { return P(x, y, s, '<path d="M0 0 Q4 -40 0 -70" ' + ln('#6FA35A', 4) + '/><path d="M0 -30 q20 -14 26 4 q-14 6 -26 -4" ' + st('#8DC06E', 2.5) + '/>' + [0, 72, 144, 216, 288].map((a) => '<ellipse cx="0" cy="-86" rx="8" ry="15" transform="rotate(' + a + ' 0 -72)" ' + st(col || '#FFFFFF', 2.5) + '/>').join('') + '<circle cx="0" cy="-72" r="7" ' + st('#F2C14E', 2) + '/>'); },
     grass(x, y, s) { return P(x, y, s, '<path d="M-12 0 Q-10 -22 -18 -34 M0 0 Q2 -30 6 -42 M10 0 Q14 -18 24 -26" ' + ln('#5E8F4A', 3.5) + '/>'); },
     cloud(x, y, s) { return P(x, y, s, '<path d="M-150 0 Q-150 -40 -100 -40 Q-80 -80 -20 -70 Q20 -100 70 -64 Q130 -70 140 -24 Q170 -10 150 0 Z" ' + st('#B8BEC4', 3) + '/>'); },
+    // ---- Wild West (added 2026-11-18) ----
+    // false-front store, base = boardwalk at (x,y), 380 wide. o: {col, seed, plank (blank sign board), porch}
+    storefront(x, y, s, pal, o) { o = o || {}; const r = rng(o.seed || 1); const c = o.col || pal.wall, top = o.top || (-440 - Math.round(r() * 3) * 20);
+      const cap = r() < 0.5 ? '<path d="M-190 ' + top + ' H190" ' + ln(INK, 14) + '/><path d="M-200 ' + top + ' H200" ' + ln(pal.wood, 8) + '/>' : '<path d="M-60 ' + top + ' Q0 ' + (top - 50) + ' 60 ' + top + ' Z" ' + st(c) + '/>';
+      let b = '<rect x="-190" y="' + top + '" width="380" height="' + -top + '" ' + st(c) + '/>' + cap;
+      for (let k = top + 34; k < -20; k += 34) b += '<path d="M-186 ' + k + ' H186" ' + ln('rgba(42,37,34,.16)', 3) + '/>';
+      b += '<path d="M60 ' + (top + 4) + ' V-4 L190 -4 V' + (top + 4) + ' Z" style="fill:' + (pal.wall2 || '#000') + ';opacity:.35"/>';
+      if (o.plank !== false) b += '<rect x="-150" y="' + (top + 30) + '" width="300" height="76" rx="6" ' + st(pal.hi || '#F3DDB0') + '/>';
+      const win = (wx) => '<rect x="' + (wx - 46) + '" y="-250" width="92" height="130" rx="4" ' + st(pal.sky || '#BFE3F0') + '/><path d="M' + wx + ' -250 V-120 M' + (wx - 46) + ' -185 H' + (wx + 46) + '" ' + ln(INK, 4) + '/><path d="M' + (wx - 30) + ' -150 l30 -40" ' + ln('rgba(255,255,255,.7)', 6) + '/>';
+      b += win(-118) + win(118);
+      b += '<rect x="-62" y="-246" width="124" height="246" ' + st('#7A5236') + '/><rect x="-50" y="-236" width="100" height="236" ' + st('#C9A06A') + '/><path d="M-20 -236 V0 M20 -236 V0" ' + ln('rgba(42,37,34,.35)', 3) + '/><rect x="30" y="-128" width="14" height="22" rx="3" ' + st('#4F555C', 3) + '/>';
+      if (o.porch !== false) b += '<path d="M-205 -300 L205 -300 L195 -270 L-195 -270 Z" ' + st(pal.wood) + '/><path d="M-178 -270 V0 M178 -270 V0" ' + ln(INK, 16) + '/><path d="M-178 -270 V0 M178 -270 V0" ' + ln(pal.wood, 9) + '/>';
+      return P(x, y, s, b); },
+    hitchPost(x, y, s, pal) { const w = (pal && pal.wood) || '#B98353'; return P(x, y, s, '<path d="M-90 -90 H90 M-80 0 V-96 M80 0 V-96" ' + ln(INK, 18) + '/><path d="M-90 -90 H90 M-80 0 V-96 M80 0 V-96" ' + ln(w, 10) + '/>'); },
+    settee(x, y, s, col) { col = col || '#B9A27A'; return P(x, y, s, '<path d="M-250 -60 V-210 Q-250 -270 -170 -262 Q0 -300 170 -262 Q250 -270 250 -210 V-60 Z" ' + st(col) + '/>' +
+      '<rect x="-270" y="-120" width="540" height="70" rx="22" ' + st(col) + '/><path d="M-270 -150 Q-300 -150 -290 -90 L-262 -60 M270 -150 Q300 -150 290 -90 L262 -60" ' + st(col) + '/>' +
+      '<path d="M-230 -50 L-240 0 M230 -50 L240 0" ' + ln(INK, 14) + '/><path d="M-230 -50 L-240 0 M230 -50 L240 0" ' + ln('#6B4A2E', 7) + '/>' +
+      [-170, -60, 50, 160].map((xx) => '<circle cx="' + xx + '" cy="-200" r="7" style="fill:rgba(42,37,34,.35)"/>').join('')); },
+    piano(x, y, s) { return P(x, y, s, '<rect x="-230" y="-330" width="460" height="330" rx="10" ' + st('#5A3A2A') + '/><rect x="-250" y="-350" width="500" height="34" rx="8" ' + st('#6E4A35') + '/>' +
+      '<rect x="-200" y="-300" width="400" height="110" rx="6" ' + st('#4A2F22') + '/><rect x="-236" y="-176" width="472" height="40" ' + st('#FFFBEA') + '/>' +
+      Array.from({ length: 16 }, (_, i) => '<path d="M' + (-236 + i * 29.5) + ' -176 V-136" ' + ln(INK, 2.5) + '/>' + (i % 7 === 2 || i % 7 === 6 ? '' : '<rect x="' + (-226 + i * 29.5) + '" y="-176" width="14" height="24" style="fill:' + INK + '"/>')).join('') +
+      '<path d="M-200 -136 V-10 M200 -136 V-10" ' + ln(INK, 18) + '/><path d="M-200 -136 V-10 M200 -136 V-10" ' + ln('#6E4A35', 10) + '/>'); },
+    keroLamp(x, y, s, t, on) { const k = 1 + 0.04 * Math.sin((t || 0) * 9); return P(x, y, s, (on === false ? '' : glow(0, -110, 260 * k, '#FFD58A', 0.55)) +
+      '<path d="M-40 0 Q-44 -20 -20 -26 H20 Q44 -20 40 0 Z" ' + st('#B98353') + '/><path d="M-30 -26 Q-60 -70 -24 -96 H24 Q60 -70 30 -26 Z" ' + st('#E3B341') + '/>' +
+      '<path d="M-16 -96 Q-30 -130 -12 -170 H12 Q30 -130 16 -96 Z" ' + st('rgba(235,245,250,.7)', 3.5) + '/>' + (on === false ? '' : '<path d="M0 -150 Q12 -128 0 -110 Q-12 -128 0 -150 Z" style="fill:#FFB347"/>')); },
+    washstand(x, y, s) { return P(x, y, s, '<rect x="-110" y="-200" width="220" height="200" rx="6" ' + st('#B98353') + '/><path d="M-110 -150 H110" ' + ln(INK, 4) + '/><circle cx="0" cy="-90" r="8" style="fill:' + INK + '"/>' +
+      '<path d="M-90 -200 Q0 -150 90 -200 Z" ' + st('#F4F1EB') + '/><path d="M-30 -210 Q-40 -300 0 -310 Q40 -300 30 -210 Z" ' + st('#F4F1EB') + '/><path d="M30 -290 Q60 -280 40 -240" ' + ln(INK, 5) + '/>'); },
+    cactus(x, y, s) { return P(x, y, s, '<path d="M-24 0 V-200 Q-24 -230 0 -230 Q24 -230 24 -200 V0 Z M24 -110 H60 V-160 Q60 -176 72 -176 Q84 -176 84 -160 V-90 H24 M-24 -80 H-60 V-130 Q-60 -146 -72 -146 Q-84 -146 -84 -130 V-60 H-24" ' + st('#7FA36A') + '/>'); },
     house(x, y, s, pal, seed) { const r = rng(seed || 7); const w = 160 + r() * 80, h = 110 + r() * 50; return P(x, y, s, '<rect x="' + f(-w / 2) + '" y="' + f(-h) + '" width="' + f(w) + '" height="' + f(h) + '" ' + st('#EFE6D6') + '/><path d="M' + f(-w / 2) + ' ' + f(-h) + ' H' + f(w / 2) + ' M' + f(-w / 4) + ' 0 V' + f(-h) + ' M' + f(w / 4) + ' 0 V' + f(-h) + ' M' + f(-w / 2) + ' ' + f(-h / 2) + ' L' + f(-w / 4) + ' ' + f(-h) + ' M' + f(w / 4) + ' ' + f(-h) + ' L' + f(w / 2) + ' ' + f(-h / 2) + '" ' + ln('#7A5236', 6) + '/><path d="M' + f(-w / 2 - 20) + ' ' + f(-h) + ' L0 ' + f(-h - 90) + ' L' + f(w / 2 + 20) + ' ' + f(-h) + ' Z" ' + st('#B5694A') + '/>'); },
     tower(x, y, s, pal, roof) { const c = (pal && pal.wall) || '#BCC2C7'; return P(x, y, s, '<rect x="-50" y="-300" width="100" height="300" ' + st(c) + '/>' + (roof ? '<path d="M-62 -300 L0 -400 L62 -300 Z" ' + st((pal && pal.hi) || '#EEF2F4') + '/>' : '<path d="M-58 -300 v-26 h22 v14 h22 v-14 h28 v14 h22 v-14 h22 v26 Z" ' + st(c) + '/>') + '<rect x="-8" y="-220" width="16" height="34" rx="8" ' + st('#4F555C', 2.5) + '/><path d="M-30 -120 h18 M10 -80 h22" ' + ln(INK, 2.5) + '/>'); },
     church(x, y, s, pal) { const c = (pal && pal.wall) || '#BCC2C7', rf = (pal && pal.hi) || '#EEF2F4'; return P(x, y, s, '<rect x="-260" y="-200" width="380" height="200" ' + st(c) + '/><path d="M-280 -200 L-70 -300 L140 -200 Z" ' + st(rf) + '/><rect x="120" y="-380" width="110" height="380" ' + st(c) + '/><path d="M110 -380 L175 -460 L240 -380 Z" ' + st(rf) + '/><path d="M175 -460 v-40 M160 -486 h30" ' + ln(INK, 4) + '/><path d="M155 -300 v-40 a20 20 0 0 1 40 0 v40 Z" ' + st('#4F555C', 3) + '/>' + [-220, -150, -80, -10, 60].map((xx) => '<path d="M' + xx + ' -60 v-70 a14 14 0 0 1 28 0 v70 Z" ' + st('#4F555C', 2.5) + '/>').join('') + '<path d="M140 0 v-70 a35 35 0 0 1 70 0 v70" ' + st('#4F555C', 3) + '/>'); },
   };
 
+  W.STREET_TOPS = [-460, -440, -480, -440, -460]; // false-front heights on mainStreet (sign plank top = 760 + top + 30)
   // ---------- backgrounds (full 1920x1080) ----------
   W.bg = {
     // stone interior: suggested blocks on a flat wall + floor band (13, 15, 18)
@@ -141,6 +173,36 @@
       for (let i = -6; i <= 14; i++) s += '<path d="M' + (i * 160) + ' 1080 L' + f(960 + (i * 160 - 960) * 0.45) + ' 640" ' + ln(INK, 2.5) + '/>';
       [740, 860, 1010].forEach((y) => (s += '<path d="M0 ' + y + ' H1920" ' + ln(INK, 2.5) + '/>'));
       if (o.beds !== false) s += W.prop.bed(1300, 640, 0.55, pal) + W.prop.bed(1700, 660, 0.7, pal) + W.prop.bed(560, 900, 1, pal);
+      return s; },
+    // ---- Wild West (added 2026-11-18) ----
+    // cattle town main street: sun, mesas, 5 false-front stores (door centres x = 192 + 384*i, boardwalk top y = 760), dirt street
+    mainStreet(pal, o) { o = o || {}; const r = rng(o.seed || 11); const cols = o.cols || [pal.wall, '#C9A47A', '#B98A6A', pal.wall, '#C7B08A'];
+      let s = '<rect width="1920" height="1080" style="fill:' + pal.sky + '"/>' + glow(1540, 150, 420, '#FFF6D8', 0.8) + '<circle cx="1540" cy="150" r="70" ' + st('#FFF3CF', 3) + '/>';
+      s += '<path d="M0 330 L140 330 L170 260 L360 260 L390 330 L900 330 L930 290 L1080 290 L1110 330 L1920 330 V480 H0 Z" ' + st(pal.mesa || '#D98C5F', 3) + '/>';
+      s += '<path d="M0 400 Q500 370 960 390 T1920 380 V500 H0 Z" style="fill:' + pal.floor2 + '"/>';
+      for (let i = 0; i < 5; i++) s += W.prop.storefront(192 + 384 * i, 760, 1, pal, { col: cols[i], seed: (o.seed || 11) + i * 7, plank: !(o.blank === i), top: W.STREET_TOPS[i] });
+      s += '<rect y="752" width="1920" height="40" ' + st(pal.wood) + '/>'; for (let x = 40; x < 1920; x += 80) s += '<path d="M' + x + ' 754 V790" ' + ln('rgba(42,37,34,.35)', 3) + '/>';
+      s += '<rect y="792" width="1920" height="288" style="fill:' + pal.floor + '"/><path d="M0 792 H1920" ' + ln(INK, LN) + '/>';
+      s += '<path d="M0 930 Q960 900 1920 935 M0 1010 Q960 985 1920 1015" ' + ln('rgba(42,37,34,.18)', 6) + '/>';
+      for (let i = 0; i < 18; i++) s += '<path d="M' + f(r() * 1900) + ' ' + f(830 + r() * 240) + ' h' + f(14 + r() * 26) + '" ' + ln('rgba(42,37,34,.3)', 3) + '/>';
+      return s; },
+    // cramped parlor: floral wallpaper (peeling seams), wainscot, worn carpet runner, staircase right, curtained window, doorway at x 120-300
+    parlor(pal, o) { o = o || {}; const r = rng(o.seed || 21); const fy = o.floorY || 800;
+      let s = '<rect width="1920" height="1080" style="fill:' + pal.wall + '"/>';
+      for (let x = 0; x < 1920; x += 120) s += '<rect x="' + x + '" y="0" width="60" height="' + fy + '" style="fill:' + pal.wall2 + ';opacity:.45"/>';
+      for (let y = 60, row = 0; y < 600; y += 110, row++) for (let x = (row % 2) * 60 + 30; x < 1920; x += 120) s += '<g transform="translate(' + x + ' ' + y + ')"><circle r="9" style="fill:' + pal.flower + '"/>' + [0, 90, 180, 270].map((a) => '<ellipse cx="0" cy="-14" rx="6" ry="9" transform="rotate(' + a + ')" style="fill:' + pal.flower + ';opacity:.8"/>').join('') + '<path d="M10 10 q14 6 18 20" ' + ln(pal.leaf, 4) + '/></g>';
+      (o.peel || [720, 1320]).forEach((x) => { s += '<path d="M' + x + ' 0 V600" ' + ln('rgba(42,37,34,.35)', 3) + '/><path d="M' + x + ' 40 q36 10 30 60 q-20 -14 -30 -10 Z" ' + st(pal.hi, 3) + '/><path d="M' + x + ' 380 q-30 20 -22 70 q14 -20 22 -24 Z" ' + st(pal.hi, 3) + '/>'; });
+      s += '<rect y="600" width="1920" height="' + (fy - 600) + '" style="fill:' + pal.wood + '"/><path d="M0 600 H1920" ' + ln(INK, LN) + '/><path d="M0 616 H1920" ' + ln('rgba(42,37,34,.35)', 3) + '/>';
+      for (let x = 60; x < 1920; x += 240) s += '<rect x="' + x + '" y="636" width="180" height="' + (fy - 660) + '" rx="6" ' + ln('rgba(42,37,34,.35)', 3) + '/>';
+      s += '<rect y="' + fy + '" width="1920" height="' + (1080 - fy) + '" style="fill:' + pal.floor + '"/><path d="M0 ' + fy + ' H1920" ' + ln(INK, LN) + '/>';
+      for (let i = 0; i < 12; i++) s += '<path d="M' + (i * 170 - 60) + ' 1080 L' + f(960 + (i * 170 - 1020) * 0.6) + ' ' + fy + '" ' + ln('rgba(42,37,34,.25)', 3) + '/>';
+      s += '<path d="M220 ' + (fy + 4) + ' L1500 ' + (fy + 4) + ' L1760 1080 L-40 1080 Z" ' + st(pal.carpet) + '/><path d="M260 ' + (fy + 20) + ' L1480 ' + (fy + 20) + ' L1700 1060 L10 1060 Z" ' + ln('#C7A35E', 5) + '/>';
+      s += '<path d="M640 ' + (fy + 30) + ' Q900 ' + (fy + 60) + ' 1100 ' + (fy + 120) + ' Q980 ' + (fy + 200) + ' 900 1080 L640 1080 Q700 ' + (fy + 160) + ' 640 ' + (fy + 30) + ' Z" style="fill:' + pal.floor + ';opacity:.75"/>';
+      if (o.door !== false) s += '<rect x="110" y="300" width="200" height="' + (fy - 300) + '" ' + st('#3B2A22') + '/><rect x="96" y="286" width="228" height="' + (fy - 286) + '" ' + ln(INK, 4) + '/>';
+      if (o.window !== false) s += '<rect x="560" y="140" width="220" height="300" ' + st(pal.sky) + '/><path d="M670 140 V440 M560 290 H780" ' + ln(INK, 4) + '/><circle cx="720" cy="200" r="14" style="fill:#F4EFD8"/>' +
+        '<path d="M520 120 H820" ' + ln(INK, 10) + '/><path d="M530 124 Q560 300 540 470 L600 470 Q590 300 610 124 Z M810 124 Q780 300 800 470 L740 470 Q750 300 730 124 Z" ' + st('#9C4A4A') + '/>';
+      if (o.stairs !== false) { s += '<path d="M1500 ' + fy + ' L1920 330 V' + fy + ' Z" style="fill:' + pal.floor2 + '"/>'; for (let i = 0; i < 8; i++) { const x = 1500 + i * 56, y = fy - i * 58; s += '<path d="M' + x + ' ' + y + ' V' + (y - 58) + ' H' + (x + 56) + '" ' + ln(INK, 4) + '/>'; }
+        s += '<path d="M1520 ' + (fy - 150) + ' L1960 ' + (fy - 640) + '" ' + ln(INK, 18) + '/><path d="M1520 ' + (fy - 150) + ' L1960 ' + (fy - 640) + '" ' + ln(pal.wood, 10) + '/>'; for (let i = 0; i < 8; i++) s += '<path d="M' + (1530 + i * 56) + ' ' + (fy - 160 - i * 62) + ' V' + (fy - 20 - i * 58) + '" ' + ln(INK, 6) + '/>'; }
       return s; },
     // infographic paper: white with a faint grid (07)
     paper(pal) { let s = '<rect width="1920" height="1080" style="fill:' + pal.wall + '"/>'; for (let x = 0; x <= 1920; x += 160) s += '<path d="M' + x + ' 0 V1080" ' + ln(pal.wall2, 3) + '/>'; for (let y = 40; y <= 1080; y += 160) s += '<path d="M0 ' + y + ' H1920" ' + ln(pal.wall2, 3) + '/>'; return s + wash(pal, 0.5, 0.5); },

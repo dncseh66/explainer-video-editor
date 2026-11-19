@@ -1,0 +1,4 @@
+{
+ "kind": "js",
+ "text": "(function () {\n  const F = W.F, { seg, eio, eo, lerp } = F, T = F.T;\n  kit.scene('chatter', {\n    init(kit) {\n      this.S = kit.start; this.E = kit.start + kit.dur; const M = W.MOODS.parlorRose;\n      kit.stage.append(kit.h(F.frame(F.room('ch', M), '', '')));\n      const q = F.q(kit.stage); this.root = kit.stage; this.R = F.bindRoom(kit.stage, 'ch'); this.cam = q('.cam');\n      this.L = [[this.S, 1.2, 1100, 600], [T(258), 1.6, 560, 560, 0.6], [T(262), 1.0, 960, 540]];\n    },\n    render(t) {\n      const a = t + this.S;\n      F.camL(this.cam, a, this.L, this.E);\n      const door = eio(seg(a, T(259), F.TE(260))), step = eio(seg(a, T(267), F.TE(268)));\n      F.poseRoom(this.R, a, { talk: true, play: true, turn: T(262), door, hero: { show: door > 0.3, x: lerp(210, 290, step), walk: step > 0 && step < 1, expr: 'worried' } });\n    },\n  });\n})();\n"
+}

@@ -11,6 +11,7 @@
 | Body (simple) — DEFAULT | Thin black stick limbs (channel decision); small WHITE oval feet; small WHITE round hands (channel decision, never black balls). | 10, 16 |
 | Body (close-up) | Hands become white 4-finger cartoon hands with outline; bare skin on the BODY (chest, limbs in crowds) is peach `#F2D2B6` while the head stays white. | 04, 13, 17 |
 | Clothes | Flat fill + one darker shade for folds/right side, a few fold lines, outline. Monk robe brown `#A87650` with rope belt, hood down on shoulders, sandals. Prisoners: torn brown tunic with jagged hem. Guard: mustard tunic + teal sleeves/legs + bucket hat. Nurse: light-blue scrubs + name tag. | 05, 10, 08, 17 |
+| Clothes (Wild West, 2026-11-18) | `outfit:'cowboy'` (shirt + vest + red bandana + jeans + boots + `hat:'cowboy'`, recolour with `color/shade/hatColor`), `suit`, `gown` (madam), `saloon` (dress with white collar), `barkeep`; hats `cowboy`, `bowler`. Narrator for western films = `W.NARRATOR_WEST` (grey mustache, glasses, brown hat). | — |
 | Traits | Hair, beards, hats and age go ON TOP of the white head (hair shapes hug the circle). | 00 (scientist mustache) |
 
 ## 2. Scenes

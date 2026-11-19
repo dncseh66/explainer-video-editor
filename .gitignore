@@ -14,3 +14,7 @@ output/final/
 **/frames/
 *.mp4
 *.mov
+
+# local links + test frames (2026-11-19)
+cache
+**/frames-test/

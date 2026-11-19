@@ -27,6 +27,19 @@ Scenes, props, infographics and colour moods: `presets/style/SCENES.md` + `prese
 - `.claude/settings.json` runs `scripts/cloud_setup.sh` at session start in the cloud (installs ffmpeg + headless Chromium). `scripts/bin/{mix,mux,vo_concat,encode}` use the Swift builds in `scripts/bin/mac/` on a Mac and `scripts/av.py` (ffmpeg) elsewhere — same arguments.
 - Finished videos are not in git: when a cloud session finishes a film, commit only the source (snapshot, timing, scripts) and hand the MP4 back as a download, or keep rendering finals locally.
 
+## Wild West film ("The First Timer", in progress 2026-11-19)
+- Script: `scripts_text/wild-west-first-timer-full.txt` (10 chapters, ~9,760 words, ~54 min). Built in parts, one film folder per part in `presets/film-snapshot/wild-west-*/`; order + voice in `presets/timing/wild-west-parts.json`. Time/cost log: `production/wild-west-first-timer.md`.
+- Shared kit: `presets/film-snapshot/wild-west-first-timer-2min/src/film-kit.js` (cast `F.CAST`, `W.NARRATOR_WEST`, street/parlor/saloon sets, props, `F.scn` scene helper, `F.chapterTitle`). Each part has `film.json` (name + kit path), `src/scenes.src.js`, `src/shots.py` (shot list + sound cues).
+- Scenes are timed by SCRIPT WORD NUMBER: marker `//@scene <id> <wordIndex>`, `F.T(i)` = start of word i. `python3 -I build.py` aligns the part's script to the voiceover (or to its slice of the full voiceover, cut with ffmpeg) and writes modules, `scene-times.json` and `presets/timing/<part>.json`. Without a voiceover it estimates timing so shots can be built first.
+- Popping (`W.pop`/`F.poofAt`) a `<g>` that has a `transform` attribute wipes its position: put the class on an outer `<g>` (the kit's `F.G` does this).
+- Full narration was submitted to ai33 on 2026-11-19 as ONE job (task `37afb29f-7162-4daf-b58f-e354473ad90a`, 55,327 chars). `scripts/tts.py` now saves a paid task id in `cache/tts/<hash>/pending.json` and resumes it instead of paying again; on another machine that file is missing, so check the ai33 dashboard before re-running the full script.
+- Status: ch.10 part 1 rendered (`output/final/wild-west-first-timer-2min.mp4`, local only); ch.10 part 2 (27 shots) and ch.9 (30 shots) built, waiting for the full voice; chapters 8–1 not started.
+
+## Gotchas (learned 2026-11-18/19)
+- ai33 rejects a text with a stretch of ~45+ words without punctuation (`text_missing_punctuation`, no charge): add a comma. `HTTP 402 insufficient_credits` = top up; retrying won't help.
+- In a git worktree, `.env` and `cache/` live only in the main checkout: symlink them in before `scripts/tts.py`.
+- OneDrive can make a just-written file unreadable for a minute ("Operation timed out"): the Swift `scripts/bin/mix` then fails with a bare error and `av.py` skips it as missing. Re-read the file, then `python3 -I scripts/av.py mix …`.
+
 ## Sound (Epidemic Sound)
 - The `epidemic-sound` MCP server (`.mcp.json`) gives music + SFX search and download; its key is `EPIDEMIC_SOUND_MCP_API_KEY` in `.env`, read by `scripts/es_mcp_headers.sh`. Key expires ~2027-11.
 - Pick cues per shot from the shot list's `sfx` field and DIRECTING.md §7; save downloads to `assets/sound/{music,sfx}/` and log each choice in `presets/timing/<name>.json` so it is never searched twice.

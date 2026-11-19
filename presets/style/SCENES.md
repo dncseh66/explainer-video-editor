@@ -17,6 +17,9 @@ Pick the mood from the story beat, not at random. Characters keep their own colo
 | `fieldSpring` | countryside, graves, "years later", hopeful beats | sky `#DCEFF6`, grass `#B4D98A`, fences `#B98A5F`, small flowers | 14, 16 |
 | `hospitalMint` | medicine, recovery, modern science | mint wall `#CDE8C4`, tiles `#E8ECEE`, metal `#A9B2BA` | 08 |
 | `infoPaper` | diagrams, comparisons, anatomy | white grid paper, shadow blue `#BFE0F2`, coral `#F08A7E` | 07, 09 |
+| `prairieDust` | Wild West streets, cattle towns, daytime exteriors | sky `#F4E2B8`, sun-bleached wood `#D9A86C`, dirt `#E2BE8A`, mesas `#D98C5F` | — |
+| `parlorRose` | Wild West interiors: parlor houses, saloons, cramped rooms | faded rose wallpaper `#C98F86`, dark wood `#8C5A3A`, red carpet `#8E3B3B`, lamp glow `#FFD58A` | — |
+| `trailNight` | trail camps, night exteriors, campfires | night blue `#2F3A4F`, fire glow `#FFC86B` | — |
 | `mapSea` | maps and geography | sea `#9ED3CC`, land `#E9C48A` | 11 |
 
 ## 2. Backgrounds (`W.bg.*`, full 1920×1080)
@@ -29,13 +32,15 @@ Pick the mood from the story beat, not at random. Characters keep their own colo
 | `snowTown(mood,{seed})` | rolling snow hills, church, walled town with towers, bare trees | — |
 | `field(mood,{seed})` | layered hills, broken fences, grass tufts, flowers | — |
 | `ward(mood,{beds})` | tall windows with light streaks, perspective tiles, metal beds | `beds:false` |
+| `mainStreet(mood,{blank})` | cattle-town main street: sun, mesas, 5 false-front stores (door centres x = 192+384·i, boardwalk top y 760), dirt street; `blank:i` = store i has no sign board. Sign text = HTML (`W.F.signs` in the Wild West film kit) | — |
+| `parlor(mood,{peel,door,window,stairs})` | cramped parlor: floral wallpaper with peeling seams, wainscot, worn carpet runner, curtained window, doorway at x 110–310, staircase right | — |
 | `paper(mood)` | infographic grid paper | — |
 | `sea(mood)` | flat sea for maps (draw land with `W.style.land(d)`) | — |
 
 Rules: flat fills + one soft wash (`wash()` is built in); same outline weight as characters (4 px on 1920); light comes from a source you can see (torch, fire, window) as a soft radial glow (`W.glow`); keep the area behind captions calm.
 
 ## 3. Props (`W.prop.*(x, y, scale, mood?)`, base at x,y)
-Furniture: `table`, `bench`, `stool`, `barrel`, `bed`, `door`. Tableware/food: `bowl`, `cup`, `bread` (character item). Light: `torch(t)`, `fire(t)` (flicker from time `t`). Architecture: `window(arched)`, `barredWindow`, `bars(w,h)`, `tower(roof)`, `church`, `house`. Nature: `tree(seed)` (bare, black), `fence(n)`, `flower(col)`, `grass`, `cloud`, `straw(n,seed)`. Paper: `scroll`, `quill`.
+Furniture: `table`, `bench`, `stool`, `barrel`, `bed`, `door`. Tableware/food: `bowl`, `cup`, `bread` (character item). Light: `torch(t)`, `fire(t)` (flicker from time `t`). Architecture: `window(arched)`, `barredWindow`, `bars(w,h)`, `tower(roof)`, `church`, `house`. Nature: `tree(seed)` (bare, black), `fence(n)`, `flower(col)`, `grass`, `cloud`, `straw(n,seed)`. Paper: `scroll`, `quill`. Wild West: `storefront(o)`, `hitchPost`, `cactus`, `settee(col)`, `piano` (upright), `keroLamp(t,on)`, `washstand`.
 Rules: wood has 2–3 grain lines; metal is flat grey with dark outline; objects sit on the floor line (no floating), drawn at a scale that matches the characters.
 
 ## 4. Infographics (`W.info.*`)

@@ -1,0 +1,37 @@
+{
+  "id": "7e6b8a5e-3c65-48a2-82a6-04ed38475212",
+  "created_at": "2026-11-18T18:38:34.223Z",
+  "status": "done",
+  "credit_cost": 2243,
+  "metadata": {
+    "v3": {
+      "provider": "elevenlabs",
+      "raw_voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY"
+    },
+    "data": {
+      "model_id": "eleven_multilingual_v2",
+      "file_name": "wild-west-first-timer-2min",
+      "multi_turn": false,
+      "with_loudnorm": false,
+      "with_transcript": true
+    },
+    "query": {},
+    "srt_url": "https://cdn.ai33.pro/v3/tts/7e6b8a5e-3c65-48a2-82a6-04ed38475212_1795027114647.srt?name=wild-west-first-timer-2min.srt&dl=1",
+    "json_url": "https://cdn.ai33.pro/v3/tts/7e6b8a5e-3c65-48a2-82a6-04ed38475212_1795027114647.json?name=wild-west-first-timer-2min.json&dl=1",
+    "voice_id": "E95b3lkMWHDsKeHJaIcY",
+    "transcript_status": "completed",
+    "transcript_credit_cost": 292,
+    "audio_url": "https://cdn.ai33.pro/v3/tts/7e6b8a5e-3c65-48a2-82a6-04ed38475212_1795027114647.mp3?name=wild-west-first-timer-2min.mp3&dl=1"
+  },
+  "progress": 100,
+  "type": "tts",
+  "updated_at": "2026-11-18T18:38:50.000Z",
+  "text": "All right, let's go. Number ten. The Door. The front door of a parlor house on a cattle town's main street looked like every other door on the block. Same pine frame. Same iron latch. Same coat of paint cracking in the same prairie sun. A man walking toward it in eighteen seventy eight could have been walking toward the dry goods store or the barber or the land office. Nothing on the outside announced what waited on the other side. But the moment the latch lifted and the door swung inward, the world changed. The air was different. The light was different. The smell hit first, before the eyes adjusted, and what it carried was not what any trail song or bunkhouse story had prepared a first time visitor to absorb. The smell was kerosene. That was the first layer. Then lye soap, the sharp chemical kind used in the washbasins upstairs. Then tobacco, not fresh smoke but the residue of thousands of cigars and hand rolled cigarettes that had soaked into the wallpaper and the curtains and the c",
+  "text_length": 1742,
+  "text_truncated": true,
+  "_request": {
+    "speed": 1.0,
+    "text": "All right, let's go. Number ten. The Door. The front door of a parlor house on a cattle town's main street looked like every other door on the block. Same pine frame. Same iron latch. Same coat of paint cracking in the same prairie sun. A man walking toward it in eighteen seventy eight could have been walking toward the dry goods store or the barber or the land office. Nothing on the outside announced what waited on the other side. But the moment the latch lifted and the door swung inward, the world changed. The air was different. The light was different. The smell hit first, before the eyes adjusted, and what it carried was not what any trail song or bunkhouse story had prepared a first time visitor to absorb. The smell was kerosene. That was the first layer. Then lye soap, the sharp chemical kind used in the washbasins upstairs. Then tobacco, not fresh smoke but the residue of thousands of cigars and hand rolled cigarettes that had soaked into the wallpaper and the curtains and the carpet until the fabric itself had become a record of every man who had stood in this room before. Then perfume. Cheap perfume, floral and aggressive, layered over something sweet and sour that had no clean name. It was the smell of bodies and business and time, compressed into a parlor no larger than a ranch house sitting room. The piano in the corner was out of tune. Someone was playing it anyway. Conversation had been happening before the door opened. It stopped when the first timer stepped inside. The room went quiet. Not silent. Quiet in the way a room goes quiet when every person in it is now looking at the same thing. The first timer stood in that quiet and understood, for the first time, that he was the thing being looked at.",
+    "voice_id": "elevenlabs_E95b3lkMWHDsKeHJaIcY"
+  }
+}

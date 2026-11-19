@@ -25,6 +25,12 @@
     exec:    { c: '#3A3533', s: '#2A2624', len: 26, sleeve: 'long', belt: 'leather', feet: 'boot', legs: '#3A3533', hat: 'mask' },
     peasant: { c: '#B8A27A', s: '#9C8762', len: 22, sleeve: 'long', belt: 'rope', feet: 'shoe', apron: '#E8DFC9' },
     baby:    { c: '#F1EEE8', s: '#DAD4C8', swaddle: true },
+    // Wild West (added 2026-11-18)
+    cowboy:  { c: '#E8DCC0', s: '#CFC2A3', len: 6, sleeve: 'long', vest: '#7A5236', scarf: '#B5503F', belt: 'leather', feet: 'boot', legs: '#5E6E8C', hat: 'cowboy' },
+    suit:    { c: '#3B3F4A', s: '#2E323B', len: 30, sleeve: 'long', lapel: true, feet: 'boot', legs: '#2E3038' },
+    gown:    { c: '#6B3F69', s: '#56315A', long: true, flare: 2.0, sleeve: 'long', collar: '#F1EEE8', feet: 'shoe' },
+    saloon:  { c: '#4E8C8A', s: '#3E7372', long: true, flare: 1.9, sleeve: 'short', collar: '#F1EEE8', feet: 'shoe' },
+    barkeep: { c: '#F1EEE8', s: '#DAD4C8', len: 6, sleeve: 'long', vest: '#3B3F4A', belt: 'leather', feet: 'shoe', legs: '#3B3036' },
   };
   const AGE = {
     adult: { R: 60, leg: 62, torso: 78, w: 56, up: 36, fo: 34 },
@@ -116,6 +122,12 @@
     if (h === 'mask') { const P = (a) => [(R + 1.5) * Math.cos(a * Math.PI / 180), cy + (R + 1.5) * Math.sin(a * Math.PI / 180)]; const a = P(172), b = P(8); const ey = cy - R * 0.08, ex = R * 0.26;
       return '<path d="M' + f(a[0]) + ' ' + f(a[1]) + ' A' + f(R + 1.5) + ' ' + f(R + 1.5) + ' 0 1 1 ' + f(b[0]) + ' ' + f(b[1]) + ' Q0 ' + f(cy + R * 0.3) + ' ' + f(a[0]) + ' ' + f(a[1]) + ' Z" ' + st('#3A3533') + '/>' +
         [fx - ex, fx + ex].map((x) => '<ellipse cx="' + f(x) + '" cy="' + f(ey) + '" rx="' + f(R * 0.14) + '" ry="' + f(R * 0.09) + '" ' + st('#FFFFFF', 2.4) + '/><circle cx="' + f(x) + '" cy="' + f(ey) + '" r="' + f(R * 0.05) + '" style="fill:' + C.ink + '"/>').join(''); }
+    if (h === 'cowboy') { const hc2 = o.hatColor || '#B98A5F', b = cy - R * 0.56, x0 = fx * 0.35;
+      return '<path d="M' + f(-R * 0.6 + x0) + ' ' + f(b) + ' L' + f(-R * 0.52 + x0) + ' ' + f(cy - R * 1.24) + ' Q' + f(-R * 0.22 + x0) + ' ' + f(cy - R * 1.36) + ' ' + f(x0) + ' ' + f(cy - R * 1.16) + ' Q' + f(R * 0.22 + x0) + ' ' + f(cy - R * 1.36) + ' ' + f(R * 0.52 + x0) + ' ' + f(cy - R * 1.24) + ' L' + f(R * 0.6 + x0) + ' ' + f(b) + ' Z" ' + st(hc2) + '/>' +
+        '<path d="M' + f(-R * 0.58 + x0) + ' ' + f(b - R * 0.14) + ' Q' + f(x0) + ' ' + f(b - R * 0.08) + ' ' + f(R * 0.58 + x0) + ' ' + f(b - R * 0.14) + '" ' + line('#5A4030', R * 0.12) + '/>' +
+        '<path d="M' + f(-R * 1.5 + x0) + ' ' + f(b - R * 0.3) + ' Q' + f(-R * 1.2 + x0) + ' ' + f(b + R * 0.02) + ' ' + f(x0) + ' ' + f(b + R * 0.02) + ' Q' + f(R * 1.2 + x0) + ' ' + f(b + R * 0.02) + ' ' + f(R * 1.5 + x0) + ' ' + f(b - R * 0.3) + ' Q' + f(R * 1.1 + x0) + ' ' + f(b + R * 0.2) + ' ' + f(x0) + ' ' + f(b + R * 0.2) + ' Q' + f(-R * 1.1 + x0) + ' ' + f(b + R * 0.2) + ' ' + f(-R * 1.5 + x0) + ' ' + f(b - R * 0.3) + ' Z" ' + st(hc2) + '/>'; }
+    if (h === 'bowler') { const hc2 = o.hatColor || '#2E2724', b = cy - R * 0.6, x0 = fx * 0.35;
+      return '<path d="M' + f(-R * 0.66 + x0) + ' ' + f(b) + ' Q' + f(-R * 0.72 + x0) + ' ' + f(cy - R * 1.36) + ' ' + f(x0) + ' ' + f(cy - R * 1.36) + ' Q' + f(R * 0.72 + x0) + ' ' + f(cy - R * 1.36) + ' ' + f(R * 0.66 + x0) + ' ' + f(b) + ' Z" ' + st(hc2) + '/><ellipse cx="' + f(x0) + '" cy="' + f(b) + '" rx="' + f(R * 0.98) + '" ry="' + f(R * 0.12) + '" ' + st(hc2) + '/>'; }
     if (h === 'straw') return '<ellipse cx="' + f(fx * 0.3) + '" cy="' + f(cy - R * 0.55) + '" rx="' + f(R * 1.35) + '" ry="' + f(R * 0.2) + '" ' + st('#E2C27A') + '/><path d="M' + f(-R * 0.6) + ' ' + f(cy - R * 0.58) + ' Q' + f(-R * 0.55) + ' ' + f(cy - R * 1.15) + ' 0 ' + f(cy - R * 1.15) + ' Q' + f(R * 0.55) + ' ' + f(cy - R * 1.15) + ' ' + f(R * 0.6) + ' ' + f(cy - R * 0.58) + ' Z" ' + st('#E2C27A') + '/><path d="M' + f(-R * 0.6) + ' ' + f(cy - R * 0.68) + ' Q0 ' + f(cy - R * 0.6) + ' ' + f(R * 0.6) + ' ' + f(cy - R * 0.68) + '" ' + line('#B5562F', 5) + '/>';
     return '';
   }
@@ -187,6 +199,9 @@
       if (oc.trim) body += '<path d="M0 ' + f(shY + 2) + ' L0 ' + f(bottom) + ' M' + f(-bw / 2 + 2) + ' ' + f(bottom - 3) + ' L' + f(bw / 2 - 2) + ' ' + f(bottom - 3) + '" ' + line(oc.trim, 4) + '/>';
       if (oc.ermine) { body += '<path d="M' + f(-A.w * 0.62) + ' ' + f(shY + 4) + ' Q0 ' + f(shY + 30) + ' ' + f(A.w * 0.62) + ' ' + f(shY + 4) + ' Q0 ' + f(shY - 6) + ' ' + f(-A.w * 0.62) + ' ' + f(shY + 4) + ' Z" ' + st('#FBF8F2') + '/>'; for (let i = -2; i <= 2; i++) body += '<path d="M' + f(i * 9) + ' ' + f(shY + 8 + Math.abs(i) * -2) + ' v5" ' + line(C.ink, 2.4) + '/>'; }
       if (oc.belt) { const bc = oc.belt === 'rope' ? '#D8BE8A' : oc.belt === 'teal' ? '#4DB6AC' : '#4E3B2C'; body += '<path d="M' + f(-A.w / 2 - 2) + ' ' + f(hipY - 4) + ' Q0 ' + f(hipY + 2) + ' ' + f(A.w / 2 + 2) + ' ' + f(hipY - 4) + '" ' + line(C.ink, 7 + ln) + '/><path d="M' + f(-A.w / 2 - 2) + ' ' + f(hipY - 4) + ' Q0 ' + f(hipY + 2) + ' ' + f(A.w / 2 + 2) + ' ' + f(hipY - 4) + '" ' + line(bc, 6) + '/>' + (oc.belt === 'rope' ? '<path d="M' + f(-A.w * 0.3) + ' ' + f(hipY - 2) + ' q-4 20 2 38 M' + f(-A.w * 0.22) + ' ' + f(hipY - 1) + ' q4 18 -1 34" ' + line(bc, 3.4) + '/>' : ''); }
+      if (oc.vest) { const vb = hipY + 4; body += [-1, 1].map((k) => '<path d="M' + f(k * (A.w / 2 + 1)) + ' ' + f(shY + 6) + ' Q' + f(k * A.w * 0.3) + ' ' + f(shY) + ' ' + f(k * A.w * 0.1) + ' ' + f(shY + 4) + ' L' + f(k * A.w * 0.06) + ' ' + f(vb) + ' L' + f(k * (A.w / 2 + 3)) + ' ' + f(vb - 4) + ' Z" ' + st(oc.vest) + '/>').join('') + '<circle cx="' + f(-A.w * 0.14) + '" cy="' + f(shY + 34) + '" r="2.4" style="fill:' + C.ink + '"/><circle cx="' + f(-A.w * 0.13) + '" cy="' + f(shY + 54) + '" r="2.4" style="fill:' + C.ink + '"/>'; }
+      if (oc.collar) body += '<path d="M' + f(-A.w * 0.34) + ' ' + f(shY + 2) + ' Q0 ' + f(shY + 22) + ' ' + f(A.w * 0.34) + ' ' + f(shY + 2) + ' Q0 ' + f(shY + 8) + ' ' + f(-A.w * 0.34) + ' ' + f(shY + 2) + ' Z" ' + st(oc.collar, 2.6) + '/>';
+      if (oc.scarf) body += '<path d="M' + f(-R * 0.26) + ' ' + f(shY - 3) + ' Q0 ' + f(shY + 4) + ' ' + f(R * 0.26) + ' ' + f(shY - 3) + ' L' + f(R * 0.06) + ' ' + f(shY + 26) + ' Q0 ' + f(shY + 30) + ' ' + f(-R * 0.06) + ' ' + f(shY + 26) + ' Z" ' + st(oc.scarf, 2.6) + '/>';
       if (oc.hood && o.hat !== 'hood') body += '<path d="M' + f(-A.w * 0.62) + ' ' + f(shY + 10) + ' Q' + f(-A.w * 0.7) + ' ' + f(shY - 16) + ' ' + f(-A.w * 0.2) + ' ' + f(shY - 8) + ' L0 ' + f(shY + 10) + ' L' + f(A.w * 0.2) + ' ' + f(shY - 8) + ' Q' + f(A.w * 0.7) + ' ' + f(shY - 16) + ' ' + f(A.w * 0.62) + ' ' + f(shY + 10) + ' Q0 ' + f(shY + 24) + ' ' + f(-A.w * 0.62) + ' ' + f(shY + 10) + ' Z" ' + st(oc.s) + '/>';
     }
 

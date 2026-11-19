@@ -1,0 +1,4 @@
+{
+ "kind": "js",
+ "text": "(function () {\n  const F = W.F;\n  kit.scene('street', {\n    init(kit) {\n      const M = W.MOODS.prairieDust;\n      kit.stage.append(kit.h(F.frame(W.bg.mainStreet(M, { blank: 2 }) + W.prop.hitchPost(560, 1000, 1, M) + W.prop.cactus(1820, 1060, 0.9) +\n        F.who('lk-ft', 'ft') + W.person('lk-n', W.NARRATOR_WEST) + F.who('lk-h2', 'hand2') + F.who('lk-h3', 'hand3'), '', '')));\n      this.p = ['lk-ft', 'lk-n', 'lk-h2', 'lk-h3'].map((c) => W.bindPerson(kit.stage, c)); this.cam = kit.stage.querySelector('.cam');\n    },\n    render(t) { F.framing(this.cam, 1, 960, 540);\n      W.posePerson(this.p[0], { x: 800, y: 1000, s: 1.9, expr: 'worried' }); W.posePerson(this.p[1], { x: 1150, y: 1010, s: 1.9, expr: 'smug', a1: -90 });\n      W.posePerson(this.p[2], { x: 300, y: 1000, s: 1.8, expr: 'happy' }); W.posePerson(this.p[3], { x: 1500, y: 1000, s: 1.8, expr: 'neutral' }); },\n  });\n})();\n"
+}
